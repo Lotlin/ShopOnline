@@ -1,0 +1,43 @@
+.main {
+  margin: 0;
+  padding: 0 0 80px 80px;
+  max-width: 1180px;
+}
+
+.main__section {
+  padding: 25px 0;
+}
+
+.main__section-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.main__section-text {
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.main__section-wrapper {
+  margin-bottom: 50px;
+}
+
+.main__section-wrapper p:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.main__section-text-gap {
+  margin-bottom: 25px;
+}
+
+.main__photo {
+  margin-bottom: 50px;
+  min-height: 560px;
+  background: url("../img/brushes.png") no-repeat;
+}
+
+.main__h3 {
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 400;
+}
