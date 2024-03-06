@@ -1,0 +1,28 @@
+.container {
+  @include center-block(1800px);
+  padding: 0 15px;
+
+  @include large {
+    @include center-block(93.6vw);
+  }
+
+  @include large-layout {
+    @include center-block(970px);
+  }
+
+  @include medium {
+    @include center-block(95.06vw);
+  }
+
+  @include medium-layout {
+    @include center-block(730px);
+  }
+
+  @include small {
+    @include center-block(94.9vw);
+  }
+
+  @include small-layout {
+    @include center-block(310px)
+  }
+}

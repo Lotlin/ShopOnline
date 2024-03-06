@@ -14,12 +14,12 @@ import gulpAvif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpIf from 'gulp-if';
 // todo
-import plumber from 'gulp-plumber';
+/* import plumber from 'gulp-plumber';
 import terser from 'gulp-terser';
 import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
 import path from 'path';
-import rename from 'gulp-rename';
+import rename from 'gulp-rename'; */
 
 const preproc = true;
 let dev = false;

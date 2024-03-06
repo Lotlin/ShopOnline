@@ -1,0 +1,30 @@
+.hero {
+  //todo 
+  display: none;
+  padding: 45px 0 30px;
+
+  &__container {
+    min-height: $hero-height;
+    border-radius: 20px;
+    color: $text-light-color;
+  }
+
+  &__link {
+    display: block;
+    min-height: $hero-height;
+    @include bg-full('../img/banner.jpg');
+  }
+
+  &__slogan {
+    margin-bottom: 100px;
+    padding-top: 145px;
+    padding-left: 112px;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__timer {
+    @include center-block(473px);
+  }
+}

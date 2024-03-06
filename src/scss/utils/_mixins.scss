@@ -1,0 +1,79 @@
+@mixin font($name, $weight, $local: $name) {
+  font: {
+    family: $name;
+    weight: $weight;
+    display: swap;
+  }
+  src: local($local), url('../fonts/#{$name}-#{$weight}.woff2') format('woff2'),
+    url('../fonts/#{$name}-#{$weight}.woff') format('woff');
+}
+
+@mixin bg-full($url) {
+  background: {
+    image: url($url);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  };
+}
+
+@mixin block-width($max-width) {
+  max-width: $max-width;
+  width: 100%;
+}
+
+@mixin center-block($max-width) {
+  margin: 0 auto;
+  @include block-width($max-width);
+}
+
+@mixin discount-top-left($discount-position) {
+  top: $discount-position;
+  left: $discount-position;
+}
+
+@mixin discount-bottom-right($discount-position) {
+  bottom: $discount-position;
+  right: $discount-position;
+}
+
+@mixin discount-bottom-left($discount-position) {
+  bottom: $discount-position;
+  left: $discount-position;
+}
+
+@mixin large {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin large-layout {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin medium-layout {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 730px) {
+    @content;
+  }
+}
+
+@mixin small-layout {
+  @media (max-width: 480px) {
+    @content;
+  }
+}

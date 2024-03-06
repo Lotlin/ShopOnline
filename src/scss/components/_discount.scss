@@ -1,0 +1,62 @@
+.discount {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: $dicsount-background-color;
+  padding-top: 24px;
+  padding-left: 9px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 130%;
+  color: $text-light-color;
+}
+
+@include large {
+  .discount {
+    width: 4.58vw;
+    height: 4.58vw;
+    padding-top: 1.25vw;
+    padding-left: 0.47vw;
+    font-size: 1.56vw;
+  }
+}
+
+@include medium {
+  .discount {
+    width: 8.62vw;
+    height: 8.62vw;
+    padding-top: 2.35vw;
+    padding-left: 0.88vw;
+    font-size: 2.94vw;
+  }
+}
+
+@include medium-layout {
+  .discount {
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 6px;
+    font-size: 16px;
+  }
+}
+
+@include small {
+  .discount {
+    width: 6.5vw;
+    height: 6.5vw;
+    padding-top: 1.95vw;
+    padding-left: 0.78vw;
+    font-size: 2.08vw;
+  }
+}
+
+@include small-layout {
+  .discount {
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 6px;
+    font-size: 16px;
+  }
+}

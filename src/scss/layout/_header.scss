@@ -1,0 +1,363 @@
+.header {
+  position: relative;
+  padding: 27px 0 45px;
+
+  &__navigation {
+    @include block-width(1980px);
+    padding: 58px 0 95px 100px;
+    display: none;
+    position: absolute;
+    top: 109px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: $text-light-color;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__logo {
+    @include block-width(190px);
+  }
+
+  &__logo-link:hover {
+    box-shadow: 
+    0 0 0 3px $footer-background-color,
+  }
+
+  &__logo-link:focus {
+    box-shadow: 
+    0 0 0 6px  $button-background-color;
+    outline: none;
+  }
+
+  &__burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7px;
+    @include block-width(151px);
+    padding: 9px 28px 12px 30px;
+    background-color: $button-background-color;
+    color: $text-light-color;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    border: 2px solid transparent;
+    border-radius: 10px;
+
+    &:hover {
+      border: 2px solid $footer-background-color;
+    }
+
+    &:focus {
+      border: 2px solid $footer-background-color;
+    }
+  }
+
+  &__burger-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__burger-img--hide {
+    display: none;
+  }
+
+  &__burger-img--show {
+    display: block;
+  }
+
+  &__search {
+    @include block-width(757px);
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: $form-background-color;
+    border-radius: 30px;
+  }
+
+  &__form-label {
+    width: 100%;
+    padding: 15px 0 18px 40px;
+  }
+
+  &__form-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      color: $placeholder-color;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  &__form-button {
+    padding: 9px 32px 9px 33px;
+    background-color: $button-background-color;
+    border: 2px solid transparent;
+    border-radius: 30px;
+
+    &:hover {
+      border: 2px solid $footer-background-color;
+    }
+
+    &:focus {
+      background-color: $footer-background-color;
+    }
+  }
+
+  &__form-button-img {
+    width: 36px;
+  }
+
+  &__user {
+    @include block-width(354px);
+    min-height: 61px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__user-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 8px;
+    background-color: transparent;
+    color: $footer-background-color;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: $main-line-height;
+
+    &:hover {
+      background-color: $placeholder-color;
+    }
+  }
+
+  @include large {
+    &__logo {
+      @include block-width(9.88vw);
+      min-width: 150px;
+    }
+
+    &__burger {
+      @include block-width(7.85vw);
+      padding: 0.47vw 1.45vw 0.6vw 1.56vw;
+      font-size: 1.14vw;
+      border-radius: 0.52vw;
+    }
+
+    &__search {
+      @include block-width(39.36vw);
+    }
+
+    &__user {
+      @include block-width(18.4vw);
+      min-height: 3.17vw;
+    }
+
+    &__user-item {
+      font-size: 0.83vw;
+    }
+  }
+
+  @include large-layout {
+    padding: 34px 0 30px;
+
+    &__container {
+      flex-wrap: wrap;
+      gap: 44px 89px;
+    }
+  
+    &__logo {
+      @include block-width(190px);
+    }
+  
+    &__burger {
+      order: 1;
+      @include block-width(151px);
+      padding: 9px 28px 12px 30px;
+      font-size: 22px;
+      border-radius: 10px;
+    }
+  
+    &__search {
+      order: 2;
+      @include block-width(700px);
+    }
+
+    &__user {
+      @include block-width(424px);
+      display: flex;
+      justify-content: flex-end;
+      gap: 40px;
+    }
+  }
+
+  @include medium {
+    &__container {
+      gap: 4.3vw 8vw;
+    }
+  
+    &__logo {
+      @include block-width(18.62vw);
+      min-width: 165px;
+    }
+  
+    &__burger {
+      @include block-width(14.8vw);
+      min-width: 100px;
+      padding: 7px 18px;
+      font-size: 2.16vw;
+    }
+  
+    &__search {
+      @include block-width(65vw);
+      min-width: 524px;
+    }
+  }
+
+  @include medium-layout {
+    padding: 25px 0 25dpx;
+
+    &__container {
+      gap: 35px 45px;
+    }
+  
+    &__logo {
+      @include block-width(165px);
+    }
+  
+    &__burger {
+      @include block-width(115px);
+      padding: 7px 21px 11px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+  
+    &__search {
+      @include block-width(540px);
+      min-width: 0;
+    }
+
+    &__user {
+      @include block-width(424px);
+      gap: 30px;
+    }
+
+    &__form-button {
+      padding: 6px 26px;
+    }
+
+    &__user-item {
+      font-size: 12px;
+    }
+  }
+
+  @include small {
+    &__container {
+      gap: 4.55vw 5vw;
+    }
+  
+    &__logo {
+      @include block-width(21.4vw);
+      min-width: 114px;
+    }
+  
+    &__burger {
+      @include block-width(14.95vw);
+      min-width: 79px;
+      padding: 0.8vw 2vw;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+  
+    &__search {
+      @include block-width(67.2vw);
+    }
+
+    &__user {
+      @include block-width(56vw);
+      gap: 30px;
+    }
+  }
+
+  @include small-layout {
+    padding: 20px 0 10px;
+
+    &__container {
+      gap: 20px 71px;
+    }
+
+    &__logo-link {
+      margin-right: 17px;
+    }
+
+    &__logo {
+      @include block-width(114px);
+      min-width: none;
+    }
+
+    &__burger {
+      order: 0;
+      column-gap: 2px;
+      @include block-width(79px);
+      min-width: 0;
+      padding: 6px 14px 7px 15px;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+
+    &__search {
+      @include block-width(280px);
+    }
+
+    &__form-label {
+      padding: 14px 0 11px 16px;
+    }
+
+    &::placeholder {
+      font-size: 8px;
+    }
+
+    &__form-button {
+      padding: 8px 24px;
+    }
+
+    &__form-button-img {
+      width: 20px;
+      min-width: 20px;
+    }
+
+    &__user {
+      @include block-width(130px);
+      min-height: 30px;
+      gap: 20px;
+    }
+
+    &__user-text {
+      display: none;
+    }
+  }
+}

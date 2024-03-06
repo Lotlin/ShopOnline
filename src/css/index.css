@@ -1,0 +1,15 @@
+@import 'normalize.css';
+@import 'global.css';
+@import 'fonts.css';
+@import 'visually-hidden.css';
+@import 'container.css';
+@import 'header.css';
+@import 'hero.css';
+@import 'timer.css';
+@import 'catalog.css';
+@import 'discount.css';
+@import 'profit.css';
+@import 'footer.css';
+@import 'crumbs.css';
+@import 'blog.css';
+@import 'pagination.css';
