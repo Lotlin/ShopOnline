@@ -1,0 +1,67 @@
+.crumbs {
+  padding: 15px 0 40px;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 38px;
+  }
+
+  &__elem {
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    color: $crumbs-arrow-color;
+    line-height: $main-line-height;
+
+    &:not(:first-child)::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 2px;
+      left: -28px;
+      @include bg-full('../img/icons/arrow_right.svg');
+    }
+  }
+
+  @include large-layout { 
+    padding: 10px 0 30px;
+  }
+
+  @include medium-layout { 
+    padding: 5px 0 25px;
+
+    &__container {
+      column-gap: 48px;
+    }
+
+    &__elem {
+      font-size: 14px;
+
+      &:not(:first-child)::before {
+        top: 0;
+        left: -33px;
+      }
+    }
+  }
+
+  @include small-layout { 
+    padding: 6px 0 15px;
+
+    &__container {
+      column-gap: 23px;
+    }
+
+    &__elem {
+      font-size: 8px;
+
+      &:not(:first-child)::before {
+        width: 11px;
+        height: 11px;
+        left: -18px;
+      }
+    }
+  }
+}

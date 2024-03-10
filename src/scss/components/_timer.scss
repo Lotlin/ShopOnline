@@ -1,0 +1,27 @@
+.timer {
+  line-height: $main-line-height;
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__countdown {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__unit {
+    font-size: 32px;
+    font-weight: 700;
+    
+  }
+
+  &__number {
+    margin-right: 9px;
+    font-size: 60px;
+    font-weight: 700;
+  }
+}

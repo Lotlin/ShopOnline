@@ -1,0 +1,771 @@
+.catalog {
+  padding: 30px 0 28px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(6, 245px);
+    grid-template-rows: repeat(4, 245px);
+    grid-template-areas: 
+    "one two three three four four"
+    "five five three three six six"
+    "seven seven seven seven eight nine"
+    "seven seven seven seven eight ten";
+  }
+
+  &__item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: $text-light-color;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+  }
+
+  &__item-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item-title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__item-book {
+    grid-area: one;
+  }
+
+  &__item-title-book {
+    position: absolute;
+    max-width: 210px;
+    top: 97px;
+    left: 20px;
+  }
+
+  &__item-title-book span {
+    font-size: 40px;
+  }
+
+  &__item-clock {
+    grid-area: two;
+  }
+
+  &__item-clock-title {
+    position: absolute;
+    top: 78px;
+    left: 14px;
+  }
+
+  &__item-discount-clock {
+    position: absolute;
+    @include discount-bottom-right($discount-position);
+  }
+
+  &__item-sneakers {
+    grid-area: three;
+  }
+
+  &__item-sneakers-title {
+    position: absolute;
+    top: 376px;
+    left: 43px;
+    z-index: 1;
+    max-width:463px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  &__item-sneakers-title span {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  &__item-sneakers-rectangle {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    @include block-width(510px);
+    min-height: 178px;
+    background-color: $blue-rectangle-color;
+    border-radius: 20px;
+  }
+
+  &__item-gifts {
+    grid-area: four;
+  }
+
+  &__item-gifts-title {
+    position: absolute;
+    max-width: 370px;
+    top: 104px;
+    left: 30px;
+    font-size: 40px;
+  }
+  
+  &__item-sneaker-red {
+    grid-area: five;
+  }
+
+  &__item-sneaker-red-discount {
+    position: absolute;
+    @include discount-top-left($discount-position);
+  }
+
+  &__item-december {
+    grid-area: six;
+  }
+
+  &__item-december-title {
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    font-size: 40px;
+  }
+
+  &__item-december-discount {
+    position: absolute;
+    @include discount-bottom-right($discount-position);
+  }
+
+  &__item-2022 {
+    grid-area: seven;
+  }
+
+  &__item-2022-title {
+    position: absolute;
+    bottom: 82px;
+    left: 92px;
+    z-index: 1;
+    color: $text-red-color;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+
+  &__item-2022-rectangle {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    @include block-width(643px);
+    min-height: 115px;
+    border-radius: 20px;
+    background-color: $text-light-color;
+  }
+
+  &__item-dress {
+    grid-area: eight;
+  }
+
+  &__item-dress-discount {
+    position: absolute;
+    @include discount-bottom-right($discount-position);
+  }
+
+  &__item-spray {
+    grid-area: nine;
+  }
+
+  &__item-spray-title {
+    position: absolute;
+    top: 147px;
+    left: 20px;
+  }
+
+  &__item-spray-discount {
+    position: absolute;
+    @include discount-top-left($discount-position);
+  }
+
+  &__item-balls {
+    grid-area: ten;
+  }
+
+  @include large {
+    &__list {
+      display: grid;
+      gap: 3.12vw;
+      grid-template-columns: repeat(6, 12.74vw);
+      grid-template-rows: repeat(4, 12.74vw);
+      grid-template-areas: 
+      "one two three three four four"
+      "five five three three six six"
+      "seven seven seven seven eight nine"
+      "seven seven seven seven eight ten";
+    }
+
+    &__item-title {
+      font-size: 1.56vw;
+    }
+
+    &__item-title-book {
+      max-width: 10.92vw;
+      top: 5vw;
+      left: 1vw;
+      font-size: 1.56vw;
+    }
+
+    &__item-title-book span {
+      font-size: 2.08vw;
+    }
+
+    &__item-clock-title {
+      top: 3vw;
+      left: 0.46vw;
+    }
+
+    &__item-discount-clock {
+      @include discount-bottom-right($discount-position-large);
+    }
+
+    &__item-sneakers-title {
+      top: 19.56vw;
+      left: 2.24vw;
+      max-width: 24vw;
+      font-size: 2.08vw;
+    }
+  
+    &__item-sneakers-title span {
+      font-size: 2.9vw;
+    }
+  
+    &__item-sneakers-rectangle {
+      bottom: 1.04vw;
+      left: 1.04vw;
+      @include block-width(26.52vw);
+      min-height: 9.26vw;
+    }
+
+    &__item-gifts-title {
+      max-width: 19.24vw;
+      top: 5.4vw;
+      left: 1.56vw;
+      font-size: 2.08vw;
+    }
+
+    &__item-sneaker-red-discount {
+      @include discount-top-left($discount-position-large);
+    }
+
+    &__item-december-title {
+      top: 8.32vw;
+      left: 1.56vw;
+      font-size: 2.08vw;
+    }
+
+    &__item-december-discount {
+      @include discount-bottom-right($discount-position-large);
+    }
+
+    &__item-2022-title {
+      bottom: 4.26vw;
+      left: 4.78vw;
+      font-size: 2.08vw;
+    }
+
+    &__item-2022-rectangle {
+      bottom: 2.6vw;
+      left: 2.6vw;
+      @include block-width(33.43vw);
+      min-height: 5.98vw;
+    }
+
+    &__item-dress-discount {
+      @include discount-bottom-right($discount-position-large);
+    }
+
+    &__item-spray-title {
+      font-size: 1.40vw;
+      top: 7.64vw;
+      left: 1.04vw;
+    }
+
+    &__item-spray-discount {
+      @include discount-top-left($discount-position-large);
+    }
+  }
+
+  @include large-layout {
+    padding-bottom: 45px;
+
+    &__list {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(4, 217px);
+      grid-template-rows: repeat(6, 217px);
+      grid-template-areas: 
+      "one two three three"
+      "five five three three"
+      "four four eight nine"
+      "six six eight ten"
+      "seven seven seven seven"
+      "seven seven seven seven";
+    }
+
+    &__item-title {
+      font-size: 30px;
+    }
+
+    &__item {
+      border-radius: 16px;
+    }
+
+    &__item-title-book {
+      max-width: 199px;
+      top: 123px;
+      left: 9px;
+      font-size: 24px;
+    }
+
+    &__item-title-book span {
+      font-size: 30px;
+    }
+
+    &__item-clock-title {
+      top: 58px;
+      left: 9px;
+    }
+
+    &__item-discount-clock {
+      @include discount-bottom-right($discount-position-large-layout);
+    }
+
+    &__item-sneakers-title {
+      top: 319px;
+      left: 47px;
+      max-width: 364px;
+      font-size: 30px;
+    }
+
+    &__item-sneakers-title span {
+      font-size: 40px;
+    }
+
+    &__item-sneakers-rectangle {
+      bottom: 22px;
+      left: 22px;
+      @include block-width(414px);
+      min-height: 146px;
+    }
+
+    &__item-gifts-title {
+      max-width: 271px;
+      top: 110px;
+      left: 20px;
+      font-size: 30px;
+    }
+
+    &__item-sneaker-red-discount {
+      @include discount-top-left($discount-position-large-layout);
+    }
+
+    &__item-december-title {
+      top: 158px;
+      left: 20px;
+      font-size: 30px;
+    }
+
+    &__item-december-discount {
+      @include discount-bottom-right($discount-position-large-layout);
+    }
+
+    &__item-2022-title {
+      bottom: 62px;
+      left: 77px;
+      font-size: 30px;
+    }
+
+    &__item-2022-rectangle {
+      bottom: 39px;
+      left: 30px;
+      @include block-width(513px);
+      min-height: 83px;
+      border-radius: 16px;
+    }
+
+    &__item-dress-discount {
+      @include discount-bottom-right($discount-position-large-layout);
+    }
+
+    &__item-spray-title {
+      top: 177px;
+      left: 14px;
+      font-size: 20px;
+    }
+
+    &__item-spray-discount {
+      @include discount-top-left($discount-position-large-layout);
+    }
+  }
+
+  @include medium {
+    padding-bottom: 4.41vw;
+
+    &__list {
+      gap: 2.35vw;
+      grid-template-columns: repeat(4, 21.26vw);
+      grid-template-rows: repeat(6, 21.26vw);
+    }
+
+    &__item-title {
+      font-size: 2.94vw;
+    }
+
+    &__item-title-book {
+      max-width: 19.4vw;
+      top: 12.05vw;
+      left: 0.88vw;
+      font-size: 2.35vw;
+    }
+
+    &__item-title-book span {
+      font-size: 2.94vw;
+    }
+
+    &__item-clock-title {
+      top: 5.69vw;
+      left: 0.88vw;
+    }
+
+    &__item-sneakers-title {
+      top: 31.26vw;
+      left: 4.6vw;
+      max-width: 35.67vw;
+      font-size: 2.94vw;
+    }
+
+    &__item-sneakers-title span {
+      font-size: 3.92vw;
+    }
+
+    &__item-sneakers-rectangle {
+      bottom: 2.16vw;
+      left: 2.16vw;
+      @include block-width(40.57vw);
+      min-height: 14.3vw;
+    }
+
+    &__item-gifts-title {
+      max-width: 26.55vw;
+      top: 10.78vw;
+      left: 1.96vw;
+      font-size: 2.94vw;
+    }
+
+    &__item-december-title {
+      top: 15.48vw;
+      left: 1.96vw;
+      font-size: 2.94vw;
+    }
+
+    &__item-2022-title {
+      bottom: 6vw;
+      left: 7.54vw;
+      font-size: 2.94vw;
+    }
+
+    &__item-2022-rectangle {
+      bottom: 3.8vw;
+      left: 2.94vw;
+      @include block-width(50.27vw);
+      min-height: 8.13vw;
+      border-radius: 1.57vw;
+    }
+
+    &__item-spray-title {
+      top: 17.35vw;
+      left: 1.37vw;
+      font-size: 1.96vw;
+    }
+  }
+
+  @include medium-layout {
+    padding-top: 25px;
+    padding-bottom: 30px;
+
+    &__list {
+      gap: 20px;
+      grid-template-columns: repeat(2, 140px) 220px 140px;
+      grid-template-rows: repeat(12, 60px) 17px;
+      grid-template-areas: 
+      "one two three three"
+      "one two three three"
+      "five five three three"
+      "five five three three"
+      "four four three three"
+      "four four eight nine"
+      "six six eight nine"
+      "six six eight ten"
+      "seven seven seven seven"
+      "seven seven seven seven"
+      "seven seven seven seven"
+      "seven seven seven seven"
+      "seven seven seven seven";     
+    }
+
+    &__item-title {
+      font-size: 16px;
+    }
+
+    &__item {
+      border-radius: 12px;
+    }
+
+    &__item-title-book {
+      max-width: 126px;
+      top: 48px;
+      left: 10px;
+      font-size: 17px;
+    }
+    
+    &__item-title-book span {
+      font-size: 22px;
+    }
+
+    &__item-clock-title {
+      top: 15px;
+      left: 5px;
+    }
+
+    &__item-sneakers-title {
+      top: 325px;
+      left: 38px;
+      max-width:463px;
+      line-height: 1.1;
+    }
+
+    &__item-sneakers-title span {
+      font-size: 26px;
+    }
+
+    &__item-sneakers-rectangle {
+      bottom: 10px;
+      left: 10px;
+      @include block-width(360px);
+      min-height: 61px;
+    }
+
+    &__item-gifts-title {
+      max-width: 156px;
+      top: 82px;
+      left: 20px;
+    }
+
+
+
+    &__item-december-title {
+      top: 93px;
+      left: 17px;
+    }
+
+    &__item-2022-title {
+      bottom: 48px;
+      left: 60px;
+      font-size: 20px;
+    }
+
+    &__item-2022-rectangle {
+      bottom: 26px;
+      left: 26px;
+      @include block-width(347px);
+      min-height: 68px;
+      border-radius: 12px;
+    }
+
+    &__item-spray-title {
+      max-width: 114px;
+      top: 88px;
+      left: 14px;
+    }
+  }
+
+  @include small {
+    @include medium-layout {
+      padding-top: 3.25vw;
+      padding-bottom: 3.9vw;
+  
+      &__list {
+        gap: 2.6vw;
+        grid-template-columns: repeat(2, 18.2vw) 28.6vw 18.2vw;
+        grid-template-rows: repeat(12, 7.8vw) 2.21vw;
+      }
+  
+      &__item-title {
+        font-size: 2.08vw;
+      }
+  
+      &__item {
+        border-radius: 1.56vw;
+      }
+  
+      &__item-title-book {
+        max-width: 16.38vw;
+        top: 6.24vw;
+        left: 1.3vw;
+        font-size: 2.21vw;
+      }
+      
+      &__item-title-book span {
+        font-size: 2.86vw;
+      }
+  
+      &__item-clock-title {
+        top: 1.95vw;
+        left: 0.65vw;
+      }
+  
+      &__item-sneakers-title {
+        top: 42.25vw;
+        left: 4.94vw;
+        max-width:60.19vw;
+      }
+  
+      &__item-sneakers-title span {
+        font-size: 3.38vw;
+      }
+  
+      &__item-sneakers-rectangle {
+        bottom: 1.3vw;
+        left: 1.3vw;
+        @include block-width(46.8vw);
+        min-height: 7.93vw;
+      }
+  
+      &__item-gifts-title {
+        max-width: 20.28vw;
+        top: 10.66vw;
+        left: 2.6vw;
+      }
+  
+      &__item-december-title {
+        top: 12.09vw;
+        left: 2.21vw;
+      }
+  
+      &__item-2022-title {
+        bottom: 6.24vw;
+        left: 7.8vw;
+        font-size: 2.6vw;
+      }
+  
+      &__item-2022-rectangle {
+        bottom: 3.38vw;
+        left: 3.38vw;
+        @include block-width(45.11vw);
+        min-height: 8.84vw;
+        border-radius: 1.56vw;
+      }
+
+      &__item-spray-title {
+        max-width: 14.81vw;
+        top: 11.44vw;
+        left: 1.82vw;
+      }
+    }
+  }
+
+  @include small-layout {
+  padding-top: 31px;
+  padding-bottom: 35px;
+
+  &__list {
+    gap: 20px;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 130px 118px 280px repeat(2, 118px) repeat(2, 130px) 123px;
+    grid-template-areas: 
+    "one two"
+    "five five"
+    "three three"
+    "four four"
+    "six six"
+    "eight nine"
+    "eight ten"
+    "seven seven";     
+  }
+
+  &__item-title {
+    font-size: 12px;
+  }
+
+  &__item {
+    border-radius: 8px;
+  }
+
+  &__item-title-book {
+    max-width: 75px;
+    top: 76px;
+    left: 10px;
+    font-size: 13px;
+    line-height: 1.1;
+  }
+  
+  &__item-title-book span {
+    font-size: 15px;
+  }
+
+  &__item-clock-title {
+    top: 28px;
+    left: 10px;
+  }
+
+  &__item-sneakers-title {
+    top: 243px;
+    left: 35px;
+    max-width: 245px;
+    line-height: 1.1;
+  }
+
+  &__item-sneakers-title span {
+    font-size: 16px;
+  }
+
+  &__item-sneakers-rectangle {
+    bottom: 10px;
+    left: 10px;
+    @include block-width(260px);
+    min-height: 36px;
+  }
+
+  &__item-gifts-title {
+    max-width: 191px;
+    top: 88px;
+    left: 16px;
+  }
+
+  &__item-december-title {
+    top: 88px;
+    left: 10px;
+  }
+
+  &__item-2022-title {
+    bottom: 19px;
+    left: 56px;
+  }
+
+  &__item-2022-rectangle {
+    bottom: 10px;
+    left: 15px;
+    @include block-width(250px);
+    min-height: 30px;
+    border-radius: 6px;
+  }
+
+  &__item-spray-title {
+    max-width: 120px;
+    top: 106px;
+    left: 9px;
+  }
+  }
+}

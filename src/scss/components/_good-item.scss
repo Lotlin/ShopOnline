@@ -1,0 +1,188 @@
+.good-item {
+  color: $text-dark-color;
+  @include block-width(420px);
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    position: relative;
+    margin-bottom: 20px;
+    @include block-width(420px);
+    min-height: 295px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 14px;
+  }
+
+  &__discount {
+    position: absolute;
+    @include discount-bottom-left($discount-position)
+  }
+
+  &__price-wrapper {
+    margin-bottom: 15px;
+    @include block-width(181px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-new {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  &__price-old {
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: line-through;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  @include large {
+    @include block-width(21.8vw);
+
+    &__img {
+      @include block-width(21.84vw);
+    }
+  }
+
+  @include large-layout {
+    @include block-width(300px);
+  
+    &__img {
+      @include block-width(300px);
+    }
+  
+    &__price-wrapper {
+      @include block-width(174px);
+    }
+  }
+
+  @include medium {
+    @include block-width(29.3vw);
+  
+    &__img {
+      @include block-width(29.3vw);
+    }
+  
+    &__price-wrapper {
+      @include block-width(17vw);
+    }
+
+    &__price-wrapper {
+      margin-bottom: 1.47vw;
+      @include block-width(17.73vw);
+    }
+  
+    &__price-new {
+      font-size: 2.74vw;
+    }
+  
+    &__price-old {
+      font-size: 1.96vw;
+    }
+  
+    &__title {
+      font-size: 2.16vw;
+    }
+  }
+
+  @include medium-layout {
+    @include block-width(220px);
+
+    &__img {
+      margin-bottom: 15px;
+      @include block-width(220px);
+      min-height: 216px;
+      border-radius: 12px;
+    }
+
+    &__discount {
+      @include discount-bottom-left($discount-position-large-layout)
+    }
+
+    &__price-wrapper {
+      margin-bottom: 10px;
+      @include block-width(137px);
+    }
+
+    &__price-new {
+      font-size: 22px;
+    }
+
+    &__price-old {
+      font-size: 16px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+  }
+
+  @include small {
+    @include block-width(28.6vw);
+
+    &__img {
+      margin-bottom: 1.95vw;
+      @include block-width(28.6vw);
+      min-height: 28vw;
+      border-radius: 1.56vw
+    }
+
+    &__price-wrapper {
+      margin-bottom: 1.3vw;
+      @include block-width(17.8vw);
+    }
+
+    &__price-new {
+      font-size: 2.86vw;
+    }
+
+    &__price-old {
+      font-size: 2.08vw;
+    }
+
+    &__title {
+      font-size: 2.34vw;
+    }
+  }
+
+  @include small-layout {
+    @include block-width(130px);
+
+    &__img {
+      margin-bottom: 9px;
+      @include block-width(130px);
+      min-height: 130px;
+      border-radius: 12px;
+    }
+
+    &__price-wrapper {
+      margin-bottom: 5px;
+      @include block-width(105px);
+    }
+
+    &__price-new {
+      font-size: 16px;
+    }
+
+    &__price-old {
+      font-size: 12px;
+    }
+
+    &__title {
+      font-size: 12px;
+    }
+  }
+}

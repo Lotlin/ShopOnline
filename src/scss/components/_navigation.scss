@@ -1,0 +1,280 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 98px;
+
+  &--header {
+    justify-content: flex-start;
+    column-gap: 173px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &--visible {
+    display: flex;
+  }
+
+
+  &__catalog {
+    @include block-width(533px);
+
+    &--header {
+      margin-right: 52px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: $main-line-height;
+
+    &--header {
+      font-size: 38px;
+    }
+  }
+
+  &__list {
+    height: 245px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.5;
+
+    &--contacts {
+      column-gap: 21px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: $main-line-height
+    }
+  }
+
+  &__item {
+    &--email {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__buyers {
+    margin-right: 29px;
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  @include large {
+    column-gap: 12px;
+
+    &__title {
+      font-size: 26px;
+    }
+  
+    &__list {
+      height: 220px;
+      gap: 12px 10px;
+      font-size: 18px;
+  
+      &--contacts {
+        column-gap: 21px;
+        font-size: 14px;
+      }
+    }
+    
+    &__buyers {
+      margin-right: 0;
+    }
+
+    &__social-list {
+      column-gap: 10px;
+    }
+  }
+
+  @include large-layout {
+    column-gap: 50px;
+
+    &__catalog {
+      @include block-width(225px);
+    }
+
+    &__title {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: $main-line-height;
+
+      &--contacts {
+        margin-bottom: 35px;
+      }
+    }
+
+    &__list {
+      height: auto;
+      row-gap: 15px;
+      font-size: 22px;
+
+      &--contacts {
+        font-size: 16px;
+      }
+    }
+
+    &__buyers {
+      margin-right: 12px;
+    }
+  }
+
+  @include medium {
+    &__title {
+      font-size: 28px;
+    }
+
+    &__list {
+      font-size: 18px;
+
+      &--contacts {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @include medium-layout {
+    &__catalog {
+      @include block-width(176px);
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    &__list {
+      row-gap: 10px;
+      font-size: 16px;
+
+      &--contacts {
+        font-size: 12px;
+      }
+    }
+
+    &__buyers {
+      margin-right: 12px;
+    }
+  }
+
+  @include small {
+    column-gap: 20px;
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__list {
+      font-size: 14px;
+
+      &--contacts {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include small-layout {
+    flex-direction: column;
+    row-gap: 20px;
+
+    &__catalog {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 100px;
+        width: 17px;
+        height: 8px;
+        @include bg-full('../img/icons/arrow-down.svg');
+      }
+
+      &--active {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 100px;
+          width: 17px;
+          height: 8px;
+          @include bg-full('../img/icons/arrow-down.svg');
+          transform: rotateX(180deg);
+        }
+      }
+    }
+
+    &__buyers {
+      position: relative;
+      margin-bottom: 10px;
+      margin-right: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 150px;
+        width: 17px;
+        height: 8px;
+        @include bg-full('../img/icons/arrow-down.svg');
+      }
+
+      &--active {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 150px;
+          width: 17px;
+          height: 8px;
+          @include bg-full('../img/icons/arrow-down.svg');
+          transform: rotateX(180deg);
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    &__list {
+      display: none;
+      gap: 8px;
+      font-size: 12px;
+      line-height: 1.2;
+
+    &--contacts {
+      display: block;
+      column-gap: 9px;
+      font-size: 10px;
+    }
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &__item {
+      &--email {
+        margin-bottom: 14px;
+      }
+    }
+
+    &__social-list {
+      column-gap: 15px;
+    }
+  }
+}

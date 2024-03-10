@@ -1,2 +1,26 @@
 @charset 'utf-8';
 
+@import 'utils/var';
+@import 'utils/mixins';
+
+@import 'vendors/normalize';
+
+@import 'base/visually-hidden';
+@import 'base/fonts';
+@import 'base/global';
+@import 'base/container';
+
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/catalog';
+@import 'layout/profit';
+@import 'layout/footer';
+@import 'layout/crumbs';
+@import 'layout/pagination';
+
+@import 'components/timer';
+@import 'components/discount';
+@import 'components/good-item';
+@import 'components/navigation';
+
+@import 'pages/blog';

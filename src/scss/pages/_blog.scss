@@ -1,0 +1,185 @@
+.blog {
+  padding: 40px 0 50px;
+
+  &__list {
+    @include center-block(1433px);
+    display: flex;
+    justify-content: space-between;
+    gap: 50px 96px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    @include block-width(668px);
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__link--img {
+    @include block-width(195px);
+  }
+
+  &__img {
+    display: block;
+    width: 195px;
+  }
+
+  &__title {
+    @include block-width(420px);
+    padding-top: 26px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: $main-line-height;
+    color: $text-dark-color;
+  }
+
+  @include large {
+    &__list {
+      @include center-block(74.52vw);
+      gap: 2.6vw 4.99vw;
+    }
+
+    &__item {
+      @include block-width(34.74vw);
+      column-gap: 1.56vw;
+    }
+
+    &__link--img {
+      @include block-width(10.14vw);
+    }
+
+    &__img {
+      width: 10.14vw;
+    }
+
+    &__title {
+      @include block-width(21.84vw);
+      padding-top: 0;
+      font-size: 30px;
+    }
+  }
+
+  @include large-layout {
+    padding: 10px 0 40px;
+
+    &__list {
+      @include center-block(940px);
+      gap: 30px 20px;
+    }
+
+    &__item {
+      @include block-width(460px);
+      column-gap: 20px;
+    }
+
+    &__link--img {
+      @include block-width(140px);
+    }
+
+    &__img {
+      width: 140px;
+    }
+
+    &__title {
+      @include block-width(300px);
+      padding-top: 5px;
+      font-size: 30px;
+    }
+  }
+
+  @include medium {
+    &__list {
+      @include center-block(92.12vw);
+      gap: 2.94vw 1.96vw;
+    }
+
+    &__item {
+      @include block-width(44vw);
+      column-gap: 1.96vw;
+    }
+
+    &__link--img {
+      @include block-width(13.72vw);
+    }
+
+    &__img {
+      width: 13.72vw;
+    }
+
+    &__title {
+      @include block-width(29.4vw);
+      padding-top: 0;
+      font-size: 22px;
+    }
+  }
+
+  @include medium-layout {
+    padding: 25px 0;
+
+    &__list {
+      justify-content: flex-start;
+      gap: 20px 0;
+    }
+
+    &__item {
+      @include block-width(620px);
+      column-gap: 20px;
+    }
+
+    &__link--img {
+      @include block-width(140px);
+    }
+
+    &__img {
+      width: 140px;
+    }
+
+    &__title {
+      @include block-width(460px);
+      padding-top: 21px;
+      font-size: 30px;
+    }
+  }
+
+  @include small {
+    &__link--img {
+      @include block-width(18.2vw);
+    }
+
+    &__img {
+      width: 18.2vw;
+    }
+
+    &__title {
+      padding-top: 2.73vw;
+      font-size: 25px;
+    }
+  }
+
+  @include small-layout {
+    padding: 15px 0 20px;
+
+    &__list {
+      gap: 10px 0;
+    }
+
+    &__item {
+      @include block-width(280px);
+      column-gap: 7px;
+    }
+
+    &__link--img {
+      @include block-width(60px);
+    }
+
+    &__img {
+      width: 60px;
+    }
+
+    &__title {
+      @include block-width(213px);
+      padding-top: 0;
+      font-size: 18px;
+    }
+  }
+}

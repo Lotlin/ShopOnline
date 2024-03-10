@@ -1,0 +1,158 @@
+.footer {
+  padding: 80px 0;
+  background-color: $footer-background-color;
+  color: $text-light-color;
+
+  &__container {
+    padding-right: 230px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    gap: 118px;
+    justify-content: flex-start;
+  }
+
+  &__navigation {
+    @include block-width(1545px);
+  }
+
+  &__development {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1124px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: $main-line-height; 
+  }
+
+  &__copyright {
+    display: inline-block;
+    @include block-width(180px);
+  }
+
+  &__designer {
+    @include block-width(211px);
+  }
+
+  &__designer-name {
+    margin-bottom: 10px;
+  }
+
+  &__designer-link:hover {
+    border-bottom: 1px solid $text-light-color;
+  }
+
+  @include large {
+    &__wrapper {
+      gap: 3.12vw;
+    }
+
+    &__development {
+      gap: 50vw;
+      font-size: 12px;
+    }
+  }
+
+  @include large-layout {
+    padding: 60px 0 44px;
+  
+    &__container {
+      padding-right: 0;
+    }
+  
+    &__wrapper {
+      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      justify-content: flex-start;
+    }
+
+    &__development {
+      display: flex;
+      justify-content: space-between;
+      gap: 538px;
+    }
+
+    &__designer {
+      @include block-width(220px);
+    }
+  }
+
+  @include medium {
+    &__wrapper {
+      gap: 3.12vw;
+    }
+
+    &__development {
+      gap: 50vw;
+      font-size: 12px;
+    }
+  }
+
+  @include medium-layout {
+    padding: 40px 0 37px;
+  
+    &__wrapper {
+      margin-bottom: 53px;
+      gap: 40px;
+    }
+
+    &__development {
+      justify-content: flex-start;
+      gap: 340px;
+      font-size: 12px;
+    }
+
+    &__copyright {
+      display: inline-block;
+      @include block-width(140px);
+    }
+  }
+
+  @include small {
+    &__wrapper {
+      gap: 3.12vw;
+    }
+
+    &__development {
+      gap: 30vw;
+      font-size: 10spx;
+    }
+  }
+
+  @include small-layout {
+    padding: 30px 0 20px;
+
+    &__wrapper {
+      margin-bottom: 60px;
+      gap: 27px;
+    }
+
+    &__logo {
+      @include block-width(127px);
+    }
+
+    &__development {
+      justify-content: flex-start;
+      gap: 20px;
+      font-size: 10px;
+    }
+
+    &__copyright {
+      display: inline-block;
+      @include block-width(130px);
+    }
+
+    &__designer {
+      @include block-width(130px);
+    }
+
+    &__designer-name {
+      margin-bottom: 5px;
+    }
+  }
+}

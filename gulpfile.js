@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import ghPages from 'gulp-gh-pages';
 import browserSync from 'browser-sync';
 import cssImport from 'gulp-cssimport';
 import * as sassPkg from 'sass';
@@ -12,22 +13,40 @@ import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpIf from 'gulp-if';
-<<<<<<< Updated upstream
 // todo
-import plumber from 'gulp-plumber';
+/* import plumber from 'gulp-plumber';
 import terser from 'gulp-terser';
 import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
 import path from 'path';
-import rename from 'gulp-rename';
-=======
-import autoPrefixer from 'gulp-autoprefixer';
-import babel from 'gulp-babel';
->>>>>>> Stashed changes
+import rename from 'gulp-rename'; */
 
 const preproc = true;
 let dev = false;
 const sass = gulpSass(sassPkg);
+
+// todo
+const webpackConf = {
+  mode: dev ? 'development' : 'production',
+  devtool: dev ? 'eval-source-map' : false,
+  optimization: {
+    minimize: false,
+  },
+  output: {
+    filename: 'index.js',
+  },
+  module: {
+    rules: [],
+  },
+};
+
+if (!dev) {
+  webpackConf.module.rules.push({
+    test: /\.(js)$/,
+    exclude: /(node_modules)/,
+    loader: 'babel-loader',
+  });
+}
 
 export const html = () => gulp
     .src('src/*.html')
@@ -44,7 +63,6 @@ export const style = () => {
         .src('src/scss/**/*.scss')
         .pipe(gulpIf(dev, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoPrefixer())
         .pipe(cleanCss({
           2: {
             specialComments: 0,
@@ -60,7 +78,6 @@ export const style = () => {
       .pipe(cssImport({
         extensions: ['css'],
       }))
-      .pipe(autoPrefixer())
       .pipe(cleanCss({
         2: {
           specialComments: 0,
@@ -71,16 +88,28 @@ export const style = () => {
       .pipe(browserSync.stream());
 };
 
+// toDO
 export const js = () => gulp
     .src('src/js/**/*.js')
     .pipe(gulpIf(dev, sourcemaps.init()))
-    .pipe(babel({
-      presets: ['@babel/preset-env'],
-      ignore: [''],
-    }))
     .pipe(gulpIf(dev, sourcemaps.write('../maps')))
     .pipe(gulp.dest('dist/js'));
 
+/*
+export const js = () => gulp
+    .src(path.src.js)
+    .pipe(plumber())
+    .pipe(webpackStream(webpackConf, webpack))
+    .pipe(gulpIf(!dev, gulp.dest(path.dist.js)))
+    .pipe(gulpIf(!dev, terser()))
+    .pipe(
+        rename({
+          suffix: '.min',
+        }),
+    )
+    .pipe(gulp.dest(path.dist.js))
+    .pipe(browserSync.stream());
+*/
 export const img = () => gulp
     .src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
     .pipe(gulpIf(!dev, gulpImg({
@@ -163,6 +192,10 @@ export const clear = (done) => {
 export const develop = async () => {
   dev = true;
 };
+
+export const deploy = () => gulp
+    .src('./dist/**/*')
+    .pipe(ghPages());
 
 export const base = gulp.parallel(html, style, js, img, webp, avif, copy);
 

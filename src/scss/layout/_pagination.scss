@@ -1,0 +1,108 @@
+.pagination {
+  padding: 50px 0 70px;
+
+  &__container {
+    @include center-block(254px);
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    align-items: center;
+  }
+
+  &__arrow {
+    display: block;
+    width: 37px;
+    height: 37px;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+  }
+
+  &__arrow-left {
+    background-image: url('../img/icons/pagination-right-blue.svg');
+    transform: rotate(180deg);
+  }
+
+  &__arrow-left--disabled {
+    background-image: url('../img/icons/pagination-left-grey.svg');
+  }  
+
+  &__list-numbers {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6px;
+    list-style-type: none;
+    counter-reset: page-counter;
+  }
+
+  &__number {
+    &::before {
+      display: flex;
+      content: counter(page-counter);
+      counter-increment: page-counter;
+      width: 36px;
+      height: 36px;
+      border: 2px solid $footer-background-color;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 700;
+      color: $text-dark-color;
+      line-height: $main-line-height;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  &__number--active {
+    &::before {
+      border: 2px solid $button-background-color;
+    }
+  }
+
+  &__arrow-right {
+    background-image: url('../img/icons/pagination-right-blue.svg');
+  }
+
+  &__arrow-right--disabled {
+    background-image: url('../img/icons/pagination-left-grey.svg');
+    transform: rotate(180deg);
+  }
+
+  @include large-layout {
+    padding: 40px 0 100px;
+  }
+
+  @include medium-layout {
+    padding: 25px 0 80px;
+
+    &__container {
+      @include center-block(166px);
+      column-gap: 15px;
+    }
+
+    &__arrow {
+      width: 28px;
+      height: 28px;
+    }
+
+    &__list-numbers {
+      column-gap: 10px;
+    }
+
+    &__number {
+      &::before {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include small-layout {
+    padding: 20px 0 50px;
+  }
+}
