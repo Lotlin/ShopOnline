@@ -7,9 +7,16 @@ html {
 }
 
 body {
+  display: flex;
+  flex-flow: column nowrap;
+
   min-width: 320px;
   min-height: 100vh;
   font-family: $font, sans-serif;
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 img, svg {

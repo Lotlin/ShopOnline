@@ -1,30 +1,137 @@
 .hero {
-  //todo 
-  display: none;
   padding: 45px 0 30px;
 
+
   &__container {
-    min-height: $hero-height;
     border-radius: 20px;
     color: $text-light-color;
   }
 
   &__link {
+    position: relative;
+    border-radius: 20px;
+  }
+
+  &__banner {
+    border-radius: 20px;
     display: block;
-    min-height: $hero-height;
-    @include bg-full('../img/banner.jpg');
+    @include block-width(1770px);
   }
 
   &__slogan {
-    margin-bottom: 100px;
-    padding-top: 145px;
-    padding-left: 112px;
+    position: absolute;
+    top: 7.55vw;
+    left: 5.8vw;
     font-size: 70px;
     font-weight: 700;
     line-height: $main-line-height;
   }
 
   &__timer {
-    @include center-block(473px);
+    position: absolute;
+    top: 17.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include large {
+    &__slogan {
+      font-size: 50px;
+    }
+
+    &__timer {
+      top: 15vw;
+    }
+  }
+
+  @include large-layout {
+    padding: 30px 0 11px;
+
+    &__container {
+      border-radius: 16px;
+    }
+
+    &__banner {
+      display: block;
+      @include block-width(940px);
+    }
+
+    &__slogan {
+      top: 80px;
+      left: 80px;
+      max-width: 400px;
+      font-size: 40px;
+    }
+
+    &__timer {
+      top: 195px;
+    }
+  }
+
+  @include medium {
+    &__slogan {
+      top: 7.8vw;
+      left: 7.8vw;
+      font-size: 32px;
+    }
+
+    &__timer {
+      top: 19vw;
+    }
+  }
+
+  @include medium-layout {
+    padding: 25px 0 20px;
+
+    &__container {
+      border-radius: 16px;
+    }
+
+    &__banner {
+      display: block;
+      @include block-width(700);
+    }
+
+    &__slogan {
+      top: 64px;
+      left: 80px;
+      font-size: 30px;
+    }
+
+    &__timer {
+      top: 185px;
+    }
+  }
+
+  @include small {
+    &__slogan {
+      top: 8.3vw;
+      left: 10.4vw;
+      font-size: 24px;
+    }
+
+    &__timer {
+      top: 24vw;
+    }
+  }
+
+  @include small-layout {
+    padding: 30px 0 10px;
+
+    &__container {
+      border-radius: 8px;
+    }
+
+    &__slogan {
+      top: 50px;
+      left:50%;
+      transform: translateX(-50%);
+      @include block-width(222px);
+      font-size: 22px;
+    }
+
+    &__timer {
+      top: 268px;
+    }
   }
 }

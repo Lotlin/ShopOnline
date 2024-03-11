@@ -298,13 +298,14 @@
   }
 
   @include large-layout {
+    padding-top: 11px;
     padding-bottom: 45px;
 
     &__list {
       display: grid;
       gap: 24px;
       grid-template-columns: repeat(4, 217px);
-      grid-template-rows: repeat(6, 217px);
+      grid-template-rows: repeat(4, 217px) 418px;
       grid-template-areas: 
       "one two three three"
       "five five three three"
@@ -390,7 +391,7 @@
     &__item-2022-rectangle {
       bottom: 39px;
       left: 30px;
-      @include block-width(513px);
+      @include block-width(512px);
       min-height: 83px;
       border-radius: 16px;
     }
@@ -416,7 +417,7 @@
     &__list {
       gap: 2.35vw;
       grid-template-columns: repeat(4, 21.26vw);
-      grid-template-rows: repeat(6, 21.26vw);
+      grid-template-rows: repeat(4, 21.26vw) 34vw;
     }
 
     &__item-title {
@@ -492,7 +493,7 @@
   }
 
   @include medium-layout {
-    padding-top: 25px;
+    padding-top: 20px;
     padding-bottom: 30px;
 
     &__list {
@@ -592,92 +593,90 @@
   }
 
   @include small {
-    @include medium-layout {
-      padding-top: 3.25vw;
-      padding-bottom: 3.9vw;
-  
-      &__list {
-        gap: 2.6vw;
-        grid-template-columns: repeat(2, 18.2vw) 28.6vw 18.2vw;
-        grid-template-rows: repeat(12, 7.8vw) 2.21vw;
-      }
-  
-      &__item-title {
-        font-size: 2.08vw;
-      }
-  
-      &__item {
-        border-radius: 1.56vw;
-      }
-  
-      &__item-title-book {
-        max-width: 16.38vw;
-        top: 6.24vw;
-        left: 1.3vw;
-        font-size: 2.21vw;
-      }
-      
-      &__item-title-book span {
-        font-size: 2.86vw;
-      }
-  
-      &__item-clock-title {
-        top: 1.95vw;
-        left: 0.65vw;
-      }
-  
-      &__item-sneakers-title {
-        top: 42.25vw;
-        left: 4.94vw;
-        max-width:60.19vw;
-      }
-  
-      &__item-sneakers-title span {
-        font-size: 3.38vw;
-      }
-  
-      &__item-sneakers-rectangle {
-        bottom: 1.3vw;
-        left: 1.3vw;
-        @include block-width(46.8vw);
-        min-height: 7.93vw;
-      }
-  
-      &__item-gifts-title {
-        max-width: 20.28vw;
-        top: 10.66vw;
-        left: 2.6vw;
-      }
-  
-      &__item-december-title {
-        top: 12.09vw;
-        left: 2.21vw;
-      }
-  
-      &__item-2022-title {
-        bottom: 6.24vw;
-        left: 7.8vw;
-        font-size: 2.6vw;
-      }
-  
-      &__item-2022-rectangle {
-        bottom: 3.38vw;
-        left: 3.38vw;
-        @include block-width(45.11vw);
-        min-height: 8.84vw;
-        border-radius: 1.56vw;
-      }
+    padding-top: 3.25vw;
+    padding-bottom: 3.9vw;
 
-      &__item-spray-title {
-        max-width: 14.81vw;
-        top: 11.44vw;
-        left: 1.82vw;
-      }
+    &__list {
+      gap: 2.6vw;
+      grid-template-columns: repeat(2, 18.2vw) 28.6vw 18.2vw;
+      grid-template-rows: repeat(12, 7.8vw) 2.21vw;
+    }
+
+    &__item-title {
+      font-size: 2.08vw;
+    }
+
+    &__item {
+      border-radius: 1.56vw;
+    }
+
+    &__item-title-book {
+      max-width: 16.38vw;
+      top: 6.24vw;
+      left: 1.3vw;
+      font-size: 2.21vw;
+    }
+    
+    &__item-title-book span {
+      font-size: 2.86vw;
+    }
+
+    &__item-clock-title {
+      top: 1.95vw;
+      left: 0.65vw;
+    }
+
+    &__item-sneakers-title {
+      top: 42.25vw;
+      left: 4.94vw;
+      max-width:60.19vw;
+    }
+
+    &__item-sneakers-title span {
+      font-size: 3.38vw;
+    }
+
+    &__item-sneakers-rectangle {
+      bottom: 1.3vw;
+      left: 1.3vw;
+      @include block-width(46.8vw);
+      min-height: 7.93vw;
+    }
+
+    &__item-gifts-title {
+      max-width: 20.28vw;
+      top: 10.66vw;
+      left: 2.6vw;
+    }
+
+    &__item-december-title {
+      top: 12.09vw;
+      left: 2.21vw;
+    }
+
+    &__item-2022-title {
+      bottom: 6.24vw;
+      left: 7.8vw;
+      font-size: 2.6vw;
+    }
+
+    &__item-2022-rectangle {
+      bottom: 3.38vw;
+      left: 3.38vw;
+      @include block-width(45.11vw);
+      min-height: 8.84vw;
+      border-radius: 1.56vw;
+    }
+
+    &__item-spray-title {
+      max-width: 14.81vw;
+      top: 11.44vw;
+      left: 1.82vw;
     }
   }
 
   @include small-layout {
-  padding-top: 31px;
+  padding-top: 10px;
   padding-bottom: 35px;
 
   &__list {

@@ -172,6 +172,24 @@
       <div class="container hero__container">
         <a class="hero__link" href="google.com">
           <h1 class="visually-hidden">Онлайн магазин ShopOnline. Главная акция</h1>
+          <picture class="hero__banner">
+            <source media="(max-width: 480px)" srcset="img/banner-480.avif, img/banner-480@2x.avif" type="image/avif" width="280" height="340">
+            <source media="(max-width: 480px)" srcset="img/banner-480.webp, img/banner-480@2x.webp" type="image/webp" width="280" height="340">
+            <source media="(max-width: 480px)" srcset="img/banner-480.jpg" type="image/jpg" width="280" height="340">
+            <source media="(max-width: 480px)" srcset="img/banner-480@2x.jpg" type="image/jpg" width="280" height="340" 2x>
+            <source media="(max-width: 768px)" srcset="img/banner-768.avif, img/banner-768@2x.avif" type="image/avif" width="700" height="280">
+            <source media="(max-width: 768px)" srcset="img/banner-768.webp, img/banner-768@2x.webp" type="image/webp" width="700" height="280">
+            <source media="(max-width: 768px)" srcset="img/banner-768.jpg" width="700" height="280">
+            <source media="(max-width: 768px)" srcset="img/banner-768@2x.jpg" width="700" height="280" 2x>
+            <source media="(max-width: 1200px)" srcset="img/banner-1200.avif, img/banner-1200@2x.avif" type="image/avif" width="940" height="314">
+            <source media="(max-width: 1200px)" srcset="img/banner-1200.webp, img/banner-1200@2x.webp" type="image/webp" width="940" height="314">
+            <source media="(max-width: 1200px)" srcset="img/banner-1200.jpg" width="940" height="314">
+            <source media="(max-width: 1200px)" srcset="img/banner-1200@2x.jpg" width="940" height="314" 2x>
+            <source media="(min-width: 1200px)" srcset="img/banner.avif, img/banner.avif" type="image/avif" width="1770" height="480">
+            <source media="(min-width: 1200px)" srcset="img/banner.webp, img/banner@2x.webp" type="image/webp" width="1770" height="480">
+            <source media="(min-width: 1200px)" srcset="img/banner@2x.jpg" width="1770" height="480" 2x>
+            <img src="img/banner.jpg" alt="фото товара по акции" width="1770" height="480">
+          </picture>
 
           <h2 class="hero__slogan">-50% на все ноутбуки</h2>
 
@@ -188,16 +206,29 @@
       </div>
     </section>
 
-    <section class="catalog">
+    <section class="catalog" id="catalog">
       <div class="container catalog__container" aria-label="каталог товаров">
         <h2 class="visually-hidden">Каталог товаров магазина ShopOnline</h2>
 
         <ul class="catalog__list">
           <li class="catalog__item catalog__item-book">
-            <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/book.avif" type="image/avif">
-                <source srcset="img/book.webp" type="image/webp">
+            <a class="catalog__item-link" href="card.html">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/book-480.avif, img/book-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/book-480.webp, img/book-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/book-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/book-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/book-768.avif, img/book-768@2x.avif" type="image/avif" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/book-768.webp, img/book-768@2x.webp" type="image/webp" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/book-768.jpg" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/book-768@2x.jpg" width="140" height="140" 2x>
+                <source media="(max-width: 1200px)" srcset="img/book-1200.avif, img/book-1200@2x.avif" type="image/avif" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/book-1200.webp, img/book-1200@2x.webp" type="image/webp" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/book-1200.jpg" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/book-1200@2x.jpg" width="217" height="217" 2x>
+                <source media="(min-width: 1200px)" srcset="img/book.avif, img/book2x.avif" type="image/avif" width="245" height="245">
+                <source media="(min-width: 1200px)" srcset="img/book.webp, img/book@2x.webp" type="image/webp" width="245" height="245">
+                <source media="(min-width: 1200px)" srcset="img/book@2x.jpg" width="245" height="245" 2x>
                 <img src="img/book.jpg" alt="книга" width="245" height="245">
               </picture>
               <h3 class="catalog__item-title catalog__item-title-book"><span>Книга –</span> лучший подарок</h3>
@@ -206,9 +237,22 @@
 
           <li class="catalog__item catalog__item-clock">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/clock.avif" type="image/avif">
-                <source srcset="img/clock.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/clock-480.avif, img/clock-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/clock-480.webp, img/clock-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/clock-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/clock-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/clock-768.avif, img/clock-768@2x.avif" type="image/avif" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/clock-768.webp, img/clock-768@2x.webp" type="image/webp" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/clock-768.jpg" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/clock-768@2x.jpg" width="140" height="140" 2x>
+                <source media="(max-width: 1200px)" srcset="img/clock-1200.avif, img/clock-1200@2x.avif" type="image/avif" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/clock-1200.webp, img/clock-1200@2x.webp" type="image/webp" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/clock-1200.jpg" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/clock-1200@2x.jpg" width="217" height="217" 2x>
+                <source media="(min-width: 1200px)" srcset="img/clock.avif, img/clock2x.avif" type="image/avif" width="245" height="245">
+                <source media="(min-width: 1200px)" srcset="img/clock.webp, img/clock@2x.webp" type="image/webp" width="245" height="245">
+                <source media="(min-width: 1200px)" srcset="img/clock@2x.jpg" width="245" height="245" 2x>
                 <img src="img/clock.jpg" alt="часы" width="245" height="245">
               </picture>
               <h3 class="catalog__item-title catalog__item-clock-title">Время скидок!</h3>
@@ -218,9 +262,22 @@
 
           <li class="catalog__item catalog__item-sneakers">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/sneakers-white.avif" type="image/avif">
-                <source srcset="img/sneakers-white.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/sneakers-white-480.avif, img/sneakers-white-480@2x.avif" type="image/avif" width="280" height="280">
+                <source media="(max-width: 480px)" srcset="img/sneakers-white-480.webp, img/sneakers-white-480@2x.webp" type="image/webp" width="280" height="280">
+                <source media="(max-width: 480px)" srcset="img/sneakers-white-480.jpg" type="image/jpg" width="280" height="280">
+                <source media="(max-width: 480px)" srcset="img/sneakers-white-480@2x.jpg" type="image/jpg" width="280" height="280" 2x>
+                <source media="(max-width: 768px)" srcset="img/sneakers-white-768.avif, img/sneakers-white-768@2x.avif" type="image/avif" width="380" height="380">
+                <source media="(max-width: 768px)" srcset="img/sneakers-white-768.webp, img/sneakers-white-768@2x.webp" type="image/webp" width="380" height="380">
+                <source media="(max-width: 768px)" srcset="img/sneakers-white-768.jpg" width="380" height="380">
+                <source media="(max-width: 768px)" srcset="img/sneakers-white-768@2x.jpg" width="380" height="380" 2x>
+                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200.avif, img/sneakers-white-1200@2x.avif" type="image/avif" width="458" height="458">
+                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200.webp, img/sneakers-white-1200@2x.webp" type="image/webp" width="458" height="458">
+                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200.jpg" width="458" height="458">
+                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200@2x.jpg" width="458" height="458" 2x>
+                <source media="(min-width: 1200px)" srcset="img/sneakers-white.avif, img/sneakers-white2x.avif" type="image/avif" width="550" height="550">
+                <source media="(min-width: 1200px)" srcset="img/sneakers-white.webp, img/sneakers-white@2x.webp" type="image/webp" width="550" height="550">
+                <source media="(min-width: 1200px)" srcset="img/sneakers-white@2x.jpg" width="550" height="550" 2x>
                 <img src="img/sneakers-white.jpg" alt="кроссовки" width="550" height="550">
               </picture>
               <h3 class="catalog__item-title catalog__item-sneakers-title">Вторая пара кроссовок <span>в&nbsp;подарок!</span></h3>
@@ -230,9 +287,22 @@
 
           <li class="catalog__item catalog__item-gifts">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/gifts.avif" type="image/avif">
-                <source srcset="img/gifts.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/gifts-480.avif, img/gifts-480@2x.avif" type="image/avif" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/gifts-480.webp, img/gifts-480@2x.webp" type="image/webp" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/gifts-480.jpg" type="image/jpg" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/gifts-480@2x.jpg" type="image/jpg" width="280" height="118" 2x>
+                <source media="(max-width: 768px)" srcset="img/gifts-768.avif, img/gifts-768@2x.avif" type="image/avif" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/gifts-768.webp, img/gifts-768@2x.webp" type="image/webp" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/gifts-768.jpg" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/gifts-768@2x.jpg" width="300" height="140" 2x>
+                <source media="(max-width: 1200px)" srcset="img/gifts-1200.avif, img/gifts-1200@2x.avif" type="image/avif" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/gifts-1200.webp, img/gifts-1200@2x.webp" type="image/webp" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/gifts-1200.jpg" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/gifts-1200@2x.jpg" width="458" height="217" 2x>
+                <source media="(min-width: 1200px)" srcset="img/gifts.avif, img/giftsx.avif" type="image/avif" width="550" height="245">
+                <source media="(min-width: 1200px)" srcset="img/gifts.webp, img/gifts2x.webp" type="image/webp" width="550" height="245">
+                <source media="(min-width: 1200px)" srcset="img/gifts@2x.jpg" width="550" height="245" 2x>
                 <img src="img/gifts.jpg" alt="две подарочные коробки" width="550" height="245">
               </picture>
               <h3 class="catalog__item-title catalog__item-gifts-title">Идеи новогодних подарков</h3>
@@ -241,9 +311,22 @@
 
           <li class="catalog__item catalog__item-sneaker-red">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/sneaker-red.avif" type="image/avif">
-                <source srcset="img/sneaker-red.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/sneaker-red-480.avif, img/sneaker-red-480@2x.avif" type="image/avif" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/sneaker-red-480.webp, img/sneaker-red-480@2x.webp" type="image/webp" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/sneaker-red-480.jpg" type="image/jpg" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/sneaker-red-480@2x.jpg" type="image/jpg" width="280" height="118" 2x>
+                <source media="(max-width: 768px)" srcset="img/sneaker-red-768.avif, img/sneaker-red-768@2x.avif" type="image/avif" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/sneaker-red-768.webp, img/sneaker-red-768@2x.webp" type="image/webp" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/sneaker-red-768.jpg" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/sneaker-red-768@2x.jpg" width="300" height="140" 2x>
+                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200.avif, img/sneaker-red-1200@2x.avif" type="image/avif" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200.webp, img/sneaker-red-1200@2x.webp" type="image/webp" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200.jpg" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200@2x.jpg" width="458" height="217" 2x>
+                <source media="(min-width: 1200px)" srcset="img/sneaker-red.avif, img/sneaker-red-x.avif" type="image/avif" width="550" height="245">
+                <source media="(min-width: 1200px)" srcset="img/sneaker-red.webp, img/sneaker-red-2x.webp" type="image/webp" width="550" height="245">
+                <source media="(min-width: 1200px)" srcset="img/sneaker-red@2x.jpg" width="550" height="245" 2x>
                 <img src="img/sneaker-red.jpg" alt="красные кроссовки" width="550" height="245">
               </picture>
               <div class="discount catalog__item-sneaker-red-discount">-40%</div>
@@ -252,9 +335,22 @@
 
           <li class="catalog__item catalog__item-december">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/laptop.avif" type="image/avif">
-                <source srcset="img/laptop.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/laptop-480.avif, img/laptop-480@2x.avif" type="image/avif" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/laptop-480.webp, img/laptop-480@2x.webp" type="image/webp" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/laptop-480.jpg" type="image/jpg" width="280" height="118">
+                <source media="(max-width: 480px)" srcset="img/laptop-480@2x.jpg" type="image/jpg" width="280" height="118" 2x>
+                <source media="(max-width: 768px)" srcset="img/laptop-768.avif, img/laptop-768@2x.avif" type="image/avif" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/laptop-768.webp, img/laptop-768@2x.webp" type="image/webp" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/laptop-768.jpg" width="300" height="140">
+                <source media="(max-width: 768px)" srcset="img/laptop-768@2x.jpg" width="300" height="140" 2x>
+                <source media="(max-width: 1200px)" srcset="img/laptop-1200.avif, img/laptop-1200@2x.avif" type="image/avif" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/laptop-1200.webp, img/laptop-1200@2x.webp" type="image/webp" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/laptop-1200.jpg" width="458" height="217">
+                <source media="(max-width: 1200px)" srcset="img/laptop-1200@2x.jpg" width="458" height="217" 2x>
+                <source media="(min-width: 1200px)" srcset="img/laptop.avif, img/laptop-x.avif" type="image/avif" width="550" height="245">
+                <source media="(min-width: 1200px)" srcset="img/laptop.webp, img/laptop-2x.webp" type="image/webp" width="550" height="245">
+                <source media="(min-width: 1200px)" srcset="img/laptop@2x.jpg" width="550" height="245" 2x>
                 <img src="img/laptop.jpg" alt="ноутбук" width="550" height="245">
               </picture>
               <h3 class="catalog__item-title catalog__item-december-title">Выгодно в декабре!</h3>
@@ -264,9 +360,22 @@
 
           <li class="catalog__item catalog__item-2022">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/2022.avif" type="image/avif">
-                <source srcset="img/2022.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/2022-480.avif, img/2022-480@2x.avif" type="image/avif" width="280" height="123">
+                <source media="(max-width: 480px)" srcset="img/2022-480.webp, img/2022-480@2x.webp" type="image/webp" width="280" height="123">
+                <source media="(max-width: 480px)" srcset="img/2022-480.jpg" type="image/jpg" width="280" height="123">
+                <source media="(max-width: 480px)" srcset="img/2022-480@2x.jpg" type="image/jpg" width="280" height="123" 2x>
+                <source media="(max-width: 768px)" srcset="img/2022-768.avif, img/2022-768@2x.avif" type="image/avif" width="700" height="337">
+                <source media="(max-width: 768px)" srcset="img/2022-768.webp, img/2022-768@2x.webp" type="image/webp" width="700" height="337">
+                <source media="(max-width: 768px)" srcset="img/2022-768.jpg" width="700" height="337">
+                <source media="(max-width: 768px)" srcset="img/2022-768@2x.jpg" width="700" height="337" 2x>
+                <source media="(max-width: 1200px)" srcset="img/2022-1200.avif, img/2022-1200@2x.avif" type="image/avif" width="940" height="418">
+                <source media="(max-width: 1200px)" srcset="img/2022-1200.webp, img/2022-1200@2x.webp" type="image/webp" width="940" height="418">
+                <source media="(max-width: 1200px)" srcset="img/2022-1200.jpg" width="940" height="418">
+                <source media="(max-width: 1200px)" srcset="img/2022-1200@2x.jpg" width="940" height="418" 2x>
+                <source media="(min-width: 1200px)" srcset="img/2022.avif, img/2022-x.avif" type="image/avif" width="1160" height="550">
+                <source media="(min-width: 1200px)" srcset="img/2022.webp, img/2022-2x.webp" type="image/webp" width="1160" height="550">
+                <source media="(min-width: 1200px)" srcset="img/2022@2x.jpg" width="1160" height="550" 2x>
                 <img src="img/2022.jpg" alt="число 2020, вместо первого нуля подарочная коробка" width="1160" height="550" loading="lazy">
               </picture>
               <h3 class="catalog__item-title catalog__item-2022-title">Новогодние украшения</h3>
@@ -276,13 +385,22 @@
 
           <li class="catalog__item catalog__item-dress">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source media="(max-width: 480px)" srcset="img/dress.avif" type="image/avif">
-                <source media="(max-width: 480px)" srcset="img/dress.webp" type="image/webp">
-                <source media="(max-width: 768px)" srcset="img/dress-medium.avif" type="image/avif">
-                <source media="(max-width: 768px)" srcset="img/dress-medium.webp" type="image/webp">
-                <source srcset="img/dress.avif" type="image/avif">
-                <source srcset="img/dress.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/dress-480.avif, img/dress-480@2x.avif" type="image/avif" width="130" height="280">
+                <source media="(max-width: 480px)" srcset="img/dress-480.webp, img/dress-480@2x.webp" type="image/webp" width="130" height="280">
+                <source media="(max-width: 480px)" srcset="img/dress-480.jpg" type="image/jpg" width="130" height="280">
+                <source media="(max-width: 480px)" srcset="img/dress-480@2x.jpg" type="image/jpg" width="130" height="280" 2x>
+                <source media="(max-width: 768px)" srcset="img/dress-768.avif, img/dress-768@2x.avif" type="image/avif" width="220" height="220">
+                <source media="(max-width: 768px)" srcset="img/dress-768.webp, img/dress-768@2x.webp" type="image/webp" width="220" height="220">
+                <source media="(max-width: 768px)" srcset="img/dress-768.jpg" width="220" height="220">
+                <source media="(max-width: 768px)" srcset="img/dress-768@2x.jpg" width="220" height="220" 2x>
+                <source media="(max-width: 1200px)" srcset="img/dress-1200.avif, img/dress-1200@2x.avif" type="image/avif" width="217" height="458">
+                <source media="(max-width: 1200px)" srcset="img/dress-1200.webp, img/dress-1200@2x.webp" type="image/webp" width="217" height="458">
+                <source media="(max-width: 1200px)" srcset="img/dress-1200.jpg" width="217" height="458">
+                <source media="(max-width: 1200px)" srcset="img/dress-1200@2x.jpg" width="217" height="458" 2x>
+                <source media="(min-width: 1200px)" srcset="img/dress.avif, img/dress-x.avif" type="image/avif" width="245" height="550">
+                <source media="(min-width: 1200px)" srcset="img/dress.webp, img/dress-2x.webp" type="image/webp" width="245" height="550">
+                <source media="(min-width: 1200px)" srcset="img/dress@2x.jpg" width="245" height="550" 2x>
                 <img src="img/dress.jpg" alt="девушка в красном платье" width="245" height="550" loading="lazy">
               </picture>
               <div class="discount catalog__item-dress-discount">-55%</div>
@@ -291,9 +409,22 @@
 
           <li class="catalog__item catalog__item-spray">
             <a class="catalog__item-link" href="#">
-              <picture>
-                <source srcset="img/spray.avif" type="image/avif">
-                <source srcset="img/spray.webp" type="image/webp">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/spray-480.avif, img/spray-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/spray-480.webp, img/spray-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/spray-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/spray-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/spray-768.avif, img/spray-768@2x.avif" type="image/avif" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/spray-768.webp, img/spray-768@2x.webp" type="image/webp" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/spray-768.jpg" width="140" height="140">
+                <source media="(max-width: 768px)" srcset="img/spray-768@2x.jpg" width="140" height="140" 2x>
+                <source media="(max-width: 1200px)" srcset="img/spray-1200.avif, img/spray-1200@2x.avif" type="image/avif" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/spray-1200.webp, img/spray-1200@2x.webp" type="image/webp" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/spray-1200.jpg" width="217" height="217">
+                <source media="(max-width: 1200px)" srcset="img/spray-1200@2x.jpg" width="217" height="217" 2x>
+                <source media="(min-width: 1200px)" srcset="img/spray.avif, img/spray-x.avif" type="image/avif" width="245" height="245">
+                <source media="(min-width: 1200px)" srcset="img/spray.webp, img/spray-2x.webp" type="image/webp" width="245" height="245">
+                <source media="(min-width: 1200px)" srcset="img/spray@2x.jpg" width="245" height="245" 2x>
                 <img src="img/spray.jpg" alt="бутылкка с рапылителем" width="245" height="245" loading="lazy">
               </picture>
               <h3 class="catalog__item-title catalog__item-spray-title">На бытовую химию</h3>
@@ -302,13 +433,22 @@
           </li>
 
           <li class="catalog__item catalog__item-balls">
-            <picture>
-              <source media="(max-width: 480px)" srcset="img/balls.avif" type="image/avif">
-              <source media="(max-width: 480px)" srcset="img/balls.webp" type="image/webp">
-              <source media="(max-width: 768px)" srcset="img/balls-medium.avif" type="image/avif">
-              <source media="(max-width: 768px)" srcset="img/balls-medium.webp" type="image/webp">
-              <source srcset="img/balls.avif" type="image/avif">
-              <source srcset="img/balls.webp" type="image/webp">
+            <picture class="good__img">
+              <source media="(max-width: 480px)" srcset="img/balls-480.avif, img/balls-480@2x.avif" type="image/avif" width="130" height="130">
+              <source media="(max-width: 480px)" srcset="img/balls-480.webp, img/balls-480@2x.webp" type="image/webp" width="130" height="130">
+              <source media="(max-width: 480px)" srcset="img/balls-480.jpg" type="image/jpg" width="130" height="130">
+              <source media="(max-width: 480px)" srcset="img/balls-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+              <source media="(max-width: 768px)" srcset="img/balls-768.avif, img/balls-768@2x.avif" type="image/avif" width="140" height="60">
+              <source media="(max-width: 768px)" srcset="img/balls-768.webp, img/balls-768@2x.webp" type="image/webp" width="140" height="60">
+              <source media="(max-width: 768px)" srcset="img/balls-768.jpg" width="140" height="60">
+              <source media="(max-width: 768px)" srcset="img/balls-768@2x.jpg" width="140" height="60" 2x>
+              <source media="(max-width: 1200px)" srcset="img/balls-1200.avif, img/balls-1200@2x.avif" type="image/avif" width="217" height="217">
+              <source media="(max-width: 1200px)" srcset="img/balls-1200.webp, img/balls-1200@2x.webp" type="image/webp" width="217" height="217">
+              <source media="(max-width: 1200px)" srcset="img/balls-1200.jpg" width="217" height="217">
+              <source media="(max-width: 1200px)" srcset="img/balls-1200@2x.jpg" width="217" height="217" 2x>
+              <source media="(min-width: 1200px)" srcset="img/balls.avif, img/balls-x.avif" type="image/avif" width="245" height="245">
+              <source media="(min-width: 1200px)" srcset="img/balls.webp, img/balls-2x.webp" type="image/webp" width="245" height="245">
+              <source media="(min-width: 1200px)" srcset="img/balls@2x.jpg" width="245" height="245" 2x>
               <img src="img/balls.jpg" alt="новогодние игрушки" width="245" height="245" loading="lazy">
             </picture>
             <a class="catalog__item-link" href="#" aria-label="новогодние игрушки"></a>
@@ -322,107 +462,236 @@
         <h2 class="profit__title" tabindex="0">Это выгодно!</h2>
 
         <ul class="profit__list">
-          <li class="profit__item profit__item-one good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img profit__item-one-img">
-                <div class="good-item__discount discount" aria-label="скидка -50%">-50%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480.avif, img/t-shirt-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480.webp, img/t-shirt-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768.avif, img/t-shirt-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768.webp, img/t-shirt-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200.avif, img/t-shirt-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200.webp, img/t-shirt-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/t-shirt.avif, img/t-shirt2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/t-shirt.webp, img/t-shirt@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/t-shirt@2x.jpg" width="420" height="295" 2x>
+                <img src="img/t-shirt.jpg" alt="две белые футболки" width="420" height="295" loading="lazy">
+              </picture>
+
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 1299 ₽">1299 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 2598 ₽">2598 ₽</p>
-              </div>
-              <h3 class="good-item__title">Пара футболок</h3>
+              <h3 class="good__title">Пара футболок</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-two good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img profit__item-two-img">
-                <div class="good-item__discount discount" aria-label="скидка -40%">-40%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/sneaker-orange-white-480.avif, img/sneaker-orange-white-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/sneaker-orange-white-480.webp, img/sneaker-orange-white-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/sneaker-orange-white-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/sneaker-orange-white-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/sneaker-orange-white-768.avif, img/sneaker-orange-white-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/sneaker-orange-white-768.webp, img/sneaker-orange-white-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/sneaker-orange-white-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/sneaker-orange-white-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/sneaker-orange-white-1200.avif, img/sneaker-orange-white-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/sneaker-orange-white-1200.webp, img/sneaker-orange-white-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/sneaker-orange-white-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/sneaker-orange-white-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/sneaker-orange-white.avif, img/sneaker-orange-white2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/sneaker-orange-white.webp, img/sneaker-orange-white@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/sneaker-orange-white@2x.jpg" width="420" height="295" 2x>
+                <img src="img/sneaker-orange-white.jpg" alt="белые с оранжевым кроссовки nike" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 2099 ₽">2099 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 5938 ₽">5938 ₽</p>
-              </div>
-              <h3 class="good-item__title">Кроссовки</h3>
+              <h3 class="good__title">Кроссовки</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-three good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img profit__item-three-img">
-                <div class="good-item__discount discount" aria-label="скидка -10%">-10%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/bed-480.avif, img/bed-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/bed-480.webp, img/bed-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/bed-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/bed-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/bed-768.avif, img/bed-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/bed-768.webp, img/bed-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/bed-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/bed-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/bed-1200.avif, img/bed-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/bed-1200.webp, img/bed-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/bed-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/bed-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/bed.avif, img/bed2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/bed.webp, img/bed@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/bed@2x.jpg" width="420" height="295" 2x>
+                <img src="img/bed.jpg" alt="кровать с постельным бельем" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 3902 ₽">3902 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 4490 ₽">4490 ₽</p>
-              </div>
-              <h3 class="good-item__title">Постельное белье</h3>
+              <h3 class="good__title">Кроссовки</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-four good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img  profit__item-four-img">
-                <div class="good-item__discount discount" aria-label="скидка -30%">-30%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480.avif, img/hair-dryer-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480.webp, img/hair-dryer-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768.avif, img/hair-dryer-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768.webp, img/hair-dryer-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200.avif, img/hair-dryer-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200.webp, img/hair-dryer-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/hair-dryer.avif, img/hair-dryer2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/hair-dryer.webp, img/hair-dryer@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/hair-dryer@2x.jpg" width="420" height="295" 2x>
+                <img src="img/hair-dryer.jpg" alt="фен" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 2999 ₽">2999 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 6030 ₽">6030 ₽</p>
-              </div>
-              <h3 class="good-item__title">Фен</h3>
+              <h3 class="good__title">Кроссовки</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-five good-item ">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img  profit__item-five-img">
-                <div class="good-item__discount discount" aria-label="скидка -10%">-10%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/bed-480.avif, img/bed-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/bed-480.webp, img/bed-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/bed-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/bed-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/bed-768.avif, img/bed-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/bed-768.webp, img/bed-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/bed-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/bed-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/bed-1200.avif, img/bed-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/bed-1200.webp, img/bed-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/bed-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/bed-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/bed.avif, img/bed2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/bed.webp, img/bed@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/bed@2x.jpg" width="420" height="295" 2x>
+                <img src="img/bed.jpg" alt="кровать с постельным бельем" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 3902 ₽">3902 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 4490 ₽">4490 ₽</p>
-              </div>
-              <h3 class="good-item__title">Постельное белье</h3>
+              <h3 class="good__title">Пара футболок</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-six good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img profit__item-six-img">
-                <div class="good-item__discount discount" aria-label="скидка -30%">-30%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480.avif, img/hair-dryer-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480.webp, img/hair-dryer-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/hair-dryer-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768.avif, img/hair-dryer-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768.webp, img/hair-dryer-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/hair-dryer-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200.avif, img/hair-dryer-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200.webp, img/hair-dryer-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/hair-dryer-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/hair-dryer.avif, img/hair-dryer2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/hair-dryer.webp, img/hair-dryer@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/hair-dryer@2x.jpg" width="420" height="295" 2x>
+                <img src="img/hair-dryer.jpg" alt="фен" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 2999 ₽">2999 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 6030 ₽">6030 ₽</p>
-              </div>
-              <h3 class="good-item__title">Фен</h3>
+              <h3 class="good__title">Кроссовки</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-seven good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img profit__item-seven-img">
-                <div class="good-item__discount discount" aria-label="скидка -30%">-30%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/mittens-480.avif, img/mittens-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/mittens-480.webp, img/mittens-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/mittens-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/mittens-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/mittens-768.avif, img/hair-dryer-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/mittens-768.webp, img/hair-dryer-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/mittens-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/mittens-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/mittens-1200.avif, img/mittens-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/mittens-1200.webp, img/mittens-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/mittens-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/mittens-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/mittens.avif, img/mittens2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/mittens.webp, img/mittens@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/mittens@2x.jpg" width="420" height="295" 2x>
+                <img src="img/mittens.jpg" alt="варежки-мишки" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 540 ₽">540 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 890 ₽">890 ₽</p>
-              </div>
-              <h3 class="good-item__title">Варежки-мишки</h3>
+              <h3 class="good__title">Кроссовки</h3>
             </a>
           </li>
 
-          <li class="profit__item profit__item-eight good-item">
-            <a class="good-item__link" href="#">
-              <div class="good-item__img profit__item-eight-img">
-                <div class="good-item__discount discount" aria-label="скидка -50%">-50%</div>
+          <li class="profit__item good">
+            <a class="good__link" href="#">
+              <picture class="good__img">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480.avif, img/t-shirt-480@2x.avif" type="image/avif" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480.webp, img/t-shirt-480@2x.webp" type="image/webp" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480.jpg" type="image/jpg" width="130" height="130">
+                <source media="(max-width: 480px)" srcset="img/t-shirt-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768.avif, img/t-shirt-768@2x.avif" type="image/avif" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768.webp, img/t-shirt-768@2x.webp" type="image/webp" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768.jpg" width="220" height="216">
+                <source media="(max-width: 768px)" srcset="img/t-shirt-768@2x.jpg" width="220" height="216" 2x>
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200.avif, img/t-shirt-1200@2x.avif" type="image/avif" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200.webp, img/t-shirt-1200@2x.webp" type="image/webp" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200.jpg" width="300" height="295">
+                <source media="(max-width: 1200px)" srcset="img/t-shirt-1200@2x.jpg" width="300" height="295" 2x>
+                <source media="(min-width: 1200px)" srcset="img/t-shirt.avif, img/t-shirt2x.avif" type="image/avif" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/t-shirt.webp, img/t-shirt@2x.webp" type="image/webp" width="420" height="295">
+                <source media="(min-width: 1200px)" srcset="img/t-shirt@2x.jpg" width="420" height="295" 2x>
+                <img src="img/t-shirt.jpg" alt="две белые футболки" width="420" height="295" loading="lazy">
+              </picture>
+              <div class="good__discount discount" aria-label="скидка -40%">-40%</div>
+              <div class="good__price-wrapper">
+                <p class="good__price good__price--new" aria-label="новая цена 2099 ₽">2099 ₽</p>
+                <p class="good__price good__price--old" aria-label="старая цена 5938 ₽">5938 ₽</p>
               </div>
-              <div class="good-item__price-wrapper">
-                <p class="good-item__price-new" aria-label="новая цена 1299 ₽">1299 ₽</p>
-                <p class="good-item__price-old" aria-label="старая цена 2598 ₽">2598 ₽</p>
-              </div>
-              <h3 class="good-item__title">Пара футболок</h3>
+              <h3 class="good__title">Кроссовки</h3>
             </a>
           </li>
         </ul>

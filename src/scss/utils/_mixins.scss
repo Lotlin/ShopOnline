@@ -42,6 +42,11 @@
   left: $discount-position;
 }
 
+@mixin discount-good-position($discount-position, $discount-bottom) {
+  bottom: $discount-bottom;
+  left: $discount-position;
+}
+
 @mixin large {
   @media (max-width: 1800px) {
     @content;
