@@ -1,0 +1,116 @@
+.additional {
+  padding-top: 50px;
+  padding-bottom: 140px;
+
+  &--card {
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    color: $text-dark-color;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: $main-line-height;
+
+    &--card {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 50px 30px;
+    flex-wrap: wrap;
+  }
+
+  &__item:nth-child(4n+4) {
+    margin-left: auto;
+  }
+
+  @include large {
+    &__list {
+      gap: 2.6vw 1.3vw;
+    }
+  }
+
+  @include large-layout {
+    padding-top: 45px;
+    padding-bottom: 100px;
+  
+    &__title {
+      margin-bottom: 40px;
+      font-size: 40px;
+    }
+  
+    &__list {
+      gap: 50px 20px;
+    }
+
+    &__item:nth-child(4n+4) {
+      margin-left: 0;
+    }
+
+  }
+
+  @include medium {
+    &__title {
+      margin-bottom: 3.92vw;
+      font-size: 3.92vw;
+    }
+  
+    &__list {
+      gap: 4.9vw 1.6vw;
+    }
+
+    &__item:nth-child(3n+3) {
+      margin-left: auto;
+    }
+  }
+
+  @include medium-layout {
+    padding-top: 46px;
+    padding-bottom: 40px;
+
+    &__title {
+      margin-bottom: 30px;
+      font-size: 30px;
+    }
+
+    &__list {
+      gap: 40px 20px;
+    }
+  }
+
+  @include small {
+    padding-top: 5.98vw;
+    padding-bottom: 5.2vw;
+
+    &__title {
+      margin-bottom: 3.9vw;
+      font-size: 3.9vw;
+    }
+
+    &__list {
+      gap: 5vw 1.4vw;
+    }
+  }
+
+  @include small-layout {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    &__title {
+      margin-bottom: 26px;
+      font-size: 20px;
+    }
+
+    &__list {
+      gap: 30px 20px;
+    }
+
+    &__item:nth-child(3n+3) {
+      margin-left: 0;
+    }
+  }
+}

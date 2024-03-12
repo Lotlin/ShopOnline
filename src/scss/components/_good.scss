@@ -10,12 +10,19 @@
   }
 
   &__img {
+    display: block;
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
     @include block-width(420px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 14px;
+  }
+
+  &__img img {
+    display: block;
   }
 
   &__discount {
@@ -25,21 +32,29 @@
 
   &__price-wrapper {
     margin-bottom: 15px;
-    @include block-width(181px);
+    @include block-width(250px);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__price--new {
-    font-size: 28px;
-    font-weight: 700;
-  }
+  &__price {
+    &--hide {
+      display: none;
+    }
 
-  &__price--old {
-    font-size: 20px;
-    font-weight: 400;
-    text-decoration: line-through;
+    &--new {
+      @include block-width(130px);
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    &--old {
+      @include block-width(96px);
+      font-size: 20px;
+      font-weight: 400;
+      text-decoration: line-through;
+    }
   }
 
   &__title {
@@ -64,7 +79,7 @@
     }
   
     &__price-wrapper {
-      @include block-width(174px);
+      @include block-width(252px);
     }
   }
 
@@ -74,14 +89,10 @@
     &__img {
       @include block-width(29.3vw);
     }
-  
-    &__price-wrapper {
-      @include block-width(17vw);
-    }
 
     &__price-wrapper {
       margin-bottom: 1.47vw;
-      @include block-width(17.73vw);
+      @include block-width(27vw);
     }
   
     &__price--new {
@@ -162,6 +173,10 @@
       margin-bottom: 9px;
       @include block-width(130px);
       border-radius: 12px;
+    }
+
+    &__discount {
+      @include discount-good-position($discount-left-small, $discount-bottom-small);
     }
 
     &__price-wrapper {

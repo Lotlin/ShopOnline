@@ -1,0 +1,360 @@
+.card {
+  padding: 40px 0 50px;
+
+  &__title {
+    margin-bottom: 68px;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__good {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    @include block-width(757px);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    @include block-width(420px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 7px 24px;
+    @include block-width(292px);
+  }
+
+  &__new-price {
+    color: $card-red;
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  &__old-price {
+    color: $text-dark-color;
+    font-size: 22px;
+    font-weight: 400;
+    text-decoration: line-through;
+  }
+
+  &__credit-price {
+    color: $button-background-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__btns-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include block-width(292px);
+  }
+
+  &__card-btn {
+    padding: 17px 42px;
+    background-color: $button-background-color;
+    border: none;
+    border-radius: 10px;
+    color: $text-light-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__favorite-btn {
+    width: 33px;
+    height: 33px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__delivery-wrapper {
+    display: flex;
+    justify-content: space-between;
+    @include block-width(236px);
+    font-size: 16px;
+    font-weight: 400;
+    color: $text-dark-color;
+    line-height: $main-line-height;
+  }
+
+  &__delivery-title {
+    display: block;
+    margin-bottom: 5px;
+    color: $card-grey;
+  }
+
+  &__find-out {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include block-width(224px);
+  }
+
+  &__bell {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__find-out-btn {
+    color: $button-background-color;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__description {
+    @include block-width(1234px);
+  }
+
+  &__description-title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__description-text {
+    font-size: 22px;
+    font-weight: 400;
+    color: $text-dark-color;
+    line-height: 1.5;
+  }
+
+  @include large {
+    &__img {
+      @include block-width(42vw);
+    }
+
+    &__info {
+      @include block-width(25vw);
+      padding: 2vw;
+    }
+
+    &__price-wrapper {
+      @include block-width(21vw);
+    }
+  
+    &__new-price {
+      font-size: 30px;
+    }
+  
+    &__old-price {
+      font-size: 18px;
+    }
+  
+    &__credit-price {
+      font-size: 14px;
+    }
+  
+    &__btns-wrapper {
+      @include block-width(21vw);
+    }
+  
+    &__card-btn {
+      padding: 10px 22px;
+    }
+  
+    &__description {
+      @include block-width(64vw);
+    }
+  
+    &__description-title {
+      font-size: 28px;
+    }
+  
+    &__description-text {
+      font-size: 20px;
+    }
+  }
+
+  @include large-layout {
+    padding: 30px 0 15px;
+
+    &__title {
+      margin-bottom: 72px;
+      @include block-width(620px);
+      font-size: 40px;
+    }
+
+    &__good {
+      margin-bottom: 70px;
+    }
+
+    &__img {
+      @include block-width(540px);
+    }
+
+    &__info {
+      @include block-width(300px);
+      padding: 25px 20px;
+    }
+
+    &__price-wrapper {
+      gap: 16px 25px;
+      @include block-width(256px);
+    }
+
+    &__new-price {
+      font-size: 28px;
+    }
+
+    &__old-price {
+      font-size: 18px;
+    }
+
+    &__credit-price {
+      font-size: 14px;
+    }
+
+    &__btns-wrapper {
+      @include block-width(256px);
+    }
+
+    &__card-btn {
+      padding: 12px 26px;
+    }
+
+    &__delivery-wrapper {
+      @include block-width(256px);
+    }
+
+
+    &__find-out {
+      @include block-width(192px);
+    }
+
+    &__bell {
+      width: 22px;
+      height: 22px;
+    }
+
+    &__find-out-btn {
+      color: $button-background-color;
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+    }
+
+    &__description {
+      @include block-width(934px);
+    }
+
+    &__description-title {
+      font-size: 24px;
+    }
+
+    &__description-text {
+      font-size: 18px;
+    }
+  }
+
+  @include medium-layout {
+    padding: 25px 0 14px;
+
+    &__title {
+      margin-bottom: 46px;
+      @include block-width(540px);
+      font-size: 28px;
+    }
+
+    &__good {
+      margin-bottom: 40px;
+    }
+
+    &__img {
+      @include block-width(380px);
+    }
+
+    &__info {
+      @include block-width(300px);
+      padding: 25px 20px;
+    }
+
+    &__description {
+      @include block-width(700px);
+    }
+
+    &__description-title {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    &__description-text {
+      font-size: 16px;
+    }
+  }
+
+  @include small {
+    /*
+    &__info {
+      @include block-width(30vw);
+      padding: 10px;
+    }
+
+    &__price-wrapper {
+      gap: 5px 5px;
+      @include block-width(26vw);
+    }
+
+    &__new-price {
+      font-size: 20px;
+    }
+
+    &__old-price {
+      font-size: 14px;
+    }
+
+    &__credit-price {
+      font-size: 14px;
+    }
+
+    &__btns-wrapper {
+      @include block-width(26vw);
+    }
+
+    &__card-btn {
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+
+    &__favorite-btn {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__delivery-wrapper {
+      @include block-width(26vw);
+    }
+
+
+    &__find-out {
+      @include block-width(22vw);
+    }
+
+    &__bell {
+      width: 14px;
+      height: 14px;
+    }
+
+    &__find-out-btn {
+      font-size: 10px;
+    } */
+  }
+}

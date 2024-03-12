@@ -41,6 +41,10 @@
     line-height: $main-line-height;
   }
 
+  &__img img {
+    display: block;
+  }
+
   &__item-book {
     grid-area: one;
   }
