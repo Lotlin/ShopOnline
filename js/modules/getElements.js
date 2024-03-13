@@ -5,3 +5,5 @@ export const headerMenuBtnOpenImg =
   header.querySelector('.header__burger-img--open');
 export const headerMenuBtnCloseImg =
   header.querySelector('.header__burger-img--close');
+
+//# sourceMappingURL=../../maps/modules/getElements.js.map

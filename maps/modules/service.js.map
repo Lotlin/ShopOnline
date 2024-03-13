@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["modules/service.js"],"sourcesContent":["export const toggleElem = (elem, className) => {\n  elem.classList.toggle(className);\n};\n\nexport const switchBurgerBtnImg = (img1, className1, img2, className2) => {\n  toggleElem(img1, className1);\n  toggleElem(img2, className2);\n};\n"],"file":"../../js/modules/service.js"}
