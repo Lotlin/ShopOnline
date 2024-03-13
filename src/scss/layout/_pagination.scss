@@ -27,6 +27,7 @@
 
   &__arrow-left--disabled {
     background-image: url('../img/icons/pagination-left-grey.svg');
+    transform: none;
   }  
 
   &__list-numbers {
