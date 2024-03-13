@@ -12,5 +12,3 @@ export const mainPageControl = () => {
     );
   });
 };
-
-//# sourceMappingURL=../../maps/modules/control.js.map
