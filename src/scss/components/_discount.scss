@@ -28,6 +28,13 @@
     padding-top: 24px;
     padding-left: 9px;
     font-size: 30px;
+
+    &--card {
+      width: 66px;
+      height: 66px;
+      padding-top: 18px;
+      font-size: 20px;
+    }
   }
 
   @include medium {
@@ -36,6 +43,14 @@
     padding-top: 2.35vw;
     padding-left: 0.88vw;
     font-size: 2.94vw;
+
+    &--card {
+      width: 50px;
+      height: 50px;
+      padding-top: 14px;
+      padding-left: 7px;
+      font-size: 16px;
+    }
   }
 
   @include medium-layout {
@@ -55,10 +70,18 @@
   }
 
   @include small-layout {
-    width: 50px;
-    height: 50px;
-    padding-top: 15px;
+    width: 40px;
+    height: 40px;
+    padding-top: 11px;
     padding-left: 6px;
-    font-size: 16px;
+    font-size: 12px;
+
+    &--card {
+      width: 32px;
+      height: 32px;
+      padding-top: 7px;
+      padding-left: 2px;
+      font-size: 12px;
+    }
   }
 }

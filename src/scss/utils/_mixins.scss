@@ -42,9 +42,14 @@
   left: $discount-position;
 }
 
-@mixin discount-good-position($discount-position, $discount-bottom) {
+@mixin discount-good-bottom($discount-left, $discount-bottom) {
   bottom: $discount-bottom;
-  left: $discount-position;
+  left: $discount-left;
+}
+
+@mixin discount-good-top($discount-left, $discount-top) {
+  top: $discount-top;
+  left: $discount-left;
 }
 
 @mixin large {

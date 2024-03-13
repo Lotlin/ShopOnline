@@ -2,6 +2,7 @@
   padding: 40px 0 50px;
 
   &__title {
+    position: relative;
     margin-bottom: 68px;
     font-size: 50px;
     font-weight: 700;
@@ -9,10 +10,28 @@
   }
 
   &__good {
+    position: relative;
     margin-bottom: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &::before {
+      position: absolute;
+      top: -43px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      display: block;
+      @include block-width(1770px);
+      height: 1px;
+      background-color: $card-line;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    @include discount-good-top(619px, 20px);
   }
 
   &__img {
@@ -64,7 +83,7 @@
     @include block-width(292px);
   }
 
-  &__card-btn {
+  &__cart-btn {
     padding: 17px 42px;
     background-color: $button-background-color;
     border: none;
@@ -137,6 +156,10 @@
   }
 
   @include large {
+    &__discount {
+      @include discount-good-top(32vw, 1.04vw);
+    }
+
     &__img {
       @include block-width(42vw);
     }
@@ -166,7 +189,7 @@
       @include block-width(21vw);
     }
   
-    &__card-btn {
+    &__cart-btn {
       padding: 10px 22px;
     }
   
@@ -194,6 +217,14 @@
 
     &__good {
       margin-bottom: 70px;
+
+      &::before {
+        top: -50px;
+      }
+    }
+
+    &__discount {
+      @include discount-good-top(444px, 10px);
     }
 
     &__img {
@@ -226,7 +257,7 @@
       @include block-width(256px);
     }
 
-    &__card-btn {
+    &__cart-btn {
       padding: 12px 26px;
     }
 
@@ -264,6 +295,12 @@
     }
   }
 
+  @include medium {
+    &__discount {
+      @include discount-good-top(35vw, 5vw);
+    }
+  }
+
   @include medium-layout {
     padding: 25px 0 14px;
 
@@ -275,6 +312,14 @@
 
     &__good {
       margin-bottom: 40px;
+
+      &::before {
+        top: -34px;
+      }
+    }
+
+    &__discount {
+      @include discount-good-top(300px, 56px);
     }
 
     &__img {
@@ -301,10 +346,14 @@
   }
 
   @include small {
-    /*
+    &__discount {
+      @include discount-good-top(240px, 56px);
+    }
+
     &__info {
       @include block-width(30vw);
-      padding: 10px;
+      padding: 8px;
+      gap: 15px;
     }
 
     &__price-wrapper {
@@ -313,24 +362,117 @@
     }
 
     &__new-price {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     &__old-price {
-      font-size: 14px;
+      font-size: 10px;
     }
 
     &__credit-price {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     &__btns-wrapper {
       @include block-width(26vw);
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
-    &__card-btn {
+    &__cart-btn {
+      margin: 0 auto;
       border-radius: 8px;
       padding: 8px 10px;
+      font-size: 10px;
+    }
+
+    &__favorite-btn {
+      margin: 0 auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    &__delivery-wrapper {
+      @include block-width(26vw);
+      font-size: 12px;
+    }
+
+
+    &__find-out {
+      @include block-width(26vw);
+    }
+
+    &__bell {
+      width: 12px;
+      height: 12px;
+    }
+
+    &__find-out-btn {
+      font-size: 10px;
+    }
+  }
+
+  @include small-layout {
+    padding: 15px 0;
+
+    &__title {
+      @include block-width(280px);
+      margin-bottom: 28px;
+      font-size: 18px;
+    }
+
+    &__good {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+
+      &::before {
+        top: -20px;
+      }
+    }
+
+    &__discount {
+      @include discount-good-top(240px, 5px);
+    }
+
+    &__img {
+      @include block-width(280px);
+    }
+
+    &__info {
+      row-gap: 20px;
+      max-width: 320px;
+      width: 320px;
+      padding: 25px 50px 29px;
+      border-radius: 0;
+      box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    &__price-wrapper {
+      gap: 13px 16px;
+      @include block-width(190px);
+    }
+
+    &__new-price {
+      font-size: 20px;
+    }
+
+    &__old-price {
+      font-size: 12px;
+    }
+
+    &__credit-price {
+      font-size: 12px;
+    }
+
+    &__btns-wrapper {
+      @include block-width(190px);
+    }
+
+    &__cart-btn {
+      padding: 8px 18px;
+      border-radius: 8px;
       font-size: 12px;
     }
 
@@ -340,12 +482,16 @@
     }
 
     &__delivery-wrapper {
-      @include block-width(26vw);
+      @include block-width(154px);
+      font-size: 12px;
     }
 
+    &__delivery-title {
+      margin-bottom: 5px;
+    }
 
     &__find-out {
-      @include block-width(22vw);
+      @include block-width(112px);
     }
 
     &__bell {
@@ -354,7 +500,20 @@
     }
 
     &__find-out-btn {
-      font-size: 10px;
-    } */
+      font-size: 8px;
+    }
+
+    &__description {
+      @include block-width(280px);
+    }
+
+    &__description-title {
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    &__description-text {
+      font-size: 12px;
+    }
   }
 }

@@ -27,7 +27,7 @@
 
   &__discount {
     position: absolute;
-    @include discount-good-position($discount-position, $discount-bottom);
+    @include discount-good-bottom($discount-position, $discount-bottom);
   }
 
   &__price-wrapper {
@@ -118,12 +118,12 @@
     }
 
     &__discount {
-      @include discount-good-position($discount-position-large-layout, $discount-bottom-medium);
+      @include discount-good-bottom($discount-position-large-layout, $discount-bottom-medium);
     }
 
     &__price-wrapper {
       margin-bottom: 10px;
-      @include block-width(137px);
+      @include block-width(212px);
     }
 
     &__price--new {
@@ -150,7 +150,7 @@
 
     &__price-wrapper {
       margin-bottom: 1.3vw;
-      @include block-width(17.8vw);
+      @include block-width(28.8vw);
     }
 
     &__price--new {
@@ -176,12 +176,12 @@
     }
 
     &__discount {
-      @include discount-good-position($discount-left-small, $discount-bottom-small);
+      @include discount-good-top(6px, 84px);
     }
 
     &__price-wrapper {
       margin-bottom: 5px;
-      @include block-width(105px);
+      @include block-width(130px);
     }
 
     &__price--new {
