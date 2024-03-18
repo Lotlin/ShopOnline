@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["modules/init.js"],"sourcesContent":["import {mainPageControl} from './control.js';\n\nexport const init = () => {\n  mainPageControl();\n};\n"],"file":"../../js/modules/init.js"}
