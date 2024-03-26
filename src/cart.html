@@ -1,26 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="preload" href="fonts/Lato-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/Lato-700.woff2" as="font" type="font/woff2" crossorigin>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const createLink = url => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = url;
-    document.head.append(link);
-    };
-    createLink('css/index.css');
-    })
-  </script>
+  <link rel="stylesheet" href="css/index.min.css">
   <script src="js/index.min.js" defer></script>
 
-  <title>ShopOnline интернет-магазин</title>
+  <title>Корзина</title>
 </head>
 <body>
   <header class="header">
@@ -167,293 +154,210 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero__container">
-        <a class="hero__link" href="#">
-          <h1 class="visually-hidden">Онлайн магазин ShopOnline. Главная акция</h1>
-          <picture class="hero__banner">
-            <source media="(max-width: 480px)" srcset="img/banner-480.avif, img/banner-480@2x.avif" type="image/avif" width="280" height="340">
-            <source media="(max-width: 480px)" srcset="img/banner-480.webp, img/banner-480@2x.webp" type="image/webp" width="280" height="340">
-            <source media="(max-width: 480px)" srcset="img/banner-480.jpg" type="image/jpg" width="280" height="340">
-            <source media="(max-width: 480px)" srcset="img/banner-480@2x.jpg" type="image/jpg" width="280" height="340" 2x>
-            <source media="(max-width: 768px)" srcset="img/banner-768.avif, img/banner-768@2x.avif" type="image/avif" width="700" height="280">
-            <source media="(max-width: 768px)" srcset="img/banner-768.webp, img/banner-768@2x.webp" type="image/webp" width="700" height="280">
-            <source media="(max-width: 768px)" srcset="img/banner-768.jpg" width="700" height="280">
-            <source media="(max-width: 768px)" srcset="img/banner-768@2x.jpg" width="700" height="280" 2x>
-            <source media="(max-width: 1200px)" srcset="img/banner-1200.avif, img/banner-1200@2x.avif" type="image/avif" width="940" height="314">
-            <source media="(max-width: 1200px)" srcset="img/banner-1200.webp, img/banner-1200@2x.webp" type="image/webp" width="940" height="314">
-            <source media="(max-width: 1200px)" srcset="img/banner-1200.jpg" width="940" height="314">
-            <source media="(max-width: 1200px)" srcset="img/banner-1200@2x.jpg" width="940" height="314" 2x>
-            <source media="(min-width: 1200px)" srcset="img/banner.avif, img/banner.avif" type="image/avif" width="1770" height="480">
-            <source media="(min-width: 1200px)" srcset="img/banner.webp, img/banner@2x.webp" type="image/webp" width="1770" height="480">
-            <source media="(min-width: 1200px)" srcset="img/banner@2x.jpg" width="1770" height="480" 2x>
-            <img src="img/banner.jpg" alt="фото товара по акции" width="1770" height="480">
-          </picture>
-
-          <h2 class="hero__slogan">-50% на все ноутбуки</h2>
-
-          <div class="hero__timer timer">
-            <h2 class="timer__title">До конца акции:</h2>
-
-            <div class="timer__countdown">
-              <p class="timer__unit"><span class="timer__number">3</span>дня</p>
-              <p class="timer__unit"><span class="timer__number">8</span>часов</p>
-              <p class="timer__unit"><span class="timer__number">43</span>минуты</p>
-            </div>
-          </div>
-        </a>
+  <main class="main">
+    <div class="crumbs">
+      <div class="container crumbs__container">
+        <p class="crumbs__elem">
+          <a class="crumbs__link" href="index.html">Главная</a>
+        </p>
+        <p class="crumbs__elem">
+          <a class="crumbs__link" href="cart.html">Корзина</a>
+        </p>
       </div>
-    </section>
+    </div>
 
-    <section class="catalog" id="catalog">
-      <div class="container catalog__container" aria-label="каталог товаров">
-        <h2 class="visually-hidden">Каталог товаров магазина ShopOnline</h2>
+    <section class="cart">
+      <h1 class="visually-hidden">Корзина товаров</h1>
+      <div class="container cart__container">
+      
+        <form class="cart__form cart-form" id="cartForm">
+          <fieldset class="cart-form__elem  cart-form__elem--cart">
+            <h2 class="cart-form__title cart-form__title--cart">Корзина<span class="cart-form__title-amount">2</span></h2>
+            <div class="cart-form__label-wrapper">
+              <label class="cart-form__label">
+                <input class="cart-form__checkbox cart-form__choose-all" type="checkbox">
+                Выбрать все
+              </label>
+              <svg class="cart-form__basket cart-form__basket--all" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_217_1895)">
+                  <path d="M19.0214 5.35355L19.1679 5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786 5.35355L12.0821 4.25H17.9179L19.0214 5.35355ZM10 25.75C8.90114 25.75 8 24.8489 8 23.75V9.25H22V23.75C22 24.8489 21.0989 25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_217_1895">
+                    <rect width="30" height="30" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
 
-        <ul class="catalog__list">
-          <li class="catalog__item catalog__item-book">
-            <a class="catalog__item-link" href="category.html">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/book-480.avif, img/book-480@2x.avif" type="image/avif" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/book-480.webp, img/book-480@2x.webp" type="image/webp" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/book-480.jpg" type="image/jpg" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/book-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
-                <source media="(max-width: 768px)" srcset="img/book-768.avif, img/book-768@2x.avif" type="image/avif" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/book-768.webp, img/book-768@2x.webp" type="image/webp" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/book-768.jpg" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/book-768@2x.jpg" width="140" height="140" 2x>
-                <source media="(max-width: 1200px)" srcset="img/book-1200.avif, img/book-1200@2x.avif" type="image/avif" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/book-1200.webp, img/book-1200@2x.webp" type="image/webp" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/book-1200.jpg" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/book-1200@2x.jpg" width="217" height="217" 2x>
-                <source media="(min-width: 1200px)" srcset="img/book.avif, img/book2x.avif" type="image/avif" width="245" height="245">
-                <source media="(min-width: 1200px)" srcset="img/book.webp, img/book@2x.webp" type="image/webp" width="245" height="245">
-                <source media="(min-width: 1200px)" srcset="img/book@2x.jpg" width="245" height="245" 2x>
-                <img src="img/book.jpg" alt="книга" width="245" height="245">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-title-book"><span>Книга –</span> лучший подарок</h3>
-            </a>
-          </li>
+            <div class="cart-form__line"></div>
 
-          <li class="catalog__item catalog__item-clock">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/clock-480.avif, img/clock-480@2x.avif" type="image/avif" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/clock-480.webp, img/clock-480@2x.webp" type="image/webp" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/clock-480.jpg" type="image/jpg" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/clock-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
-                <source media="(max-width: 768px)" srcset="img/clock-768.avif, img/clock-768@2x.avif" type="image/avif" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/clock-768.webp, img/clock-768@2x.webp" type="image/webp" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/clock-768.jpg" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/clock-768@2x.jpg" width="140" height="140" 2x>
-                <source media="(max-width: 1200px)" srcset="img/clock-1200.avif, img/clock-1200@2x.avif" type="image/avif" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/clock-1200.webp, img/clock-1200@2x.webp" type="image/webp" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/clock-1200.jpg" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/clock-1200@2x.jpg" width="217" height="217" 2x>
-                <source media="(min-width: 1200px)" srcset="img/clock.avif, img/clock2x.avif" type="image/avif" width="245" height="245">
-                <source media="(min-width: 1200px)" srcset="img/clock.webp, img/clock@2x.webp" type="image/webp" width="245" height="245">
-                <source media="(min-width: 1200px)" srcset="img/clock@2x.jpg" width="245" height="245" 2x>
-                <img src="img/clock.jpg" alt="часы" width="245" height="245">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-clock-title">Время скидок!</h3>
-              <div class="discount catalog__item-discount-clock">-25%</div>
-            </a>
-          </li>
+            <ul class="cart-form__goods-list">
+              <li class="cart-form__good-item">
+                <div class="cart-form__item-wtapper">
+                  <div class="cart-form__img-wrapper">
+                    <label class="cart-form__good-label">
+                      <input class="cart-form__checkbox cart-form__checkbox--good" type="checkbox">
+                    </label>
+  
+                    <img class="cart-form__good-img" src="img/card/laptop-1.jpg">
+                  </div>
 
-          <li class="catalog__item catalog__item-sneakers">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/sneakers-white-480.avif, img/sneakers-white-480@2x.avif" type="image/avif" width="280" height="280">
-                <source media="(max-width: 480px)" srcset="img/sneakers-white-480.webp, img/sneakers-white-480@2x.webp" type="image/webp" width="280" height="280">
-                <source media="(max-width: 480px)" srcset="img/sneakers-white-480.jpg" type="image/jpg" width="280" height="280">
-                <source media="(max-width: 480px)" srcset="img/sneakers-white-480@2x.jpg" type="image/jpg" width="280" height="280" 2x>
-                <source media="(max-width: 768px)" srcset="img/sneakers-white-768.avif, img/sneakers-white-768@2x.avif" type="image/avif" width="380" height="380">
-                <source media="(max-width: 768px)" srcset="img/sneakers-white-768.webp, img/sneakers-white-768@2x.webp" type="image/webp" width="380" height="380">
-                <source media="(max-width: 768px)" srcset="img/sneakers-white-768.jpg" width="380" height="380">
-                <source media="(max-width: 768px)" srcset="img/sneakers-white-768@2x.jpg" width="380" height="380" 2x>
-                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200.avif, img/sneakers-white-1200@2x.avif" type="image/avif" width="458" height="458">
-                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200.webp, img/sneakers-white-1200@2x.webp" type="image/webp" width="458" height="458">
-                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200.jpg" width="458" height="458">
-                <source media="(max-width: 1200px)" srcset="img/sneakers-white-1200@2x.jpg" width="458" height="458" 2x>
-                <source media="(min-width: 1200px)" srcset="img/sneakers-white.avif, img/sneakers-white2x.avif" type="image/avif" width="550" height="550">
-                <source media="(min-width: 1200px)" srcset="img/sneakers-white.webp, img/sneakers-white@2x.webp" type="image/webp" width="550" height="550">
-                <source media="(min-width: 1200px)" srcset="img/sneakers-white@2x.jpg" width="550" height="550" 2x>
-                <img src="img/sneakers-white.jpg" alt="кроссовки" width="550" height="550">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-sneakers-title">Вторая пара кроссовок <span>в&nbsp;подарок!</span></h3>
-              <div class="catalog__item-sneakers-rectangle"></div>
-            </a>
-          </li>
+                  <div class="cart-form__good-description">
+                    <h2 class="cart-form__good-title">15.6" Игровой ноутбук ASUS G513IE-HN004T</h2>
+                    <p class="cart-form__good-detail">Цвет: черный</p>
+                    <p class="cart-form__good-detail">Оперативная память: 16 ГБ</p>
+                  </div>
 
-          <li class="catalog__item catalog__item-gifts">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/gifts-480.avif, img/gifts-480@2x.avif" type="image/avif" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/gifts-480.webp, img/gifts-480@2x.webp" type="image/webp" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/gifts-480.jpg" type="image/jpg" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/gifts-480@2x.jpg" type="image/jpg" width="280" height="118" 2x>
-                <source media="(max-width: 768px)" srcset="img/gifts-768.avif, img/gifts-768@2x.avif" type="image/avif" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/gifts-768.webp, img/gifts-768@2x.webp" type="image/webp" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/gifts-768.jpg" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/gifts-768@2x.jpg" width="300" height="140" 2x>
-                <source media="(max-width: 1200px)" srcset="img/gifts-1200.avif, img/gifts-1200@2x.avif" type="image/avif" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/gifts-1200.webp, img/gifts-1200@2x.webp" type="image/webp" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/gifts-1200.jpg" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/gifts-1200@2x.jpg" width="458" height="217" 2x>
-                <source media="(min-width: 1200px)" srcset="img/gifts.avif, img/giftsx.avif" type="image/avif" width="550" height="245">
-                <source media="(min-width: 1200px)" srcset="img/gifts.webp, img/gifts2x.webp" type="image/webp" width="550" height="245">
-                <source media="(min-width: 1200px)" srcset="img/gifts@2x.jpg" width="550" height="245" 2x>
-                <img src="img/gifts.jpg" alt="две подарочные коробки" width="550" height="245">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-gifts-title">Идеи новогодних подарков</h3>
-            </a>
-          </li>
+                  <div class="cart-form__good-num-wrapper">
+                    <div class="cart-form__good-num cart-form__good-num--less">-</div>
+                    <div class="cart-form__good-num-num">1</div>
+                    <div class="cart-form__good-num cart-form__good-num--more">+</div>
+                  </div>
 
-          <li class="catalog__item catalog__item-sneaker-red">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/sneaker-red-480.avif, img/sneaker-red-480@2x.avif" type="image/avif" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/sneaker-red-480.webp, img/sneaker-red-480@2x.webp" type="image/webp" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/sneaker-red-480.jpg" type="image/jpg" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/sneaker-red-480@2x.jpg" type="image/jpg" width="280" height="118" 2x>
-                <source media="(max-width: 768px)" srcset="img/sneaker-red-768.avif, img/sneaker-red-768@2x.avif" type="image/avif" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/sneaker-red-768.webp, img/sneaker-red-768@2x.webp" type="image/webp" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/sneaker-red-768.jpg" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/sneaker-red-768@2x.jpg" width="300" height="140" 2x>
-                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200.avif, img/sneaker-red-1200@2x.avif" type="image/avif" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200.webp, img/sneaker-red-1200@2x.webp" type="image/webp" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200.jpg" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/sneaker-red-1200@2x.jpg" width="458" height="217" 2x>
-                <source media="(min-width: 1200px)" srcset="img/sneaker-red.avif, img/sneaker-red-x.avif" type="image/avif" width="550" height="245">
-                <source media="(min-width: 1200px)" srcset="img/sneaker-red.webp, img/sneaker-red-2x.webp" type="image/webp" width="550" height="245">
-                <source media="(min-width: 1200px)" srcset="img/sneaker-red@2x.jpg" width="550" height="245" 2x>
-                <img src="img/sneaker-red.jpg" alt="красные кроссовки" width="550" height="245">
-              </picture>
-              <div class="discount catalog__item-sneaker-red-discount">-40%</div>
-            </a>
-          </li>
+                  <div class="cart-form__price-wrapper">
+                    <div class="cart-form__price-new">109 090 ₽</div>
+                    <div class="cart-form__price-old">140 590 ₽</div>
+                    <div class="cart-form__price-credit">В кредит от 5600 ₽</div>
+                  </div>
 
-          <li class="catalog__item catalog__item-december">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/laptop-480.avif, img/laptop-480@2x.avif" type="image/avif" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/laptop-480.webp, img/laptop-480@2x.webp" type="image/webp" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/laptop-480.jpg" type="image/jpg" width="280" height="118">
-                <source media="(max-width: 480px)" srcset="img/laptop-480@2x.jpg" type="image/jpg" width="280" height="118" 2x>
-                <source media="(max-width: 768px)" srcset="img/laptop-768.avif, img/laptop-768@2x.avif" type="image/avif" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/laptop-768.webp, img/laptop-768@2x.webp" type="image/webp" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/laptop-768.jpg" width="300" height="140">
-                <source media="(max-width: 768px)" srcset="img/laptop-768@2x.jpg" width="300" height="140" 2x>
-                <source media="(max-width: 1200px)" srcset="img/laptop-1200.avif, img/laptop-1200@2x.avif" type="image/avif" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/laptop-1200.webp, img/laptop-1200@2x.webp" type="image/webp" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/laptop-1200.jpg" width="458" height="217">
-                <source media="(max-width: 1200px)" srcset="img/laptop-1200@2x.jpg" width="458" height="217" 2x>
-                <source media="(min-width: 1200px)" srcset="img/laptop.avif, img/laptop-x.avif" type="image/avif" width="550" height="245">
-                <source media="(min-width: 1200px)" srcset="img/laptop.webp, img/laptop-2x.webp" type="image/webp" width="550" height="245">
-                <source media="(min-width: 1200px)" srcset="img/laptop@2x.jpg" width="550" height="245" 2x>
-                <img src="img/laptop.jpg" alt="ноутбук" width="550" height="245">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-december-title">Выгодно в декабре!</h3>
-              <div class="discount catalog__item-december-discount">-15%</div>
-            </a>
-          </li>
+                  <svg class="cart-form__basket cart-form__basket--good" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_217_1895)">
+                      <path d="M19.0214 5.35355L19.1679 5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786 5.35355L12.0821 4.25H17.9179L19.0214 5.35355ZM10 25.75C8.90114 25.75 8 24.8489 8 23.75V9.25H22V23.75C22 24.8489 21.0989 25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_217_1895">
+                        <rect width="30" height="30" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
 
-          <li class="catalog__item catalog__item-2022">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/2022-480.avif, img/2022-480@2x.avif" type="image/avif" width="280" height="123">
-                <source media="(max-width: 480px)" srcset="img/2022-480.webp, img/2022-480@2x.webp" type="image/webp" width="280" height="123">
-                <source media="(max-width: 480px)" srcset="img/2022-480.jpg" type="image/jpg" width="280" height="123">
-                <source media="(max-width: 480px)" srcset="img/2022-480@2x.jpg" type="image/jpg" width="280" height="123" 2x>
-                <source media="(max-width: 768px)" srcset="img/2022-768.avif, img/2022-768@2x.avif" type="image/avif" width="700" height="337">
-                <source media="(max-width: 768px)" srcset="img/2022-768.webp, img/2022-768@2x.webp" type="image/webp" width="700" height="337">
-                <source media="(max-width: 768px)" srcset="img/2022-768.jpg" width="700" height="337">
-                <source media="(max-width: 768px)" srcset="img/2022-768@2x.jpg" width="700" height="337" 2x>
-                <source media="(max-width: 1200px)" srcset="img/2022-1200.avif, img/2022-1200@2x.avif" type="image/avif" width="940" height="418">
-                <source media="(max-width: 1200px)" srcset="img/2022-1200.webp, img/2022-1200@2x.webp" type="image/webp" width="940" height="418">
-                <source media="(max-width: 1200px)" srcset="img/2022-1200.jpg" width="940" height="418">
-                <source media="(max-width: 1200px)" srcset="img/2022-1200@2x.jpg" width="940" height="418" 2x>
-                <source media="(min-width: 1200px)" srcset="img/2022.avif, img/2022-x.avif" type="image/avif" width="1160" height="550">
-                <source media="(min-width: 1200px)" srcset="img/2022.webp, img/2022-2x.webp" type="image/webp" width="1160" height="550">
-                <source media="(min-width: 1200px)" srcset="img/2022@2x.jpg" width="1160" height="550" 2x>
-                <img src="img/2022.jpg" alt="число 2020, вместо первого нуля подарочная коробка" width="1160" height="550" loading="lazy">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-2022-title">Новогодние украшения</h3>
-              <div class="catalog__item-2022-rectangle"></div>
-            </a>
-          </li>
+                <div class="cart-form__line cart-form__line--good"></div>
+              </li>
 
-          <li class="catalog__item catalog__item-dress">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/dress-480.avif, img/dress-480@2x.avif" type="image/avif" width="130" height="280">
-                <source media="(max-width: 480px)" srcset="img/dress-480.webp, img/dress-480@2x.webp" type="image/webp" width="130" height="280">
-                <source media="(max-width: 480px)" srcset="img/dress-480.jpg" type="image/jpg" width="130" height="280">
-                <source media="(max-width: 480px)" srcset="img/dress-480@2x.jpg" type="image/jpg" width="130" height="280" 2x>
-                <source media="(max-width: 768px)" srcset="img/dress-768.avif, img/dress-768@2x.avif" type="image/avif" width="220" height="220">
-                <source media="(max-width: 768px)" srcset="img/dress-768.webp, img/dress-768@2x.webp" type="image/webp" width="220" height="220">
-                <source media="(max-width: 768px)" srcset="img/dress-768.jpg" width="220" height="220">
-                <source media="(max-width: 768px)" srcset="img/dress-768@2x.jpg" width="220" height="220" 2x>
-                <source media="(max-width: 1200px)" srcset="img/dress-1200.avif, img/dress-1200@2x.avif" type="image/avif" width="217" height="458">
-                <source media="(max-width: 1200px)" srcset="img/dress-1200.webp, img/dress-1200@2x.webp" type="image/webp" width="217" height="458">
-                <source media="(max-width: 1200px)" srcset="img/dress-1200.jpg" width="217" height="458">
-                <source media="(max-width: 1200px)" srcset="img/dress-1200@2x.jpg" width="217" height="458" 2x>
-                <source media="(min-width: 1200px)" srcset="img/dress.avif, img/dress-x.avif" type="image/avif" width="245" height="550">
-                <source media="(min-width: 1200px)" srcset="img/dress.webp, img/dress-2x.webp" type="image/webp" width="245" height="550">
-                <source media="(min-width: 1200px)" srcset="img/dress@2x.jpg" width="245" height="550" 2x>
-                <img src="img/dress.jpg" alt="девушка в красном платье" width="245" height="550" loading="lazy">
-              </picture>
-              <div class="discount catalog__item-dress-discount">-55%</div>
-            </a>
-          </li>
+              <li class="cart-form__good-item">
+                <div class="cart-form__item-wtapper">
+                  <div class="cart-form__img-wrapper">
+                    <label class="cart-form__good-label">
+                      <input class="cart-form__checkbox cart-form__checkbox--good" type="checkbox">
+                    </label>
+  
+                    <img class="cart-form__good-img" src="img/bed-480.jpg">
+                  </div>
 
-          <li class="catalog__item catalog__item-spray">
-            <a class="catalog__item-link" href="#">
-              <picture class="catalog__img">
-                <source media="(max-width: 480px)" srcset="img/spray-480.avif, img/spray-480@2x.avif" type="image/avif" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/spray-480.webp, img/spray-480@2x.webp" type="image/webp" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/spray-480.jpg" type="image/jpg" width="130" height="130">
-                <source media="(max-width: 480px)" srcset="img/spray-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
-                <source media="(max-width: 768px)" srcset="img/spray-768.avif, img/spray-768@2x.avif" type="image/avif" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/spray-768.webp, img/spray-768@2x.webp" type="image/webp" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/spray-768.jpg" width="140" height="140">
-                <source media="(max-width: 768px)" srcset="img/spray-768@2x.jpg" width="140" height="140" 2x>
-                <source media="(max-width: 1200px)" srcset="img/spray-1200.avif, img/spray-1200@2x.avif" type="image/avif" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/spray-1200.webp, img/spray-1200@2x.webp" type="image/webp" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/spray-1200.jpg" width="217" height="217">
-                <source media="(max-width: 1200px)" srcset="img/spray-1200@2x.jpg" width="217" height="217" 2x>
-                <source media="(min-width: 1200px)" srcset="img/spray.avif, img/spray-x.avif" type="image/avif" width="245" height="245">
-                <source media="(min-width: 1200px)" srcset="img/spray.webp, img/spray-2x.webp" type="image/webp" width="245" height="245">
-                <source media="(min-width: 1200px)" srcset="img/spray@2x.jpg" width="245" height="245" 2x>
-                <img src="img/spray.jpg" alt="бутылкка с рапылителем" width="245" height="245" loading="lazy">
-              </picture>
-              <h3 class="catalog__item-title catalog__item-spray-title">На бытовую химию</h3>
-              <div class="discount catalog__item-spray-discount">-25%</div>
-            </a>
-          </li>
+                  <div class="cart-form__good-description">
+                    <h2 class="cart-form__good-title">Постельное белье </h2>
+                    <p class="cart-form__good-detail">Цвет: белый</p>
+                    <p class="cart-form__good-detail">Размер: Евро, двуспальное</p>
+                  </div>
 
-          <li class="catalog__item catalog__item-balls">
-            <picture class="catalog__img">
-              <source media="(max-width: 480px)" srcset="img/balls-480.avif, img/balls-480@2x.avif" type="image/avif" width="130" height="130">
-              <source media="(max-width: 480px)" srcset="img/balls-480.webp, img/balls-480@2x.webp" type="image/webp" width="130" height="130">
-              <source media="(max-width: 480px)" srcset="img/balls-480.jpg" type="image/jpg" width="130" height="130">
-              <source media="(max-width: 480px)" srcset="img/balls-480@2x.jpg" type="image/jpg" width="130" height="130" 2x>
-              <source media="(max-width: 768px)" srcset="img/balls-768.avif, img/balls-768@2x.avif" type="image/avif" width="140" height="60">
-              <source media="(max-width: 768px)" srcset="img/balls-768.webp, img/balls-768@2x.webp" type="image/webp" width="140" height="60">
-              <source media="(max-width: 768px)" srcset="img/balls-768.jpg" width="140" height="60">
-              <source media="(max-width: 768px)" srcset="img/balls-768@2x.jpg" width="140" height="60" 2x>
-              <source media="(max-width: 1200px)" srcset="img/balls-1200.avif, img/balls-1200@2x.avif" type="image/avif" width="217" height="217">
-              <source media="(max-width: 1200px)" srcset="img/balls-1200.webp, img/balls-1200@2x.webp" type="image/webp" width="217" height="217">
-              <source media="(max-width: 1200px)" srcset="img/balls-1200.jpg" width="217" height="217">
-              <source media="(max-width: 1200px)" srcset="img/balls-1200@2x.jpg" width="217" height="217" 2x>
-              <source media="(min-width: 1200px)" srcset="img/balls.avif, img/balls-x.avif" type="image/avif" width="245" height="245">
-              <source media="(min-width: 1200px)" srcset="img/balls.webp, img/balls-2x.webp" type="image/webp" width="245" height="245">
-              <source media="(min-width: 1200px)" srcset="img/balls@2x.jpg" width="245" height="245" 2x>
-              <img src="img/balls.jpg" alt="новогодние игрушки" width="245" height="245" loading="lazy">
-            </picture>
-            <a class="catalog__item-link" href="#" aria-label="новогодние игрушки"></a>
-          </li>
-        </ul>
+                  <div class="cart-form__good-num-wrapper">
+                    <div class="cart-form__good-num cart-form__good-num--less">-</div>
+                    <div class="cart-form__good-num-num">1</div>
+                    <div class="cart-form__good-num cart-form__good-num--more">+</div>
+                  </div>
+
+                  <div class="cart-form__price-wrapper">
+                    <div class="cart-form__price-new">3902 ₽</div>
+                    <div class="cart-form__price-old">4490 ₽</div>
+                    <div class="cart-form__price-credit">В кредит от 560 ₽</div>
+                  </div>
+
+                  <svg class="cart-form__basket cart-form__basket--good" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_217_1895)">
+                      <path d="M19.0214 5.35355L19.1679 5.5H19.375H23.25V7H6.75V5.5H10.625H10.8321L10.9786 5.35355L12.0821 4.25H17.9179L19.0214 5.35355ZM10 25.75C8.90114 25.75 8 24.8489 8 23.75V9.25H22V23.75C22 24.8489 21.0989 25.75 20 25.75H10Z" fill="#C9C9C9" stroke="#C9C9C9"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_217_1895">
+                        <rect width="30" height="30" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+
+                <div class="cart-form__line cart-form__line--good"></div>
+              </li>
+            </ul>
+          </fieldset>
+
+        <fieldset class="cart-form__elem  cart-form__elem--delivery">
+            <div class="cart-form__delivery-wrapper">
+              <h2 class="cart-form__title cart-form__title--delivery">Способ доставки</h2>
+              <p class="cart-form__delivery-change">Изменить</p>
+            </div>
+            
+            <div class="cart-form__delivery-info">
+              <div class="cart-form__delivery-elem">
+                <p class="cart-form__delivery-title">Пункт выдачи</p>          
+                
+                <p class="cart-form__delivery-desc">г. Москва (Московская область), улица Павлика Морозова, д. 48, (Пункт выдачи), Ежедневно 10:00-21:00</p>
+              </div>
+
+              <div class="cart-form__delivery-elem cart-form__delivery-elem--big">
+                <p class="cart-form__delivery-title">Стоимость доставки</p>
+                <p class="cart-form__delivery-desc">Бесплатно</p>
+              </div>
+
+              <div class="cart-form__delivery-elem cart-form__delivery-elem--small">
+                <p class="cart-form__delivery-desc">Бесплатная доставка</p>
+                <div class="cart-form__line"></div>
+              </div>
+
+              <div class="cart-form__delivery-elem cart-form__delivery-elem--date">
+                <p class="cart-form__delivery-date">10-13 февраля</p>               
+                <p class="cart-form__delivery-desc cart-form__delivery-desc--imgages">
+                  <img class="cart-form__delivery-img" src="img/card/laptop-1.jpg">
+                  <img class="cart-form__delivery-img" src="img/bed-480.jpg">
+                </p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="cart-form__elem  cart-form__elem--total">
+            <div class="cart-form__total-wrapper cart-form__wrapper">
+              <h2 class="cart-form__title cart-form__title--total">Итого:</h2>
+              <p class="cart-form__total-price">112 992 ₽</p>
+            </div>
+
+            <div class="cart-form__total-description-wrapper cart-form__wrapper">
+              <div class="cart-form__total-description-elem">
+                <p class="cart-form__total-description-name">Товары, <span class="cart-form__total-description-amount">2  шт.</span></p>
+                <p class="cart-form__total-description-value">145 080 ₽</p>
+              </div>  
+
+              <div class="cart-form__total-description-elem">
+                <p class="cart-form__total-description-name">Скидка</p>
+                <p class="cart-form__total-description-value">32 088 ₽</p>
+              </div>
+              
+              <div class="cart-form__total-description-elem">
+                <p class="cart-form__total-description-name">Доставка</p>
+                <p class="cart-form__total-description-value">Бесплатно</p>
+              </div>
+            </div>
+
+            <div class="cart-form__total-delivery cart-form__wrapper">
+              <p class="cart-form__total-name cart-form__total-name--delivery">Доставка: <span class="cart-form__total-value">Пункт выдачи</span></p>
+              <p class="cart-form__total-pick-up">Ежедневно 10:00 - 21:00</p>
+              <p class="cart-form__total-pick-up">г. Москва (Московская область), улица Павлика Морозова, д. 48</p>
+            </div>
+
+            <p class="cart-form__total-name">Дата: <span class="cart-form__total-value">10-13 февраля</span></p>
+
+            <p class="cart-form__total-name cart-form__total-name--payment">Оплата: <span class="cart-form__total-value">Картой</span></p>
+
+            <div class="cart-form__submit-wrapper">
+              <button class="cart-form__submit" type="submit" form="cartForm">Заказать</button>
+            </div>
+          
+
+            <label class="cart-form__label cart-form__label--agreement">
+              <input class="cart-form__checkbox cart-form__checkbox--agreement" type="checkbox">
+              <span class="cart-form__checkbox-span">Согласен с условиями </span>правил пользования торговой площадкой и правилами возврата
+            </label>
+          </fieldset>
+        </form>
       </div>
     </section>
 

@@ -1,0 +1,20 @@
+.cart {
+  padding-top: 20px;
+  padding-bottom: 50px; 
+
+  
+
+  &__form {
+  }
+
+  @include large-layout {
+    padding-bottom: 15px; 
+  }
+
+  @include medium-layout {
+    &__container {
+      @include block-width(768px);
+      padding: 0;
+    }
+  }
+}
