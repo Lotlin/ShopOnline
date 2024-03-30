@@ -311,7 +311,7 @@
     }
 
     &__logo-link {
-      margin-right: 17px;
+      flex: 0 0 100%;
     }
 
     &__logo {
@@ -324,13 +324,19 @@
       column-gap: 2px;
       @include block-width(79px);
       min-width: 0;
-      padding: 6px 14px 7px 15px;
+      padding: 4px 14px;
       font-size: 12px;
+      line-height: 1.5;
       border-radius: 4px;
     }
 
+    &__burger-img-wrapper {
+      width: 14px;
+      height: 14px;
+    }
+
     &__search {
-      @include block-width(280px);
+      @include block-width(100%);
     }
 
     &__form-label {

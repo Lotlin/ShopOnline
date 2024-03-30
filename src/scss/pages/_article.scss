@@ -1,0 +1,145 @@
+.article {
+  padding: 40px 0 150px;
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: $main-line-height;
+  }
+
+  &__text {
+    margin-bottom: 150px;
+  }
+
+  &__paragraph {
+    margin-bottom: 38px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__signature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link-return {
+    position: relative;
+    padding-left: 34px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: $main-line-height;
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: -2px;
+      transform: translateY(-50%);
+      background: url(../../img/icons/arrow-article.svg) center no-repeat;
+    }
+  }
+
+  &__autor {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  @include large-layout {
+    padding: 30px 0 100px;
+
+    &__title {
+      @include block-width(620px);
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+
+    &__text {
+      margin-bottom: 130px;
+    }
+
+    &__paragraph {
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    &__signature {
+      @include block-width(620px);
+    }
+
+    &__link-return {
+      padding-left: 28px;
+      font-size: 14px;
+    }
+
+    &__autor {
+      font-size: 18px;
+    }
+  }
+
+  @include medium-layout {
+    padding: 25px 0 80px;
+
+    &__title {
+      margin-bottom: 28px;
+      font-size: 20px;
+    }
+
+    &__text {
+      margin-bottom: 120px;
+    }
+
+    &__paragraph {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    &__signature {
+      @include block-width(100%);
+    }
+  }
+
+  @include small-layout {
+    padding: 15px 0 50px;
+
+    &__title {
+      @include block-width(280px);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    &__text {
+      margin-bottom: 122px;
+    }
+
+    &__paragraph {
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+
+    &__link-return {
+      padding-left: 20px;
+      font-size: 10px;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+      }
+    }
+
+    &__autor {
+      font-size: 12px;
+    }
+  }
+}

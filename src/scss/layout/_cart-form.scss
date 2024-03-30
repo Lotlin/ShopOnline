@@ -884,13 +884,24 @@
   
     &__label {
       padding-left: 26px;
-      font-size: 10px;
       
-    &--agreement {
+      &--agreement {
         width: 87%;
         min-width: 280px;
+        padding-top: 0;
+        font-size: 14px;
         text-indent: -4px;
       }
+        
+      &--agreement span {
+        padding-top: 0;
+        font-size: 10px;
+      }
+
+    }
+
+    &__choose-all span {
+      font-size: 10px;
     }
 
     &__line {

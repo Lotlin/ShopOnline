@@ -89,7 +89,7 @@
 
     &__banner {
       display: block;
-      @include block-width(700);
+      @include block-width(700px);
     }
 
     &__slogan {
@@ -122,6 +122,10 @@
       border-radius: 8px;
     }
 
+    &__banner {
+      width: 100%;
+    }
+
     &__slogan {
       top: 50px;
       left:50%;
@@ -131,7 +135,9 @@
     }
 
     &__timer {
-      top: 268px;
+      top: auto;
+      bottom: 30px;
+      height: 42px;
     }
   }
 }

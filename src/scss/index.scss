@@ -17,8 +17,6 @@
 @import 'layout/footer';
 @import 'layout/crumbs';
 @import 'layout/pagination';
-@import 'layout/card';
-@import 'layout/cart';
 @import 'layout/cart-form';
 
 @import 'components/timer';
@@ -26,4 +24,7 @@
 @import 'components/good';
 @import 'components/navigation';
 
+@import 'pages/card';
+@import 'pages/cart';
 @import 'pages/blog';
+@import 'pages/article';

@@ -33,6 +33,10 @@
   @include medium-layout { 
     padding: 5px 0 25px;
 
+    &--article {
+      padding-top: 10px;
+    }
+
     &__container {
       column-gap: 48px;
     }

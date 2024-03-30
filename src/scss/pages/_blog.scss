@@ -164,7 +164,8 @@
     }
 
     &__item {
-      @include block-width(280px);
+      @include block-width(76vw);
+      min-width: 280px;
       column-gap: 7px;
     }
 
@@ -177,7 +178,8 @@
     }
 
     &__title {
-      @include block-width(213px);
+      @include block-width(76vw);
+      min-width: 212px;
       padding-top: 0;
       font-size: 18px;
     }

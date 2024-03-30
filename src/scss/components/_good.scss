@@ -167,11 +167,11 @@
   }
 
   @include small-layout {
-    @include block-width(130px);
+    max-width: 50%;
 
     &__img {
       margin-bottom: 9px;
-      @include block-width(130px);
+      @include block-width(220px);
       border-radius: 12px;
     }
 

@@ -109,8 +109,17 @@
       gap: 30px 20px;
     }
 
-    &__item:nth-child(3n+3) {
+    &__item {
+      flex: 0 1 calc((100% - 20px) / 2);
+    }
+
+    &__item:nth-child(odd) {
+      margin-right: auto;
+    }
+
+    &__item:nth-child(3n + 3) {
       margin-left: 0;
     }
+
   }
 }
