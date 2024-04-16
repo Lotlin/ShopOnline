@@ -1,4 +1,4 @@
-import {mainPageControl} from './control.js';
+import {mainPageControl} from './indexControl.js';
 
 export const init = () => {
   mainPageControl();

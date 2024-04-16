@@ -1,9 +1,10 @@
+import {toggleElem} from '../service.js';
 import {
   headerMenuBtn, headerNavigation, headerMenuBtnCloseImg, headerMenuBtnOpenImg,
-} from './getElements.js';
-import {toggleElem, switchBurgerBtnImg} from './service.js';
+} from './headerGetElements.js';
+import {switchBurgerBtnImg} from './headerService.js';
 
-export const mainPageControl = () => {
+export const burgerMenuControl = () => {
   headerMenuBtn.addEventListener('click', () => {
     toggleElem(headerNavigation, 'navigation--visible');
     switchBurgerBtnImg(

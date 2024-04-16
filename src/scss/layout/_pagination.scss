@@ -40,28 +40,32 @@
   }
 
   &__number {
-    &::before {
-      display: flex;
-      content: counter(page-counter);
-      counter-increment: page-counter;
-      width: 36px;
-      height: 36px;
-      border: 2px solid $footer-background-color;
-      border-radius: 4px;
-      font-size: 16px;
-      font-weight: 700;
-      color: $text-dark-color;
-      line-height: $main-line-height;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid $footer-background-color;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $text-dark-color;
+    line-height: $main-line-height;
+    cursor: pointer;
+
+    &--active {
+      border: 2px solid $button-background-color;
     }
   }
 
-  &__number--active {
-    &::before {
-      border: 2px solid $button-background-color;
-    }
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   &__arrow-right {

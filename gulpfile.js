@@ -27,8 +27,8 @@ import {stream as critical} from 'critical';
 
 // js
 import terser from 'gulp-terser';
-import webpackStream from 'webpack-stream';
-import webpack from 'webpack';
+// import webpackStream from 'webpack-stream';
+// import webpack from 'webpack';
 
 // img
 // eslint-disable-next-line no-unused-vars
@@ -55,7 +55,7 @@ const path = {
     html: 'src/*.html',
     pug: 'src/pug/*.pug',
     scss: 'src/scss/**/*.scss',
-    js: 'src/js/index.js',
+    js: 'src/js/**/*.js',
     img: 'src/img/**/*.*',
     svg: 'src/svg/**/*.svg',
     imgF: 'src/img/**/*.{jpg,jpeg,png}',
@@ -153,6 +153,7 @@ export const scss = () => gulp
     .pipe(browserSync.stream());
 
 // js
+/*
 const webpackConf = {
   mode: dev ? 'development' : 'production',
   devtool: dev ? 'eval-source-map' : false,
@@ -174,18 +175,18 @@ if (!dev) {
     loader: 'babel-loader',
   });
 }
-
+*/
 export const js = () => gulp
     .src(path.src.js)
     .pipe(plumber())
-    .pipe(webpackStream(webpackConf, webpack))
+    // .pipe(webpackStream(webpackConf, webpack))
     .pipe(gulpif(!dev, gulp.dest(path.dist.js)))
     .pipe(gulpif(!dev, terser()))
-    .pipe(
+    /* .pipe(
         rename({
           suffix: '.min',
         }),
-    )
+    )*/
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());
 

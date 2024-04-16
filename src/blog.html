@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/index.min.css">
-  <script src="js/index.min.js" defer></script>
+  <script src="js/blogIndex.js" type="module"></script>
 
   <title>Блог сайта ShopOnline</title>
 </head>
@@ -169,163 +169,7 @@
     <section class="blog">
       <div class="container">
         <h1 class="visually-hidden">Блог сайта ShopOnline</h1>
-        <ul class="blog__list">
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="article.html">
-              <picture>
-                <source srcset="img/blog/shoe.avif" type="image/avif">
-                <source srcset="img/blog/shoe.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/shoe.jpg" alt="ботинки" width="195" height="195">
-              </picture>
-            </a>
-            <a class="blog__link" href="article.html">
-              <h2 class="blog__title">Как ухаживать за обувью из кожи</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/mountains.avif" type="image/avif">
-                <source srcset="img/blog/mountains.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/mountains.jpg" alt="горы и озеро" width="195" height="195">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Неизведанные места озера Байкал</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/fox.avif" type="image/avif">
-                <source srcset="img/blog/fox.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/fox.jpg" alt="лиса" width="195" height="195">
-              </picture>
-            </a>
-            <a class="blog__link " href="#">
-              <h2 class="blog__title">Можно ли приручить дикую лису?</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/man-lap-top.avif" type="image/avif">
-                <source srcset="img/blog/man-lap-top.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/man-lap-top.jpg" alt="человек сидит спиной, смотрит на экран ноутбука" width="195" height="195">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Лучшие модели ноутбуков для фриланса</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/oranges.avif" type="image/avif">
-                <source srcset="img/blog/oranges.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/oranges.jpg" alt="мандарины" width="195" height="195">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">10 необычных блюд из мандаринов</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/man.avif" type="image/avif">
-                <source srcset="img/blog/man.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/man.jpg" alt="человек" width="195" height="195">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Люди, изменившие digital индустрию</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/lap-top.avif" type="image/avif">
-                <source srcset="img/blog/lap-top.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/lap-top.jpg" alt="ноутбук" width="195" height="195" loading="lazy">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Современные программы для дизайнера</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/aloe.avif" type="image/avif">
-                <source srcset="img/blog/aloe.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/aloe.jpg" alt="алоэ" width="195" height="195" loading="lazy">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Самый неприхотливые домашние растения</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/plant.avif" type="image/avif">
-                <source srcset="img/blog/plant.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/plant.jpg" alt="рука с растением" width="195" height="195" loading="lazy">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Как вырастить герберу в домашних условиях</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/room.avif" type="image/avif">
-                <source srcset="img/blog/room.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/room.jpg" alt="современный интерьер" width="195" height="195" loading="lazy">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Идеи для современного интерьера</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/starway.avif" type="image/avif">
-                <source srcset="img/blog/starway.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/starway.jpg" alt="винтовая лестница" width="195" height="195" loading="lazy">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Искусство фотографии</h2>
-            </a>
-          </li>
-
-          <li class="blog__item">
-            <a class="blog__link blog__link--img" href="#">
-              <picture>
-                <source srcset="img/blog/threads.avif" type="image/avif">
-                <source srcset="img/blog/threads.webp" type="image/webp">
-                <img class="blog__img" src="img/blog/threads.jpg" alt="разноцветные клубки ниток" width="195" height="195" loading="lazy">
-              </picture>
-            </a>
-            <a class="blog__link" href="#">
-              <h2 class="blog__title">Необычная пряжа</h2>
-            </a>
-          </li>
-        </ul>
+        <ul class="blog__list"></ul>
       </div>
     </section>
 
@@ -333,11 +177,7 @@
       <div class="pagination__container">
         <button class="pagination__arrow pagination__arrow-left  pagination__arrow-left--disabled"></button>
 
-        <ol class="pagination__list-numbers">
-          <li class="pagination__number pagination__number--active"></li>
-          <li class="pagination__number"></li>
-          <li class="pagination__number"></li>
-        </ol>
+        <ol class="pagination__list-numbers"></ol>
 
         <button class="pagination__arrow pagination__arrow-right"></button>
       </div>     
@@ -402,8 +242,8 @@
               <li class="navigation__item">
                 <a href="#">Условия возврата заказа</a>
               </li>
-              <li class="navigation__item">
-                <a href="blog.html">Блог</a>
+              <li class="navigation__item navigation__item--blog">
+                <a class="navigation__link navigation__link--blog" href="blog.html">Блог</a>
               </li>
             </ul>
           </nav>

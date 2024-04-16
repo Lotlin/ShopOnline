@@ -2,6 +2,7 @@
   padding: 40px 0 50px;
 
   &__list {
+    min-height: 645px;
     @include center-block(1433px);
     display: flex;
     justify-content: space-between;
@@ -10,7 +11,7 @@
   }
 
   &__item {
-    @include block-width(668px);
+    @include block-width(645px);
     display: flex;
     column-gap: 30px;
   }

@@ -19,6 +19,7 @@
     "browser-sync": "^2.29.3",
     "critical": "^5.3.0",
     "del": "^7.1.0",
+    "glob": "^10.3.12",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",
