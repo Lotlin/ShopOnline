@@ -1,11 +1,11 @@
 import {
-  createElement, delLastPeriodStr, splitStrIntoParagraphs,
+  createElement, delLastPeriodStr, splitStrIntoParagraphs, getUrlGetParam,
 } from '../service.js';
 import {
   articleCrumbsContainer, articleContainer,
 } from './articleGetElements.js';
 import {
-  loadArticleData, getArticleId, loadAutorData,
+  loadArticleData, loadAutorData,
 } from './articleGetData.js';
 
 const renderArticleCrumbsElem = async (articleTitle, articleId) => {
@@ -66,7 +66,7 @@ const renderArticle = async (dbTitle = '', dbText = '', dbAutorId = '') => {
 };
 
 export const renderArticlePage = async () => {
-  const articleId = getArticleId();
+  const articleId = getUrlGetParam();
   const dbArticleData = await loadArticleData(articleId);
   const dbArticleTitle = dbArticleData.title;
   const dbAutorId = dbArticleData.userId;

@@ -13,8 +13,6 @@ export const loadArticleData = async (linkId) => {
   };
 };
 
-export const getArticleId = () => window.location.href.split('?id=')[1];
-
 export const loadAutorData = async (userId) => {
   const fetchData = await fetchRequest(`${AUTOR_API_URL}/${userId}`, {});
   const autorData = fetchData.data.name;

@@ -54,3 +54,5 @@ export const splitStrIntoParagraphs = (str = '') => {
 
   return paragraphsArr;
 };
+
+export const getUrlGetParam = () => window.location.href.split('?id=')[1];
