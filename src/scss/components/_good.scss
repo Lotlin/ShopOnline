@@ -11,18 +11,16 @@
 
   &__img {
     display: block;
-    width: 100%;
-    height: auto;
     margin-bottom: 20px;
     @include block-width(420px);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     border-radius: 14px;
   }
 
   &__img img {
     display: block;
+    width: 420px;
+    max-height: 295px;
+    object-fit: contain;
   }
 
   &__discount {
@@ -69,6 +67,11 @@
     &__img {
       @include block-width(21.84vw);
     }
+
+    &__img img {
+      width: 21.84vw;
+      max-height: 15.34vw;
+    }
   }
 
   @include large-layout {
@@ -76,6 +79,11 @@
   
     &__img {
       @include block-width(300px);
+    }
+
+    &__img img {
+      width: 300px;
+      max-height: 295px;
     }
   
     &__price-wrapper {
@@ -88,6 +96,11 @@
   
     &__img {
       @include block-width(29.3vw);
+    }
+
+    &__img img {
+      width: 29.3vw;
+      max-height: 28.8vw;
     }
 
     &__price-wrapper {
@@ -115,6 +128,11 @@
       margin-bottom: 15px;
       @include block-width(220px);
       border-radius: 12px;
+    }
+
+    &__img img {
+      width: 220px;
+      max-height: 216px;
     }
 
     &__discount {
@@ -148,6 +166,11 @@
       border-radius: 1.56vw
     }
 
+    &__img img {
+      width: 28.6vw;
+      max-height: 28vw;
+    }
+
     &__price-wrapper {
       margin-bottom: 1.3vw;
       @include block-width(28.8vw);
@@ -171,8 +194,13 @@
 
     &__img {
       margin-bottom: 9px;
-      @include block-width(220px);
+      @include block-width(130px);
       border-radius: 12px;
+    }
+
+    &__img img {
+      width: 130px;
+      max-height: 130px;
     }
 
     &__discount {

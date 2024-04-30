@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/index.min.css">
-  <script src="js/index.min.js" defer></script>
+  <script src="js/cardIndex.js" type="module"></script>
 
   <title>Карточка товара</title>
 </head>
@@ -156,25 +156,19 @@
   
   <main class="main">
     <div class="crumbs">
-      <div class="container crumbs__container">
+      <div class="container crumbs__container crumbs__container--card">
         <p class="crumbs__elem">
           <a class="crumbs__link" href="index.html">Главная</a>
         </p>
         <p class="crumbs__elem">
           <a class="crumbs__link" href="index.html#catalog">Каталог</a>
         </p>
-        <p class="crumbs__elem">
-          <a class="crumbs__link" href="#">Ноутбуки</a>
-        </p>
-        <p class="crumbs__elem">
-          <a class="crumbs__link" href="#">ASUS</a>
-        </p>
       </div>
     </div>
 
     <section class="card">
       <div class="container card__container">
-        <h1 class="card__title">15.6" Игровой ноутбук ASUS G513IE-HN004T</h1>
+        <!-- <h1 class="card__title">15.6" Игровой ноутбук ASUS G513IE-HN004T</h1>
 
         <div class="card__good">
           <div class="card__discount discount discount--card" aria-label="скидка -15%">-15%</div>
@@ -242,7 +236,7 @@
           <p class="card__description-text">
             ROG Strix G15/17&nbsp;&mdash; это игровая платформа для массового пользователя, работающая на&nbsp;базе операционной системы Windows 10&nbsp;Pro. Благодаря мощной конфигурации, которая может включать в&nbsp;себя процессор AMD Ryzen 9 5900HX и&nbsp;видеокарту GeForce RTX 3070, этот ноутбук подходит для широкого спектра задач. Его дисплей доступен в&nbsp;двух вариантах: с&nbsp;киберспортивного уровня частотой обновления в&nbsp;300&nbsp;Гц или с&nbsp;высоким разрешением WQHD. Оба варианта обладают низким временем отклика (3&nbsp;мс) и&nbsp;поддерживают адаптивную синхронизацию Adaptive-Sync. Оптимизированная система охлаждения гарантирует стабильную работу устройства под тяжелыми нагрузками, поэтому ROG Strix G15/17 позволит вам проявить все свое мастерство в&nbsp;любой игровой ситуации!
           </p>
-        </div>
+        </div>-->
       </div>
     </section>
 
@@ -250,8 +244,8 @@
       <div class="container">
         <h2 class="additional__title additional__title--card" tabindex="0">Рекомендуем также</h2>
 
-        <ul class="additional__list">
-          <li class="additional__item good">
+        <ul class="additional__list additional__list--card">
+          <!-- <li class="additional__item good">
             <a class="good__link" href="#">
               <picture class="good__img">
                 <source media="(max-width: 480px)" srcset="img/t-shirt-480.avif, img/t-shirt-480@2x.avif" type="image/avif" width="130" height="130">
@@ -366,7 +360,7 @@
               </div>
               <h3 class="good__title">Ноутбук ASUS ZenBook Pro</h3>
             </a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </section>

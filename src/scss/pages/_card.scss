@@ -36,6 +36,14 @@
 
   &__img {
     @include block-width(757px);
+    max-height: 427px;
+    object-fit: contain;
+  }
+
+  &__img  img {
+    @include block-width(757px);
+    max-height: 427px;
+    object-fit: contain;
   }
 
   &__info {
@@ -162,6 +170,13 @@
 
     &__img {
       @include block-width(42vw);
+      max-height: 23.7vw;
+    }
+
+    &__img  img {
+      @include block-width(42vw);
+      max-height: 23.7vw;
+      object-fit: contain;
     }
 
     &__info {
@@ -229,6 +244,12 @@
 
     &__img {
       @include block-width(540px);
+      max-height: 303px;
+    }
+
+    &__img  img {
+      @include block-width(540px);
+      max-height: 303px;
     }
 
     &__info {
@@ -324,6 +345,12 @@
 
     &__img {
       @include block-width(380px);
+      max-height: 213px;
+    }
+
+    &__img  img {
+      @include block-width(380px);
+      max-height: 213px;
     }
 
     &__info {
@@ -438,6 +465,12 @@
 
     &__img {
       @include block-width(280px);
+      max-height: 157px;
+    }
+
+    &__img  img {
+      @include block-width(280px);
+      max-height: 157px;
     }
 
     &__info {

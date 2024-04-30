@@ -4,6 +4,7 @@ import {categoriesLinks} from './indexGetElem.js';
 
 export const renderCategoriesLinks = async () => {
   const categories = await loadCategoryData();
+
   const categoriesNum = categories.length;
 
   const categoriesLinksNum = categoriesLinks.length;

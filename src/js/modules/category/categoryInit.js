@@ -1,5 +1,5 @@
-import {renderCategoryTitle} from './categoryRender.js';
+import {renderCategoryPage} from './categoryRender.js';
 
 export const init = () => {
-  renderCategoryTitle();
+  renderCategoryPage();
 };

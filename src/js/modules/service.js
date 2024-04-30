@@ -56,3 +56,16 @@ export const splitStrIntoParagraphs = (str = '') => {
 };
 
 export const getUrlGetParam = () => window.location.href.split('?id=')[1];
+
+export const getImgName = (dbImageName) => {
+  let imageName = dbImageName;
+  imageName = imageName.split('/')[1];
+  imageName = imageName.split('.')[0];
+
+  return imageName;
+};
+
+export const getDiscountedPrice = (fullPrice, discoutnSize) =>
+  fullPrice - (fullPrice * discoutnSize * 0.01);
+
+export const arrIsEmpty = (arr) => !arr.length;
