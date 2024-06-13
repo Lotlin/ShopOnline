@@ -1,4 +1,3 @@
-export const fotoPath = 'img/category';
 export const downPaymentFraction = 0.05;
 
 export const numRecommGoods = 4;

@@ -2,12 +2,12 @@ import {
   createElement, getUrlGetParam, getImgName, getDiscountedPrice, fetchRequest,
   arrIsEmpty,
 } from '../service.js';
-import {GOODS_URL} from '../data.js';
+import {SERVER_URL, GOODS_URL, IMAGES_FOLDER} from '../API.js';
 import {
   crumbsContainer, cardContainer, recommendetContainer,
 } from './cardGetElements.js';
 import {getDbGoodData, getCategoryId} from './cardGetData.js';
-import {fotoPath, favoriteBtnSvg, bellSvg, numRecommGoods} from './cardData.js';
+import {favoriteBtnSvg, bellSvg, numRecommGoods} from './cardData.js';
 import {getDownPayment, getRecommendedGoodInCategory} from './cardService.js';
 import {
   loadCategoryName, loadCategoryGoodsData,
@@ -63,15 +63,21 @@ const renderPicture = (imgName) => {
     className: 'card__img',
   });
   const source1 = createElement('source', {
-    'srcset': `${fotoPath}/${imgName}.avif`,
+    'srcset': `
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@1x.avif 1x,
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@2x.avif 2x
+    `,
     'type': 'image/avif',
   });
   const source2 = createElement('source', {
-    'srcset': `${fotoPath}/${imgName}.webp`,
+    'srcset': `
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@1x.webp 1x,
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@2x.webp 2x
+    `,
     'type': 'image/webp',
   });
   const img = createElement('img', {
-    'src': `${fotoPath}/${imgName}.jpg`,
+    src: `${SERVER_URL}/${IMAGES_FOLDER}/${imgName}.jpg`,
   });
 
   picture.append(source1, source2, img);
@@ -250,15 +256,21 @@ const renderRecommGoodPicture = (image) => {
   const imgName = getImgName(image);
 
   const source1 = createElement('source', {
-    'srcset': `${fotoPath}/${imgName}.avif`,
+    'srcset': `
+      ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@1x.avif 1x,
+      ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@2x.avif 2x
+      `,
     'type': 'image/avif',
   });
   const source2 = createElement('source', {
-    'srcset': `${fotoPath}/${imgName}.webp`,
+    'srcset': `
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@1x.webp 1x,
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@2x.webp 2x
+    `,
     'type': 'image/webp',
   });
   const img = createElement('img', {
-    'src': `${fotoPath}/${imgName}.jpg`,
+    'src': `${SERVER_URL}/${IMAGES_FOLDER}/${imgName}.jpg`,
   });
 
   picture.append(source1, source2, img);
@@ -371,6 +383,7 @@ const renderRecommendationSection = async (allGoodsInCategory, goodId) => {
 export const renderGoodPage = async () => {
   const goodId = getUrlGetParam();
   const goodDbData = await getDbGoodData(goodId);
+  console.log('goodDbData: ', goodDbData);
   const categoryId = await getCategoryId(goodDbData.category);
   const categoryName = await loadCategoryName(categoryId);
   const allGoodsInCategory = await loadCategoryGoodsData(categoryName);

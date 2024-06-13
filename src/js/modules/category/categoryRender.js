@@ -2,7 +2,7 @@ import {createElement, getUrlGetParam, getDiscountedPrice} from '../service.js';
 import {getImgName, isDiscounted, getCategoryName} from './categoryService.js';
 import {categoryTitle, categoryList} from './categoryGetElements.js';
 import {loadCategoryName, loadCategoryGoodsData} from './categoryGetData.js';
-
+import {SERVER_URL, IMAGES_FOLDER} from '../API.js';
 
 const renderCategoryTitle = async () => {
   const categoryId = getUrlGetParam();
@@ -24,29 +24,33 @@ const renderGoodPicture = (imgName) => {
   });
 
   const source1 = createElement('source', {
-    srcset: `img/category/${imgName}.avif,
-      img/category/${imgName}-1200@2x.avif`,
-    type: 'image/avif',
-    width: 300,
-    height: 295,
+    'srcset': `
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@1x.avif 1x,
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@2x.avif 2x
+    `,
+    'type': 'image/avif',
+    'width': 300,
+    'height': 295,
   });
 
   const source2 = createElement('source', {
-    srcset: `img/category/${imgName}.webp,
-      img/category/${imgName}-1200@2x.webp`,
-    type: 'image/webp',
-    width: 300,
-    height: 295,
+    'srcset': `
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@1x.webp 1x,
+    ${SERVER_URL}/${IMAGES_FOLDER}/${imgName}@2x.webp 2x
+    `,
+    'type': 'image/webp',
+    'width': 300,
+    'height': 295,
   });
 
   const source3 = createElement('source', {
-    srcset: `img/category/${imgName}.jpg`,
+    srcset: `${SERVER_URL}/${IMAGES_FOLDER}/${imgName}.jpg`,
     width: 300,
     height: 295,
   });
 
   const img = createElement('img', {
-    src: `img/category/${imgName}.jpg`,
+    src: `${SERVER_URL}/${IMAGES_FOLDER}/${imgName}.jpg`,
     width: 420,
     height: 295,
   });
