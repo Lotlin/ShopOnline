@@ -1,7 +1,9 @@
 import {createElement} from '../service.js';
 import {
   cartChooseAllElem, cartItemsCountElem, cartItemsListElem,
+  deliveryInfoElem,
 } from './cartGetElements.js';
+import {getDeliveryDate} from './cartService.js';
 
 
 export const renderCartItemsCount = (countOfProductsInCart) => {
@@ -188,7 +190,7 @@ export const renderCartItemContentWrapper = (
 };
 
 // в макете корзины предусмотрена дополнительная информация,
-// но в DB и в карточке товара нет, поэтому пока заглушка 'details')
+// но в DB и в карточке товара допю. инф. нет, поэтому пока заглушка 'details')
 export const renderCartItem = ({
   imgUrl,
   title,
@@ -222,6 +224,58 @@ details = {},
   return cartItem;
 };
 
+export const renderDeliveryDate = (deliveryDate) => {
+  const deliveryDateElem = createElement('p', {
+    className: 'cart-form__delivery-date',
+    textContent: deliveryDate,
+  });
+
+  return deliveryDateElem;
+};
+
+export const renderGoodInfoFieldSet = (cartItems) => {
+  renderCartChooseAllElem();
+  cartItems.forEach(item => {
+    const cartItem = renderCartItem(item);
+
+    cartItemsListElem.append(cartItem);
+  });
+};
+
+export const renderDeliveryImg = (imgPath) => {
+  const imgElem = createElement('img', {
+    className: 'cart-form__delivery-img',
+    src: imgPath,
+  });
+
+  return imgElem;
+};
+
+export const renderDeliveryAllImgs = (cartItems) => {
+  const imgsWrapper = createElement('div', {
+    className: 'cart-form__delivery-desc cart-form__delivery-desc--imgages',
+  });
+
+  cartItems.forEach(item => {
+    const imgELem = renderDeliveryImg(item.imgUrl);
+
+    imgsWrapper.append(imgELem);
+  });
+
+  return imgsWrapper;
+};
+
+export const renderDeliveryFieldset = (cartItems, deliveryDate) => {
+  const deliveryDateElem = renderDeliveryDate(deliveryDate);
+  const deliveryAllImgs = renderDeliveryAllImgs(cartItems);
+
+  deliveryInfoElem.append(deliveryDateElem, deliveryAllImgs);
+};
+
+export const renderTotalFieldset = () => {
+
+};
+
 export const renderCart = (countOfItemsInCart, cartItems) => {
   if (!countOfItemsInCart) {
     renderEmptyCartMessage();
@@ -229,12 +283,9 @@ export const renderCart = (countOfItemsInCart, cartItems) => {
     return;
   }
 
-  renderCartItemsCount(countOfItemsInCart);
-  renderCartChooseAllElem();
-  cartItems.forEach(item => {
-    console.log(item);
-    const cartItem = renderCartItem(item);
+  const deliveryDate = getDeliveryDate();
 
-    cartItemsListElem.append(cartItem);
-  });
+  renderCartItemsCount(countOfItemsInCart);
+  renderGoodInfoFieldSet(cartItems);
+  renderDeliveryFieldset(cartItems, deliveryDate);
 };

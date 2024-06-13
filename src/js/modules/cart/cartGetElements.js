@@ -5,3 +5,6 @@ export const cartItemsListElem =
   cartElem.querySelector('.cart-form__goods-list');
 export const cartChooseAllElem =
   cartElem.querySelector('.cart-form__label-wrapper');
+
+export const deliveryInfoElem =
+  cartElem.querySelector('.cart-form__delivery-elem--date');

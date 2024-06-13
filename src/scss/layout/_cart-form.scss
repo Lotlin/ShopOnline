@@ -133,6 +133,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    cursor: pointer;
 
     &--all {
       width: 30px;
@@ -286,6 +287,8 @@
     font-weight: 700;
     line-height: $main-line-height;
     color: $button-background-color;
+    border: none;
+    background-color: transparent;
   }
 
   &__delivery-info {
