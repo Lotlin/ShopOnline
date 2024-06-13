@@ -1,8 +1,7 @@
-// import {loadGoodData} from './cardGetData.js';
 import {renderGoodPage} from './cardRender.js';
+import {addCartBtnControl} from './cardControl.js';
 
-export const cardInit = () => {
-  renderGoodPage();
-  // loadAllGoodsData();
-  // loadGoodData(2074454224);
+export const cardInit = async () => {
+  await renderGoodPage();
+  addCartBtnControl();
 };

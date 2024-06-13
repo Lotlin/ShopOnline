@@ -129,6 +129,15 @@
   }
   
   &__basket {
+    background-image: url('../../img/basket.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--all {
+      width: 30px;
+      height: 30px;
+    }
 
     &--good {
       display: none;
@@ -221,6 +230,7 @@
     align-items: center;
     width: 36px;
     height: 36px;
+    background-color: #ffffff;
     border: 1px solid $card-line;
     border-radius: 50%;
     font-size: 16px;
@@ -421,6 +431,10 @@
     line-height: $main-line-height;
   }
 
+  &__empty-message {
+    font-size: 22px;
+  }
+
   @include large {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -551,6 +565,10 @@
 
     &__price-credit {
       font-size: 14px;
+    }
+
+    &__empty-message {
+      font-size: 18px;
     }
   }
 

@@ -1,5 +1,5 @@
 import {fetchRequest} from '../service.js';
-import {GOODS_URL} from '../data.js';
+import {GOODS_URL} from '../API.js';
 import {loadCategoryData} from '../index/indexGetData.js';
 
 export const getDbGoodData = async (id) => {

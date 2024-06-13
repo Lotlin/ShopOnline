@@ -1,5 +1,5 @@
 import {fetchRequest} from '../service.js';
-import {CATEGORIES_URL, GOODS_URL} from '../data.js';
+import {CATEGORIES_URL, GOODS_URL} from '../API.js';
 
 export const loadCategoryName = async (id) => {
   const categoriesNameArr = await fetchRequest(CATEGORIES_URL, {});

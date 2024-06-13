@@ -15,3 +15,8 @@ export const getRecommendedGoodInCategory = (allGoodsInCategory, goodId) => {
 
   return recomendedGoodsInCategory;
 };
+
+export const getGoodPrice = (priceElem) =>
+  Number(priceElem.textContent.split(' ')[0]);
+export const getGoodImgUrl = (goodImgElem) => goodImgElem.getAttribute('src');
+export const getGoodElemTextContent = (goodElem) => goodElem.textContent;

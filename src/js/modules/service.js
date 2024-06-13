@@ -69,3 +69,103 @@ export const getDiscountedPrice = (fullPrice, discoutnSize) =>
   fullPrice - (fullPrice * discoutnSize * 0.01);
 
 export const arrIsEmpty = (arr) => !arr.length;
+
+export const getLocalStorageCartItems = () =>
+  JSON.parse(localStorage.getItem('cartItems') || '[]');
+
+export const getCountOfLocalStorageCartItems = () =>
+  getLocalStorageCartItems().length;
+
+export const getProductInCart = (cartItems, productId) =>
+  cartItems.find((item) => item.id === productId);
+
+export const addProductToLocalStorage = (
+    cartItems,
+    producId,
+    productPrice,
+    productImageUrl,
+    productTitle,
+    newPrice,
+    oldPrice,
+    creditPrice,
+) => {
+  const productInCart = getProductInCart(cartItems, producId);
+
+  if (productInCart) {
+    productInCart.count += 1;
+  } else {
+    cartItems.push({
+      id: producId,
+      count: 1,
+      price: productPrice,
+      imgUrl: productImageUrl,
+      title: productTitle,
+      newPrice,
+      oldPrice,
+      creditPrice,
+    });
+  }
+
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
+
+export const addToCart = (
+    producId,
+    productPrice,
+    productImageUrl,
+    productTitle,
+    newPrice,
+    oldPrice,
+    creditPrice,
+) => {
+  const cartItems = getLocalStorageCartItems();
+  console.log('cartItems: ', cartItems);
+
+  addProductToLocalStorage(
+      cartItems,
+      producId,
+      productPrice,
+      productImageUrl,
+      productTitle,
+      newPrice,
+      oldPrice,
+      creditPrice,
+  );
+};
+// toDO новый localStorage
+/*
+
+export const clearLocalStorageCartItems = () => {
+  localStorage.removeItem('cartItems');
+};
+
+
+
+export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
+  const itemInCart = getProductInCart(cartItems, itemId);
+
+  itemInCart.count += 1;
+
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
+
+export const updateCartCount = () => {
+  const cartItems = getLocalStorageCartItems();
+
+  cartCount.textContent = cartItems.length;
+};
+
+export const reduceCountLocalStorageCartItem = (cartItems, itemId) => {
+  const itemInCart = getProductInCart(cartItems, itemId);
+
+  if (itemInCart.count === 1) {
+    cartItems = cartItems.filter((item) => item.id !== itemInCart.id);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    updateCartCount();
+    return;
+  }
+
+  itemInCart.count -= 1;
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
+*/

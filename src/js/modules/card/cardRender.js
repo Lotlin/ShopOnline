@@ -77,7 +77,8 @@ const renderPicture = (imgName) => {
     'type': 'image/webp',
   });
   const img = createElement('img', {
-    src: `${SERVER_URL}/${IMAGES_FOLDER}/${imgName}.jpg`,
+    'className': 'card__img-img',
+    'src': `${SERVER_URL}/${IMAGES_FOLDER}/${imgName}.jpg`,
   });
 
   picture.append(source1, source2, img);
