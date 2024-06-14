@@ -313,8 +313,6 @@ export const renderTotalFieldset =
     renderTotalFieldsetDeliveryDate(deliveryDate);
   };
 
-// toDo убрать newPrice из CartItems
-
 export const renderCart = (countOfItemsInCart, cartItems) => {
   if (!countOfItemsInCart) {
     renderEmptyCartMessage();
