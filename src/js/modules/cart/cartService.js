@@ -30,8 +30,23 @@ export const getDeliveryDate = (minDeliveryDays = 1, maxDeliveryDays = 5) => {
     `${earliestDeliveryDay}-${latestDeliveryDay} ${earliestDeliveryMonth}`;
   } else {
     deliveryTime =
+      // eslint-disable-next-line max-len
       `${earliestDeliveryDay} ${earliestDeliveryMonth} - ${latestDeliveryDay} ${latestDeliveryMonth}`;
   }
 
   return deliveryTime;
 };
+
+export const getCartTotalPrice = (cartItemsData) =>
+  cartItemsData.reduce((acc, item) => acc + (item.price * item.count), 0);
+
+export const getCartTotalItemsCount = (cartItemsData) =>
+  cartItemsData.reduce((acc, item) => acc + item.count, 0);
+
+export const getCartTotalItemsOldPrice = (cartItemsData) =>
+  cartItemsData.reduce((acc, item) => acc + (item.oldPrice * item.count), 0);
+
+export const getCartTotalDiscount = (cartItemsData) =>
+  cartItemsData.reduce((acc, item) =>
+    acc + ((item.oldPrice - item.price) * item.count), 0);
+

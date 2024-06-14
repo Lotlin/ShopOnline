@@ -1,9 +1,13 @@
 import {createElement} from '../service.js';
 import {
   cartChooseAllElem, cartItemsCountElem, cartItemsListElem,
-  deliveryInfoElem,
+  deliveryInfoElem, totalDeliveryInfoElem, totalItemsCountELem,
+  totalItemsDiscountElem, totalItemsOldPriceElem, totalPriceElem,
 } from './cartGetElements.js';
-import {getDeliveryDate} from './cartService.js';
+import {
+  getCartTotalItemsCount, getCartTotalItemsOldPrice, getCartTotalPrice,
+  getDeliveryDate, getCartTotalDiscount,
+} from './cartService.js';
 
 
 export const renderCartItemsCount = (countOfProductsInCart) => {
@@ -145,13 +149,16 @@ export const renderPriceElem = (newPrice, oldPrice, creditPrice) => {
 
   const newPriceElem = createElement('p', {
     className: 'cart-form__price-wrapper',
-    textContent: newPrice,
+    textContent: `${newPrice.toLocaleString('ru-RU')} ₽`,
   });
 
   const oldPriceElem = createElement('p', {
     className: 'cart-form__price-old',
-    textContent: oldPrice,
   });
+
+  if (oldPrice !== newPrice) {
+    oldPriceElem.textContent = `${oldPrice.toLocaleString('ru-RU')} ₽`;
+  }
 
   const creditPriceElem = createElement('p', {
     className: 'cart-form__price-credit',
@@ -272,9 +279,43 @@ export const renderDeliveryFieldset = (cartItems, deliveryDate) => {
   deliveryInfoElem.append(deliveryDateElem, deliveryAllImgs);
 };
 
-export const renderTotalFieldset = () => {
-
+export const renderTotalPrice = (totalPrice) => {
+  totalPriceElem.textContent = `${totalPrice.toLocaleString('ru-RU')} ₽`;
 };
+
+export const renderTotalCountAndFullPrice = (totalCount, totalOldPrice) => {
+  totalItemsCountELem.textContent = `${totalCount} шт.`;
+  totalItemsOldPriceElem.textContent =
+    `${totalOldPrice.toLocaleString('ru-RU')} ₽`;
+};
+
+export const renderTotalDiscount = (totalDiscount) => {
+  totalItemsDiscountElem.textContent =
+    `${totalDiscount.toLocaleString('ru-RU')} ₽`;
+};
+
+// <p class="cart-form__total-name"><!--Дата: <span class="cart-form__total-value">10-13 февраля</span>--></p>
+
+export const renderTotalFieldsetDeliveryDate = (deliveryDate) => {
+  totalDeliveryInfoElem.textContent = 'Дата: ';
+
+  const date = createElement('span', {
+    className: 'cart-form__total-value',
+    textContent: deliveryDate,
+  });
+
+  totalDeliveryInfoElem.append(date);
+};
+
+export const renderTotalFieldset =
+  (totalPrice, totalCount, totalOldPrice, totalDiscount, deliveryDate) => {
+    renderTotalPrice(totalPrice);
+    renderTotalCountAndFullPrice(totalCount, totalOldPrice);
+    renderTotalDiscount(totalDiscount);
+    renderTotalFieldsetDeliveryDate(deliveryDate);
+  };
+
+// toDo убрать newPrice из CartItems
 
 export const renderCart = (countOfItemsInCart, cartItems) => {
   if (!countOfItemsInCart) {
@@ -283,9 +324,18 @@ export const renderCart = (countOfItemsInCart, cartItems) => {
     return;
   }
 
+  console.log(cartItems);
+
   const deliveryDate = getDeliveryDate();
+  const totalPrice = getCartTotalPrice(cartItems);
+  const totalCount = getCartTotalItemsCount(cartItems);
+  const totalOldPrice = getCartTotalItemsOldPrice(cartItems);
+  const totalDiscount = getCartTotalDiscount(cartItems);
 
   renderCartItemsCount(countOfItemsInCart);
   renderGoodInfoFieldSet(cartItems);
   renderDeliveryFieldset(cartItems, deliveryDate);
+  renderTotalFieldset(
+      totalPrice, totalCount, totalOldPrice, totalDiscount, deliveryDate,
+  );
 };

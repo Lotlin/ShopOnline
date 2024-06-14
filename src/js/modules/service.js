@@ -119,7 +119,6 @@ export const addToCart = (
     creditPrice,
 ) => {
   const cartItems = getLocalStorageCartItems();
-  console.log('cartItems: ', cartItems);
 
   addProductToLocalStorage(
       cartItems,
@@ -138,8 +137,6 @@ export const addToCart = (
 export const clearLocalStorageCartItems = () => {
   localStorage.removeItem('cartItems');
 };
-
-
 
 export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
   const itemInCart = getProductInCart(cartItems, itemId);
