@@ -384,7 +384,6 @@ const renderRecommendationSection = async (allGoodsInCategory, goodId) => {
 export const renderGoodPage = async () => {
   const goodId = getUrlGetParam();
   const goodDbData = await getDbGoodData(goodId);
-  console.log('goodDbData: ', goodDbData);
   const categoryId = await getCategoryId(goodDbData.category);
   const categoryName = await loadCategoryName(categoryId);
   const allGoodsInCategory = await loadCategoryGoodsData(categoryName);

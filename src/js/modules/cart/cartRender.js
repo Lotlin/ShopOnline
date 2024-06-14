@@ -320,8 +320,6 @@ export const renderCart = (countOfItemsInCart, cartItems) => {
     return;
   }
 
-  console.log(cartItems);
-
   const deliveryDate = getDeliveryDate();
   const totalPrice = getCartTotalPrice(cartItems);
   const totalCount = getCartTotalItemsCount(cartItems);
