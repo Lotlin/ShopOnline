@@ -85,7 +85,6 @@ export const addProductToLocalStorage = (
     productPrice,
     productImageUrl,
     productTitle,
-    newPrice,
     oldPrice,
     creditPrice,
 ) => {
@@ -100,7 +99,6 @@ export const addProductToLocalStorage = (
       price: productPrice,
       imgUrl: productImageUrl,
       title: productTitle,
-      newPrice,
       oldPrice,
       creditPrice,
     });
@@ -114,7 +112,6 @@ export const addToCart = (
     productPrice,
     productImageUrl,
     productTitle,
-    newPrice,
     oldPrice,
     creditPrice,
 ) => {
@@ -126,7 +123,6 @@ export const addToCart = (
       productPrice,
       productImageUrl,
       productTitle,
-      newPrice,
       oldPrice,
       creditPrice,
   );

@@ -12,8 +12,7 @@ export const addCartBtnControl = () => {
       goodPrice,
       goodImage,
       goodTitle,
-      newPrice,
-      oldPrice,
+      goodOldPrice,
       creditPrice,
     } = getGoodCardData();
 
@@ -22,8 +21,7 @@ export const addCartBtnControl = () => {
         goodPrice,
         goodImage,
         goodTitle,
-        newPrice,
-        oldPrice,
+        goodOldPrice,
         creditPrice,
     );
   });

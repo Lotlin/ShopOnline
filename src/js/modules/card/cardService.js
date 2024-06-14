@@ -27,20 +27,17 @@ export const getGoodCardData = () => {
     titleElem,
     priceElem,
     imgELem,
-    newPriceElem,
     oldPriceElem,
     creditPriceElem,
   } = getGoodDataElements();
 
-
   const goodPrice = getGoodPrice(priceElem);
   const goodImage = getGoodImgUrl(imgELem);
   const goodTitle = getGoodElemTextContent(titleElem);
-  const newPrice = getGoodPrice(newPriceElem);
-  let oldPrice = getGoodPrice(oldPriceElem);
+  let goodOldPrice = getGoodPrice(oldPriceElem);
 
-  if (!oldPrice) {
-    oldPrice = newPrice;
+  if (!goodOldPrice) {
+    goodOldPrice = goodPrice;
   }
 
   const creditPrice = getGoodElemTextContent(creditPriceElem);
@@ -49,8 +46,7 @@ export const getGoodCardData = () => {
     goodPrice,
     goodImage,
     goodTitle,
-    newPrice,
-    oldPrice,
+    goodOldPrice,
     creditPrice,
   };
 };

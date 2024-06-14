@@ -142,21 +142,21 @@ export const renderNumElem = (count) => {
   return numElem;
 };
 
-export const renderPriceElem = (newPrice, oldPrice, creditPrice) => {
+export const renderPriceElem = (price, oldPrice, creditPrice) => {
   const priceElem = createElement('div', {
     className: 'cart-form__price-wrapper',
   });
 
   const newPriceElem = createElement('p', {
     className: 'cart-form__price-wrapper',
-    textContent: `${newPrice.toLocaleString('ru-RU')} ₽`,
+    textContent: `${price.toLocaleString('ru-RU')} ₽`,
   });
 
   const oldPriceElem = createElement('p', {
     className: 'cart-form__price-old',
   });
 
-  if (oldPrice !== newPrice) {
+  if (oldPrice !== price) {
     oldPriceElem.textContent = `${oldPrice.toLocaleString('ru-RU')} ₽`;
   }
 
@@ -175,7 +175,7 @@ export const renderCartItemContentWrapper = (
     title,
     details,
     count,
-    newPrice,
+    price,
     oldPrice,
     creditPrice,
 ) => {
@@ -186,7 +186,7 @@ export const renderCartItemContentWrapper = (
   const imgWrapper = renderImgWrapper(imgUrl);
   const description = renderDescription(title, details);
   const numElem = renderNumElem(count);
-  const priceElem = renderPriceElem(newPrice, oldPrice, creditPrice);
+  const priceElem = renderPriceElem(price, oldPrice, creditPrice);
   const basketSvg = createElement('svg', {
     className: 'cart-form__basket cart-form__basket--good',
   });
@@ -202,7 +202,7 @@ export const renderCartItem = ({
   imgUrl,
   title,
   count,
-  newPrice,
+  price,
   oldPrice,
   creditPrice,
 },
@@ -217,7 +217,7 @@ details = {},
       title,
       details,
       count,
-      newPrice,
+      price,
       oldPrice,
       creditPrice,
   );
@@ -293,8 +293,6 @@ export const renderTotalDiscount = (totalDiscount) => {
   totalItemsDiscountElem.textContent =
     `${totalDiscount.toLocaleString('ru-RU')} ₽`;
 };
-
-// <p class="cart-form__total-name"><!--Дата: <span class="cart-form__total-value">10-13 февраля</span>--></p>
 
 export const renderTotalFieldsetDeliveryDate = (deliveryDate) => {
   totalDeliveryInfoElem.textContent = 'Дата: ';
