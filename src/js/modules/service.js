@@ -1,3 +1,5 @@
+import {renderHeaderCartItemsCount} from './header/headerRender.js';
+
 export const fetchRequest = async (url, {
   method = 'GET',
   callback,
@@ -126,6 +128,8 @@ export const addToCart = (
       oldPrice,
       creditPrice,
   );
+
+  renderHeaderCartItemsCount();
 };
 // toDO новый localStorage
 /*

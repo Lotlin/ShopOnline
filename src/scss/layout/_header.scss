@@ -150,9 +150,27 @@
     font-weight: 700;
     line-height: $main-line-height;
 
+    &--cart {
+      position: relative;
+    }
+
     &:hover {
       background-color: $placeholder-color;
     }
+  }
+
+  &__user-cart-count {
+    position: absolute;
+    top: -4px;
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 14px;
+    color: $button-background-color;
+    line-height: 1.3;
+    text-align: center;
   }
 
   @include large {

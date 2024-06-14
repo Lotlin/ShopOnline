@@ -5,3 +5,5 @@ export const headerMenuBtnOpenImg =
   header.querySelector('.header__burger-img--open');
 export const headerMenuBtnCloseImg =
   header.querySelector('.header__burger-img--close');
+export const headerItemCartElem =
+  header.querySelector('.header__user-item--cart');
