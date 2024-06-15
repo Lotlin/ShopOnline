@@ -79,7 +79,7 @@ export const getCountOfLocalStorageCartItems = () =>
   getLocalStorageCartItems().length;
 
 export const getProductInCart = (cartItems, productId) =>
-  cartItems.find((item) => item.id === productId);
+  cartItems.find((item) => Number(item.id) === productId);
 
 export const addProductToLocalStorage = (
     cartItems,
@@ -131,12 +131,6 @@ export const addToCart = (
 
   renderHeaderCartItemsCount();
 };
-// toDO новый localStorage
-/*
-
-export const clearLocalStorageCartItems = () => {
-  localStorage.removeItem('cartItems');
-};
 
 export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
   const itemInCart = getProductInCart(cartItems, itemId);
@@ -145,6 +139,15 @@ export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
 
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
+
+// toDO новый localStorage
+/*
+
+export const clearLocalStorageCartItems = () => {
+  localStorage.removeItem('cartItems');
+};
+
+
 
 export const updateCartCount = () => {
   const cartItems = getLocalStorageCartItems();

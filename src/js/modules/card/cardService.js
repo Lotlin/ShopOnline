@@ -17,8 +17,8 @@ export const getRecommendedGoodInCategory = (allGoodsInCategory, goodId) => {
   return recomendedGoodsInCategory;
 };
 
-export const getGoodPrice = (priceElem) =>
-  Number(priceElem.textContent.split(' ')[0]);
+export const getGoodPrice = (priceElem, numOfElemInArr = 0) =>
+  Number(priceElem.textContent.split(' ')[numOfElemInArr]);
 export const getGoodImgUrl = (goodImgElem) => goodImgElem.getAttribute('src');
 export const getGoodElemTextContent = (goodElem) => goodElem.textContent;
 
@@ -34,13 +34,12 @@ export const getGoodCardData = () => {
   const goodPrice = getGoodPrice(priceElem);
   const goodImage = getGoodImgUrl(imgELem);
   const goodTitle = getGoodElemTextContent(titleElem);
+  const creditPrice = getGoodPrice(creditPriceElem, 3);
   let goodOldPrice = getGoodPrice(oldPriceElem);
 
   if (!goodOldPrice) {
     goodOldPrice = goodPrice;
   }
-
-  const creditPrice = getGoodElemTextContent(creditPriceElem);
 
   return {
     goodPrice,

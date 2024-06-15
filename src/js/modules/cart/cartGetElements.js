@@ -17,3 +17,9 @@ export const totalItemsDiscountElem =
   cartElem.querySelector('.cart-form__total-dicount');
 export const totalDeliveryInfoElem =
   cartElem.querySelector('.cart-form__total-delivery-info');
+export const getItemPriceElem = (item) =>
+  item.querySelector('.cart-form__price');
+export const getItemCountElem = (item) =>
+  item.querySelector('.cart-form__good-num-num');
+export const getItemCreditPriceElem = (item) =>
+  item.querySelector('.cart-form__price-credit');

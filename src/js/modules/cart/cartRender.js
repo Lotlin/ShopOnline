@@ -125,6 +125,7 @@ export const renderNumElem = (count) => {
   const minusBtn = createElement('button', {
     className: 'cart-form__good-num cart-form__good-num--less',
     textContent: '-',
+    type: 'button',
   });
 
   const countElem = createElement('p', {
@@ -135,6 +136,7 @@ export const renderNumElem = (count) => {
   const plusBtn = createElement('button', {
     className: 'cart-form__good-num cart-form__good-num--more',
     textContent: '+',
+    type: 'button',
   });
 
   numElem.append(minusBtn, countElem, plusBtn);
@@ -142,14 +144,16 @@ export const renderNumElem = (count) => {
   return numElem;
 };
 
-export const renderPriceElem = (price, oldPrice, creditPrice) => {
+export const renderPriceElem = (price, oldPrice, creditPrice, count) => {
   const priceElem = createElement('div', {
     className: 'cart-form__price-wrapper',
   });
 
+  const totalElemPrice = price * count;
+
   const newPriceElem = createElement('p', {
-    className: 'cart-form__price-wrapper',
-    textContent: `${price.toLocaleString('ru-RU')} ₽`,
+    className: 'cart-form__price',
+    textContent: `${totalElemPrice.toLocaleString('ru-RU')} ₽`,
   });
 
   const oldPriceElem = createElement('p', {
@@ -157,12 +161,15 @@ export const renderPriceElem = (price, oldPrice, creditPrice) => {
   });
 
   if (oldPrice !== price) {
-    oldPriceElem.textContent = `${oldPrice.toLocaleString('ru-RU')} ₽`;
+    const totalOldPrice = oldPrice * count;
+    oldPriceElem.textContent = `${totalOldPrice.toLocaleString('ru-RU')} ₽`;
   }
+
+  const totalCreditPrice = creditPrice * count;
 
   const creditPriceElem = createElement('p', {
     className: 'cart-form__price-credit',
-    textContent: creditPrice,
+    textContent: `В кредит от ${totalCreditPrice.toLocaleString('ru-RU')} ₽`,
   });
 
   priceElem.append(newPriceElem, oldPriceElem, creditPriceElem);
@@ -186,7 +193,7 @@ export const renderCartItemContentWrapper = (
   const imgWrapper = renderImgWrapper(imgUrl);
   const description = renderDescription(title, details);
   const numElem = renderNumElem(count);
-  const priceElem = renderPriceElem(price, oldPrice, creditPrice);
+  const priceElem = renderPriceElem(price, oldPrice, creditPrice, count);
   const basketSvg = createElement('svg', {
     className: 'cart-form__basket cart-form__basket--good',
   });
@@ -205,12 +212,15 @@ export const renderCartItem = ({
   price,
   oldPrice,
   creditPrice,
+  id,
 },
 details = {},
 ) => {
   const cartItem = createElement('li', {
     className: 'cart-form__good-item',
   });
+
+  cartItem.dataset.id = id;
 
   const itemContentWrapper = renderCartItemContentWrapper(
       imgUrl,
