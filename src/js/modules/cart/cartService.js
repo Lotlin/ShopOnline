@@ -1,9 +1,17 @@
 import {
-  getLocalStorageCartItems, increaseCountLocalStorageCartItem,
+  disableElem,
+  getCountOfLocalStorageCartItems, getLocalStorageCartItems,
+  increaseCountLocalStorageCartItem, reduceCountLocalStorageCartItem,
 } from '../service.js';
 import {
   getItemPriceElem, getItemCountElem, getItemCreditPriceElem,
+  getItemOldPriceELem,
+  cartSubmitBtn,
 } from './cartGetElements.js';
+import {
+  renderEmptyCartMessage, renderUpdatedDeliveryAllImg,
+  updateTotalFieldset,
+} from './cartRender.js';
 
 export const getDeliveryDate = (minDeliveryDays = 1, maxDeliveryDays = 5) => {
   const monthsArr = [
@@ -77,17 +85,19 @@ export const getCartItemRenderedElements = (item) => {
   const itemPriceELem = getItemPriceElem(item);
   const itemCountElem = getItemCountElem(item);
   const itemCreditPriceElem = getItemCreditPriceElem(item);
+  const itemOldPriceElem = getItemOldPriceELem(item);
 
   return {
     itemPriceELem,
     itemCountElem,
     itemCreditPriceElem,
+    itemOldPriceElem,
   };
 };
 
 export const getElemPrice = (priceElem) => {
   const noSpaceBtwNumbsTextContent =
-    priceElem.textContent.replace('\u00A0', '');
+    priceElem.textContent.replace(/\u00A0/g, '');
   const price = noSpaceBtwNumbsTextContent.split(' ')[0];
 
   return price;
@@ -102,37 +112,48 @@ export const getCreditPrice = (creditPriceElem) => {
 };
 
 export const updateItemPriceAndCount = (
-    parentItem, priceElem, countElem, creditPriceElem, operator = false,
+    parentItem,
+    priceElem,
+    countElem,
+    creditPriceElem,
+    oldPriceElem,
+    operator = false,
 ) => {
   const currentPrice = Number(getElemPrice(priceElem));
   const currentCount = Number(countElem.textContent);
   const currentCreditPrice = Number(getCreditPrice(creditPriceElem));
+  const currentOldPrice = Number(getElemPrice(oldPriceElem));
 
-  // toDO проверить условие
   if (currentCount === 1 && !operator) {
     parentItem.remove();
+    renderUpdatedDeliveryAllImg();
 
     const сartItems = getLocalStorageCartItems();
     if (!сartItems.length) {
-      // renderCartIsEmptyMessage();
-      // disableElem(cartSubmitBtn);
+      renderEmptyCartMessage();
+      disableElem(cartSubmitBtn);
     }
 
     return;
   }
 
-  const oneItemPrice = currentPrice / currentCount;
-
   const newCount = operator ? (currentCount + 1) : (currentCount - 1);
+
   countElem.textContent = newCount;
 
+  const oneItemPrice = currentPrice / currentCount;
   priceElem.textContent =
    `${(newCount * oneItemPrice).toLocaleString('ru-RU')} ₽`;
 
   const oneItemCreditPrice = currentCreditPrice / currentCount;
-
   creditPriceElem.textContent =
    `В кредит от ${(newCount * oneItemCreditPrice).toLocaleString('ru-RU')} ₽`;
+
+  if (currentOldPrice) {
+    const oneItemOldPrice = currentOldPrice / currentCount;
+    oldPriceElem.textContent =
+      `${(newCount * oneItemOldPrice).toLocaleString('ru-RU')} ₽`;
+  }
 };
 
 export const cartItemCountService = (target, clickedCountdBtn) => {
@@ -143,24 +164,33 @@ export const cartItemCountService = (target, clickedCountdBtn) => {
     itemPriceELem,
     itemCountElem,
     itemCreditPriceElem,
+    itemOldPriceElem,
   } = getCartItemRenderedElements(itemElem);
 
   const cartItems = getLocalStorageCartItems();
-
-
-  // toDO перепутаны (?) increase и reduce
-
+  // toDO DRY если останется время
   if (clickedCountdBtn === 'increase') {
     increaseCountLocalStorageCartItem(cartItems, itemId);
 
     updateItemPriceAndCount(
-        itemElem, itemPriceELem, itemCountElem, itemCreditPriceElem, 'increase',
+        itemElem,
+        itemPriceELem,
+        itemCountElem,
+        itemCreditPriceElem,
+        itemOldPriceElem,
+        'increase',
     );
   } else {
-    /*reduceCountLocalStorageCartItem(cartItems, itemId);
-    updateItemPriceAndCount(item, itemPriceELem, itemCountElem);*/
+    reduceCountLocalStorageCartItem(cartItems, itemId);
+    updateItemPriceAndCount(
+        itemElem,
+        itemPriceELem,
+        itemCountElem,
+        itemCreditPriceElem,
+        itemOldPriceElem,
+    );
   }
 
-  //const newCartItems = getLocalStorageCartItems();
-  //renderTotalPrice(newCartItems);
+  const newCartItems = getLocalStorageCartItems();
+  updateTotalFieldset(getCountOfLocalStorageCartItems(), newCartItems);
 };

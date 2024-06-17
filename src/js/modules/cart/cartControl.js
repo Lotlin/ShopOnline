@@ -7,7 +7,6 @@ export const countBtnControl = () => {
 
     if (clickedCountdBtn) {
       cartItemCountService(target, clickedCountdBtn);
-      // toDO пересчитывать итоговую секцию
     }
   });
 };

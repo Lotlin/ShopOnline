@@ -1,8 +1,12 @@
-import {createElement} from '../service.js';
+import {
+  activateElem, createElement, disableElem, getLocalStorageCartItems,
+} from '../service.js';
 import {
   cartChooseAllElem, cartItemsCountElem, cartItemsListElem,
-  deliveryInfoElem, totalDeliveryInfoElem, totalItemsCountELem,
-  totalItemsDiscountElem, totalItemsOldPriceElem, totalPriceElem,
+  cartSubmitBtn,
+  deliveryInfoElem, getDeliveryAllImgsList, totalDeliveryInfoElem,
+  totalItemsCountELem, totalItemsDiscountElem, totalItemsOldPriceElem,
+  totalPriceElem,
 } from './cartGetElements.js';
 import {
   getCartTotalItemsCount, getCartTotalItemsOldPrice, getCartTotalPrice,
@@ -269,14 +273,16 @@ export const renderDeliveryImg = (imgPath) => {
 };
 
 export const renderDeliveryAllImgs = (cartItems) => {
-  const imgsWrapper = createElement('div', {
+  const imgsWrapper = createElement('ul', {
     className: 'cart-form__delivery-desc cart-form__delivery-desc--imgages',
   });
 
   cartItems.forEach(item => {
+    const li = createElement('li');
     const imgELem = renderDeliveryImg(item.imgUrl);
 
-    imgsWrapper.append(imgELem);
+    li.append(imgELem);
+    imgsWrapper.append(li);
   });
 
   return imgsWrapper;
@@ -326,6 +332,7 @@ export const renderTotalFieldset =
 export const renderCart = (countOfItemsInCart, cartItems) => {
   if (!countOfItemsInCart) {
     renderEmptyCartMessage();
+    disableElem(cartSubmitBtn);
 
     return;
   }
@@ -339,6 +346,34 @@ export const renderCart = (countOfItemsInCart, cartItems) => {
   renderCartItemsCount(countOfItemsInCart);
   renderGoodInfoFieldSet(cartItems);
   renderDeliveryFieldset(cartItems, deliveryDate);
+  renderTotalFieldset(
+      totalPrice, totalCount, totalOldPrice, totalDiscount, deliveryDate,
+  );
+  activateElem(cartSubmitBtn);
+};
+
+export const renderUpdatedDeliveryAllImg = () => {
+  const imgsWrapper = getDeliveryAllImgsList();
+  imgsWrapper.textContent = '';
+  const cartItems = getLocalStorageCartItems();
+
+  cartItems.forEach(item => {
+    const li = createElement('li');
+    const imgELem = renderDeliveryImg(item.imgUrl);
+
+    li.append(imgELem);
+    imgsWrapper.append(li);
+  });
+};
+
+export const updateTotalFieldset = (countOfItemsInCart, cartItems) => {
+  const deliveryDate = getDeliveryDate();
+  const totalPrice = getCartTotalPrice(cartItems);
+  const totalCount = getCartTotalItemsCount(cartItems);
+  const totalOldPrice = getCartTotalItemsOldPrice(cartItems);
+  const totalDiscount = getCartTotalDiscount(cartItems);
+
+  renderCartItemsCount(countOfItemsInCart);
   renderTotalFieldset(
       totalPrice, totalCount, totalOldPrice, totalDiscount, deliveryDate,
   );

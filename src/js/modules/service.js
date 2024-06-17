@@ -79,7 +79,7 @@ export const getCountOfLocalStorageCartItems = () =>
   getLocalStorageCartItems().length;
 
 export const getProductInCart = (cartItems, productId) =>
-  cartItems.find((item) => Number(item.id) === productId);
+  cartItems.find((item) => Number(item.id) === Number(productId));
 
 export const addProductToLocalStorage = (
     cartItems,
@@ -140,32 +140,27 @@ export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
 
-// toDO новый localStorage
-/*
-
-export const clearLocalStorageCartItems = () => {
-  localStorage.removeItem('cartItems');
-};
-
-
-
-export const updateCartCount = () => {
-  const cartItems = getLocalStorageCartItems();
-
-  cartCount.textContent = cartItems.length;
-};
-
 export const reduceCountLocalStorageCartItem = (cartItems, itemId) => {
   const itemInCart = getProductInCart(cartItems, itemId);
 
   if (itemInCart.count === 1) {
     cartItems = cartItems.filter((item) => item.id !== itemInCart.id);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    updateCartCount();
     return;
   }
 
   itemInCart.count -= 1;
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
-*/
+
+export const clearLocalStorageCartItems = () => {
+  localStorage.removeItem('cartItems');
+};
+
+export const activateElem = (elem) => {
+  elem.disabled = false;
+};
+
+export const disableElem = (elem) => {
+  elem.disabled = true;
+};
