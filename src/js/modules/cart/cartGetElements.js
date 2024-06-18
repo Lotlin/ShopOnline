@@ -1,3 +1,4 @@
+export const cartSection = document.querySelector('.cart');
 export const cartElem = document.querySelector('.cart-form');
 export const cartItemsCountElem =
   cartElem.querySelector('.cart-form__title-amount');
@@ -28,3 +29,17 @@ export const getItemOldPriceELem = (item) =>
   item.querySelector('.cart-form__price-old');
 export const getDeliveryAllImgsList = () =>
   cartElem.querySelector('.cart-form__delivery-desc--imgages');
+export const getAgreementCheckbox = () =>
+  cartElem.querySelector('.cart-form__checkbox--agreement');
+export const getChooseAllCheckbox = () =>
+  cartElem.querySelector('.cart-form__choose-all');
+export const getDeleteAllBtn = () =>
+  cartElem.querySelector('.cart-form__basket--all');
+export const getAllGoodCheckbox = () =>
+  cartElem.querySelectorAll('.cart-form__checkbox--good');
+export const getAllDeliveryDateELems = () =>
+  cartElem.querySelectorAll('.cart-form__delivery-date');
+export const getAllDelGoodBtn = () =>
+  cartItemsListElem.querySelectorAll('.cart-form__basket--good');
+export const getDelGoodBtn = (item) =>
+  item.querySelector('.cart-form__basket--good');

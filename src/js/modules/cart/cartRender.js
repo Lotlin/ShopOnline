@@ -1,8 +1,9 @@
 import {
-  activateElem, createElement, disableElem, getLocalStorageCartItems,
+  createElement, disableElem, getLocalStorageCartItems,
 } from '../service.js';
 import {
   cartChooseAllElem, cartItemsCountElem, cartItemsListElem,
+  cartSection,
   cartSubmitBtn,
   deliveryInfoElem, getDeliveryAllImgsList, totalDeliveryInfoElem,
   totalItemsCountELem, totalItemsDiscountElem, totalItemsOldPriceElem,
@@ -43,8 +44,10 @@ export const renderCartChooseAllElem = () => {
 
   label.append(checkBox, span);
 
-  const basketSvg = createElement('svg', {
+  const basketSvg = createElement('button', {
     className: 'cart-form__basket cart-form__basket--all',
+    disabled: true,
+    type: 'button',
   });
 
   cartChooseAllElem.append(label, basketSvg);
@@ -198,8 +201,10 @@ export const renderCartItemContentWrapper = (
   const description = renderDescription(title, details);
   const numElem = renderNumElem(count);
   const priceElem = renderPriceElem(price, oldPrice, creditPrice, count);
-  const basketSvg = createElement('svg', {
+  const basketSvg = createElement('button', {
     className: 'cart-form__basket cart-form__basket--good',
+    disabled: true,
+    type: 'button',
   });
 
   wrapper.append(imgWrapper, description, numElem, priceElem, basketSvg);
@@ -311,6 +316,12 @@ export const renderTotalDiscount = (totalDiscount) => {
 };
 
 export const renderTotalFieldsetDeliveryDate = (deliveryDate) => {
+  if (!deliveryDate) {
+    totalDeliveryInfoElem.textContent = '';
+
+    return;
+  }
+
   totalDeliveryInfoElem.textContent = 'Дата: ';
 
   const date = createElement('span', {
@@ -349,7 +360,6 @@ export const renderCart = (countOfItemsInCart, cartItems) => {
   renderTotalFieldset(
       totalPrice, totalCount, totalOldPrice, totalDiscount, deliveryDate,
   );
-  activateElem(cartSubmitBtn);
 };
 
 export const renderUpdatedDeliveryAllImg = () => {
@@ -366,15 +376,51 @@ export const renderUpdatedDeliveryAllImg = () => {
   });
 };
 
+export const renderEmptyDeliveryAllImg = () => {
+  const imgsWrapper = getDeliveryAllImgsList();
+  imgsWrapper.textContent = '';
+};
+
 export const updateTotalFieldset = (countOfItemsInCart, cartItems) => {
-  const deliveryDate = getDeliveryDate();
+  let deliveryDate = NaN;
+
+  if (countOfItemsInCart) {
+    deliveryDate = getDeliveryDate();
+    renderCartItemsCount(countOfItemsInCart);
+  }
+
   const totalPrice = getCartTotalPrice(cartItems);
   const totalCount = getCartTotalItemsCount(cartItems);
   const totalOldPrice = getCartTotalItemsOldPrice(cartItems);
   const totalDiscount = getCartTotalDiscount(cartItems);
 
-  renderCartItemsCount(countOfItemsInCart);
   renderTotalFieldset(
       totalPrice, totalCount, totalOldPrice, totalDiscount, deliveryDate,
   );
+};
+
+export const renderOrderMessageModal = (orderId) => {
+  const orderMessageWrapper = createElement('div', {
+    className: 'order-message',
+  });
+
+  const orderMessageText = createElement('p', {
+    className: 'order-message__text',
+    textContent: `Ваш заказ с номером ${orderId} принят.
+      Вы можете его забрать ${getDeliveryDate()} в пункте выдачи.
+      Адрес пункта выдачи: г. Москва улица Центральная, д. 48.
+      Режим работы: ежедневно 10:00 - 21:00
+      `,
+  });
+
+  const orderMessageColseBtn = createElement('button', {
+    className: 'order-message__close-btn',
+    textContent: 'Закрыть',
+  });
+
+  orderMessageWrapper.append(orderMessageText, orderMessageColseBtn);
+
+  cartSection.textContent = '';
+
+  cartSection.append(orderMessageWrapper);
 };

@@ -1,16 +1,16 @@
 import {
-  disableElem,
+  activateElem, disableElem, reduceCountLocalStorageCartItem,
   getCountOfLocalStorageCartItems, getLocalStorageCartItems,
-  increaseCountLocalStorageCartItem, reduceCountLocalStorageCartItem,
+  increaseCountLocalStorageCartItem,
 } from '../service.js';
 import {
   getItemPriceElem, getItemCountElem, getItemCreditPriceElem,
-  getItemOldPriceELem,
-  cartSubmitBtn,
+  getItemOldPriceELem, cartSubmitBtn, cartItemsListElem,
+  getAllDeliveryDateELems, cartItemsCountElem, cartChooseAllElem,
 } from './cartGetElements.js';
 import {
-  renderEmptyCartMessage, renderUpdatedDeliveryAllImg,
-  updateTotalFieldset,
+  renderEmptyCartMessage, renderEmptyDeliveryAllImg,
+  renderUpdatedDeliveryAllImg, updateTotalFieldset,
 } from './cartRender.js';
 
 export const getDeliveryDate = (minDeliveryDays = 1, maxDeliveryDays = 5) => {
@@ -192,5 +192,50 @@ export const cartItemCountService = (target, clickedCountdBtn) => {
   }
 
   const newCartItems = getLocalStorageCartItems();
-  updateTotalFieldset(getCountOfLocalStorageCartItems(), newCartItems);
+  const countOfItemsInCart = getCountOfLocalStorageCartItems(newCartItems);
+  updateTotalFieldset(countOfItemsInCart, newCartItems);
 };
+
+export const makeAllCheckboxesChecked = (allGoodCheckbox) => {
+  allGoodCheckbox.forEach(checkbox => {
+    checkbox.checked = true;
+  });
+};
+
+export const makeAllCheckboxesUnchecked = (allGoodCheckbox) => {
+  allGoodCheckbox.forEach(checkbox => {
+    checkbox.checked = false;
+  });
+};
+
+export const cleanCart = () => {
+  cartItemsListElem.textContent = '';
+  renderEmptyCartMessage();
+  renderEmptyDeliveryAllImg();
+  getAllDeliveryDateELems().forEach(elem => {
+    elem.textContent = '';
+  });
+  cartItemsCountElem.textContent = '';
+  updateTotalFieldset(0, []);
+  cartChooseAllElem.textContent = '';
+};
+
+export const isGoodCheckBoxClicked = (target) =>
+  target.classList.contains('cart-form__checkbox--good');
+
+export const isGoodCheckBoxChecked = (target) => target.checked;
+
+export const activateAllDelGooDBtns = (allgetAllDelGoodBtn) => {
+  allgetAllDelGoodBtn.forEach(btn => {
+    activateElem(btn);
+  });
+};
+
+export const disableAllDelGooDBtns = (allgetAllDelGoodBtn) => {
+  allgetAllDelGoodBtn.forEach(btn => {
+    disableElem(btn);
+  });
+};
+
+export const getParentGoodItem = (elem) =>
+  elem.closest('.cart-form__good-item');

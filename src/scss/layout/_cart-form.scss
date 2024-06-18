@@ -79,6 +79,8 @@
 
   &__checkbox {
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
     &::before {
       position: absolute;
@@ -133,7 +135,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    cursor: pointer;
+    background-color: transparent;
+    border: none;
 
     &--all {
       width: 30px;
@@ -141,7 +144,14 @@
     }
 
     &--good {
-      display: none;
+      // display: none;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
     }
   }
   
@@ -435,6 +445,7 @@
 
     &:disabled {
       opacity: 0.6;
+      cursor: not-allowed;
     }
   }
 

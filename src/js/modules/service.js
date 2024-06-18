@@ -41,6 +41,14 @@ export const toggleElem = (elem, className) => {
   elem.classList.toggle(className);
 };
 
+export const activateElem = (elem) => {
+  elem.disabled = false;
+};
+
+export const disableElem = (elem) => {
+  elem.disabled = true;
+};
+
 export const delLastPeriodStr = (str) => {
   let newStr = str;
 
@@ -75,8 +83,10 @@ export const arrIsEmpty = (arr) => !arr.length;
 export const getLocalStorageCartItems = () =>
   JSON.parse(localStorage.getItem('cartItems') || '[]');
 
-export const getCountOfLocalStorageCartItems = () =>
-  getLocalStorageCartItems().length;
+/*export const getCountOfLocalStorageCartItems = () =>
+  getLocalStorageCartItems().length;*/
+
+export const getCountOfLocalStorageCartItems = (cartItems) => cartItems.length;
 
 export const getProductInCart = (cartItems, productId) =>
   cartItems.find((item) => Number(item.id) === Number(productId));
@@ -132,6 +142,12 @@ export const addToCart = (
   renderHeaderCartItemsCount();
 };
 
+export const removeItemFromLocalStorageCartItem = (cartItems, itemId) => {
+  cartItems = cartItems.filter((item) => Number(item.id) !== itemId);
+
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
+
 export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
   const itemInCart = getProductInCart(cartItems, itemId);
 
@@ -142,6 +158,8 @@ export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
 
 export const reduceCountLocalStorageCartItem = (cartItems, itemId) => {
   const itemInCart = getProductInCart(cartItems, itemId);
+
+  // ToDO DRY (removeItem)
 
   if (itemInCart.count === 1) {
     cartItems = cartItems.filter((item) => item.id !== itemInCart.id);
@@ -155,12 +173,4 @@ export const reduceCountLocalStorageCartItem = (cartItems, itemId) => {
 
 export const clearLocalStorageCartItems = () => {
   localStorage.removeItem('cartItems');
-};
-
-export const activateElem = (elem) => {
-  elem.disabled = false;
-};
-
-export const disableElem = (elem) => {
-  elem.disabled = true;
 };

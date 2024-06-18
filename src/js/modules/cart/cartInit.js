@@ -7,6 +7,6 @@ import {renderCart} from './cartRender.js';
 export const cartInit = () => {
   const cartItems = getLocalStorageCartItems();
 
-  renderCart(getCountOfLocalStorageCartItems(), cartItems);
+  renderCart(getCountOfLocalStorageCartItems(cartItems), cartItems);
   cartControl();
 };
