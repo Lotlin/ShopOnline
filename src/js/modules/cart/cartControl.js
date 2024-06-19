@@ -6,17 +6,18 @@ import {
 } from '../service.js';
 import {
   cartElem, cartItemsListElem, cartSubmitBtn, getAgreementCheckbox,
-  getAllDelGoodBtn, getAllGoodCheckbox, getChooseAllCheckbox, getDelGoodBtn,
-  getDeleteAllBtn,
+  getAllDelGoodBtn, getAllGoodCheckbox, getChooseAllCheckbox,
+  getCloseOrderMessageBtn, getDelGoodBtn, getDeleteAllBtn, getOrderMessage,
 } from './cartGetElements.js';
 import {
-  renderCartItemsCount, renderOrderMessageModal, renderUpdatedDeliveryAllImg, updateTotalFieldset,
+  renderCartItemsCount, renderOrderMessageModal, renderUpdatedDeliveryAllImg,
+  updateTotalFieldset,
 } from './cartRender.js';
 import {
   activateAllDelGooDBtns, cartItemCountService, cleanCart,
-  disableAllDelGooDBtns, getItemId, getParentGoodItem, isCountBtnClicked,
-  isGoodCheckBoxChecked, isGoodCheckBoxClicked, makeAllCheckboxesChecked,
-  makeAllCheckboxesUnchecked,
+  disableAllDelGooDBtns, getDataForServer, getItemId, getParentGoodItem,
+  isCountBtnClicked, isGoodCheckBoxChecked, isGoodCheckBoxClicked,
+  makeAllCheckboxesChecked, makeAllCheckboxesUnchecked,
 } from './cartService.js';
 
 export const countBtnControl = () => {
@@ -115,31 +116,30 @@ export const deleteGoodBtnControl = () => {
   });
 };
 
+export const orderMEssageCloseControl = () => {
+  const closeOrderMessageBtn = getCloseOrderMessageBtn();
+  closeOrderMessageBtn.addEventListener('click', () => {
+    getOrderMessage().remove();
+  });
+};
+
 export const submitBtnControl = () => {
   cartElem.addEventListener('submit', e => {
     e.preventDefault();
 
-    const orderedItems = getLocalStorageCartItems();
-    console.log('orderedItems: ', orderedItems);
-    const orderedItemsData = orderedItems.map(({id, count}) => ({
-      id,
-      quantity: count,
-    }));
+    const orderedItemsData = getDataForServer(getLocalStorageCartItems());
 
     // здесь была бы отправка на сервер, если бы он это предусматривал :)
-    console.log(orderedItemsData);
-    const orderId = Math.floor(Math.random() * (1000 - 10 + 1)) + 10;
+    console.log('Данные для сервера: ', orderedItemsData);
 
+    // здесь был бы номер заказа, сгенерируемый сервером :)
+    const orderId = Math.floor(Math.random() * (1000 - 10 + 1)) + 10;
     renderOrderMessageModal(orderId);
-    // toDO нужно ли
-    // clearLocalStorageCartItems();
-    // updateCartCount();
-    // disableElem(cartSubmitBtn);
-    // toDo написать функционал
-    // const closeOrderMessageBtn = getCloseOrderMessageBtn();
-    /* closeOrderMessageBtn.addEventListener('click', () => {
-      getOrderMessage().remove();
-    }); */
+
+    orderMEssageCloseControl();
+
+    cleanCart();
+    clearLocalStorageCartItems();
   });
 };
 

@@ -239,3 +239,9 @@ export const disableAllDelGooDBtns = (allgetAllDelGoodBtn) => {
 
 export const getParentGoodItem = (elem) =>
   elem.closest('.cart-form__good-item');
+
+export const getDataForServer = (itemsObj) => itemsObj.map(({id, count}) => ({
+  id,
+  count,
+}),
+);

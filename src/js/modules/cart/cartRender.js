@@ -420,7 +420,5 @@ export const renderOrderMessageModal = (orderId) => {
 
   orderMessageWrapper.append(orderMessageText, orderMessageColseBtn);
 
-  cartSection.textContent = '';
-
   cartSection.append(orderMessageWrapper);
 };

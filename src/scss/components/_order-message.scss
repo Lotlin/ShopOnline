@@ -10,6 +10,7 @@
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba($text-dark-color, .4);
   text-align: center;
+  white-space: pre-line;
 
   &__text {
     margin-bottom: 20px;
@@ -24,11 +25,11 @@
     outline: 1px solid transparent;
 
     &:hover {
-      background-color: $button-background-color;
+      background-color: $card-grey;
     }
 
     &:focus-visible {
-      outline: 1px solid $button-background-color;
+      outline: 1px solid $card-grey;
     }
 
     &:active {

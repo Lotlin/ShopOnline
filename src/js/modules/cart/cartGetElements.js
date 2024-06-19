@@ -43,3 +43,7 @@ export const getAllDelGoodBtn = () =>
   cartItemsListElem.querySelectorAll('.cart-form__basket--good');
 export const getDelGoodBtn = (item) =>
   item.querySelector('.cart-form__basket--good');
+export const getOrderMessage = () =>
+  document.querySelector('.order-message');
+export const getCloseOrderMessageBtn = () =>
+  document.querySelector('.order-message__close-btn');
