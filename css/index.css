@@ -542,6 +542,10 @@ td {
   outline: none;
 }
 
+.header__burger:active {
+  transform: scale(0.9);
+}
+
 .header__burger-img-wrapper {
   display: flex;
   justify-content: center;
@@ -1254,7 +1258,7 @@ td {
   transform: translateY(-50%);
   display: block;
   padding-left: 4px;
-  content: url("../../img/icons/check.svg");
+  content: url("../img/icons/check.svg");
   width: 20px;
   height: 20px;
   background-color: #3670C7;
@@ -1339,7 +1343,6 @@ td {
 }
 
 .cart-form__good-description {
-  margin-right: auto;
   flex: 0 1 533px;
 }
 
@@ -1372,7 +1375,7 @@ td {
 }
 
 .cart-form__good-num-wrapper {
-  margin-right: auto;
+  flex: 0 1 106px;
   height: 36px;
   display: flex;
   justify-content: space-between;
@@ -1404,6 +1407,7 @@ td {
 }
 
 .cart-form__price-wrapper {
+  flex: 0 1 160px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1579,8 +1583,50 @@ td {
   cursor: not-allowed;
 }
 
+.cart-form__submit:hover {
+  transform: scale(1.1);
+}
+
+.cart-form__submit:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.cart-form__submit:active {
+  transform: scale(0.9);
+}
+
 .cart-form__empty-message {
   font-size: 22px;
+}
+
+.cart-form__good-num:hover {
+  transform: scale(1.1);
+}
+
+.cart-form__good-num:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.cart-form__good-num:active {
+  transform: scale(0.9);
+}
+
+.cart-form__basket:hover {
+  transform: scale(1.1);
+}
+
+.cart-form__basket:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.cart-form__basket:active {
+  transform: scale(0.9);
 }
 
 .timer {
@@ -1978,11 +2024,39 @@ td {
   line-height: 1.3;
 }
 
+.card__cart-btn:hover {
+  transform: scale(1.1);
+}
+
+.card__cart-btn:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.card__cart-btn:active {
+  transform: scale(0.9);
+}
+
 .card__favorite-btn {
   width: 33px;
   height: 33px;
   background-color: transparent;
   border: none;
+}
+
+.card__favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.card__favorite-btn:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.card__favorite-btn:active {
+  transform: scale(0.9);
 }
 
 .card__delivery-wrapper {
@@ -2017,10 +2091,38 @@ td {
   border: none;
 }
 
+.card__bell:hover {
+  transform: scale(1.1);
+}
+
+.card__bell:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.card__bell:active {
+  transform: scale(0.9);
+}
+
 .card__find-out-btn {
   color: #3670C7;
   background-color: transparent;
   border: none;
+}
+
+.card__find-out-btn:hover {
+  transform: scale(1.1);
+}
+
+.card__find-out-btn:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  outline: none;
+}
+
+.card__find-out-btn:active {
+  transform: scale(0.9);
 }
 
 .card__description {
