@@ -68,7 +68,7 @@ export const renderCartItemDetails = (details) => {
   return detailsElemsArr;
 };
 
-export const renderImgWrapper = (imgUrl) => {
+export const renderImgWrapper = (imgUrl, id) => {
   const imgWrapper = createElement('div', {
     className: 'cart-form__img-wrapper',
   });
@@ -84,19 +84,29 @@ export const renderImgWrapper = (imgUrl) => {
 
   label.append(checkBox);
 
+  const goodCardLink = createElement('a', {
+    href: `card.html?id=${id}`,
+  });
+
   const img = createElement('img', {
     'className': 'cart-form__good-img',
     'src': imgUrl,
   });
 
-  imgWrapper.append(label, img);
+  goodCardLink.append(img);
+
+  imgWrapper.append(label, goodCardLink);
 
   return imgWrapper;
 };
 
-export const renderDescription = (title, details) => {
+export const renderDescription = (title, details, id) => {
   const description = createElement('div', {
     className: 'cart-form__good-description',
+  });
+
+  const goodCardLink = createElement('a', {
+    href: `card.html?id=${id}`,
   });
 
   const itemTitle = createElement('h2', {
@@ -104,7 +114,8 @@ export const renderDescription = (title, details) => {
     textContent: title,
   });
 
-  description.append(itemTitle);
+  goodCardLink.append(itemTitle);
+  description.append(goodCardLink);
 
   const detailElements = renderCartItemDetails(details);
 
@@ -192,13 +203,14 @@ export const renderCartItemContentWrapper = (
     price,
     oldPrice,
     creditPrice,
+    id,
 ) => {
   const wrapper = createElement('div', {
     className: 'cart-form__item-wtapper',
   });
 
-  const imgWrapper = renderImgWrapper(imgUrl);
-  const description = renderDescription(title, details);
+  const imgWrapper = renderImgWrapper(imgUrl, id);
+  const description = renderDescription(title, details, id);
   const numElem = renderNumElem(count);
   const priceElem = renderPriceElem(price, oldPrice, creditPrice, count);
   const basketSvg = createElement('button', {
@@ -239,6 +251,7 @@ details = {},
       price,
       oldPrice,
       creditPrice,
+      id,
   );
 
   const line = createElement('div', {

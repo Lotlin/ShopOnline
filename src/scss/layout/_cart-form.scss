@@ -447,10 +447,56 @@
       opacity: 0.6;
       cursor: not-allowed;
     }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__empty-message {
     font-size: 22px;
+  }
+
+  &__good-num {
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  } 
+
+  &__basket {
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   @include large {

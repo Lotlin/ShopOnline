@@ -30,16 +30,22 @@
     @include block-width(190px);
   }
 
-  &__logo-link:hover {
-    box-shadow: 
-    0 0 0 3px $footer-background-color,
-  }
+  &__logo-link {
 
-  &__logo-link:focus {
-    box-shadow: 
-    0 0 0 6px  $button-background-color;
-    outline: none;
-  }
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+}
 
   &__burger {
     display: flex;
@@ -57,11 +63,17 @@
     border-radius: 10px;
 
     &:hover {
-      border: 2px solid $footer-background-color;
+      transform: scale(1.1);
     }
 
-    &:focus {
-      border: 2px solid $footer-background-color;
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 
@@ -90,7 +102,18 @@
     display: flex;
     justify-content: space-between;
     background-color: $form-background-color;
+    border: 1px solid transparent;
     border-radius: 30px;
+
+    &:hover {
+      background-color: rgba($button-background-color, .1);
+      border-color: $form-background-color;
+    }
+
+    &:focus-visible {
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
   }
 
   &__form-label {
@@ -118,11 +141,13 @@
     border-radius: 30px;
 
     &:hover {
-      border: 2px solid $footer-background-color;
+      transform: scale(1.1);
     }
 
-    &:focus {
-      background-color: $footer-background-color;
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
     }
   }
 
@@ -155,7 +180,13 @@
     }
 
     &:hover {
-      background-color: $placeholder-color;
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
     }
   }
 

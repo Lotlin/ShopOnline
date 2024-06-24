@@ -100,6 +100,20 @@
     font-size: 16px;
     font-weight: 700;
     line-height: $main-line-height;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__favorite-btn {
@@ -107,6 +121,20 @@
     height: 33px;
     background-color: transparent;
     border: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__delivery-wrapper {
@@ -137,12 +165,40 @@
     height: 24px;
     background-color: transparent;
     border: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__find-out-btn {
     color: $button-background-color;
     background-color: transparent;
     border: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__description {

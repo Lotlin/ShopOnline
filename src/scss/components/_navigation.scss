@@ -61,6 +61,54 @@
     }
   }
 
+  &__item-link,
+  &__contact-link {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+    outline: none;
+
+    &:hover {
+      color: $dicsount-background-color;
+      border-bottom: 1px solid $dicsount-background-color;
+    }
+
+    &:focus-visible {
+      border-bottom: 1px solid $dicsount-background-color;
+      filter: drop-shadow(0 0 10px rgba(255, 189, 19, 0.7));
+    }
+
+    &:active {
+      filter: drop-shadow(0 0 10px rgba(255, 189, 19, 1));
+    }
+  }
+
+  &__social-link {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+    outline: none;
+
+    &:hover svg,
+    &:hover path {
+      fill: $dicsount-background-color;
+      border-bottom: 1px solid $dicsount-background-color;
+    }
+
+    &:focus-visible svg {
+      border-bottom: 1px solid $dicsount-background-color;
+      filter: drop-shadow(0 0 10px rgba(255, 189, 19, 0.7));
+    }
+
+    &:active svg {
+      filter: drop-shadow(0 0 10px rgba(255, 189, 19, 1));
+    }
+  }
+
+  &__facebook {
+    &:hover path {
+      stroke: $dicsount-background-color;
+    }
+  }
+
   &__buyers {
     margin-right: 29px;
   }
