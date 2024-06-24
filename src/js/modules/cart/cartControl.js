@@ -140,6 +140,7 @@ export const submitBtnControl = () => {
 
     cleanCart();
     clearLocalStorageCartItems();
+    disableElem(cartSubmitBtn);
   });
 };
 

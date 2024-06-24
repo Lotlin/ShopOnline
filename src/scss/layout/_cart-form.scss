@@ -191,7 +191,6 @@
   }
 
   &__good-description {
-    margin-right: auto;
     flex: 0 1 533px;
   }
 
@@ -206,9 +205,6 @@
     height: 130px;
     border: 1px solid $card-line;
     border-radius: 10px;
-  }
-  
-  &__good-description {
   }
 
   &__good-title {
@@ -227,7 +223,7 @@
   }
 
   &__good-num-wrapper {
-    margin-right: auto;
+    flex: 0 1 106px;
     height: 36px;
     display: flex;
     justify-content: space-between;
@@ -258,6 +254,7 @@
   }
 
   &__price-wrapper {
+    flex: 0 1 160px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -299,9 +296,6 @@
     color: $button-background-color;
     border: none;
     background-color: transparent;
-  }
-
-  &__delivery-info {
   }
 
   &__delivery-elem {
@@ -377,19 +371,6 @@
 
   &__total-description-elem:last-child {
     margin-bottom: 0;
-  }
-
-  &__total-description-name {
-
-  }
-
-  &__total-description-amount {
-  }
-
-  &__total-description-value {
-  }
-
-  &__total-delivery {
   }
 
   &__total-name {

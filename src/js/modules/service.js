@@ -83,9 +83,6 @@ export const arrIsEmpty = (arr) => !arr.length;
 export const getLocalStorageCartItems = () =>
   JSON.parse(localStorage.getItem('cartItems') || '[]');
 
-/*export const getCountOfLocalStorageCartItems = () =>
-  getLocalStorageCartItems().length;*/
-
 export const getCountOfLocalStorageCartItems = (cartItems) => cartItems.length;
 
 export const getProductInCart = (cartItems, productId) =>
@@ -158,8 +155,6 @@ export const increaseCountLocalStorageCartItem = (cartItems, itemId) => {
 
 export const reduceCountLocalStorageCartItem = (cartItems, itemId) => {
   const itemInCart = getProductInCart(cartItems, itemId);
-
-  // ToDO DRY (removeItem)
 
   if (itemInCart.count === 1) {
     cartItems = cartItems.filter((item) => item.id !== itemInCart.id);
