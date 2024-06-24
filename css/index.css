@@ -1285,7 +1285,7 @@ td {
 }
 
 .cart-form__basket {
-  background-image: url("../../img/basket.svg");
+  background-image: url("../img/basket.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -2241,7 +2241,7 @@ td {
   top: 50%;
   left: -2px;
   transform: translateY(-50%);
-  background: url(../../img/icons/arrow-article.svg) center no-repeat;
+  background: url("../img/icons/arrow-article.svg") center no-repeat;
 }
 
 .article__autor {
