@@ -957,21 +957,6 @@ td {
   padding: 80px 0;
   background-color: #2D2D2D;
   color: #FFFFFF;
-  /* &__designer-link {
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:focus-visible {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px rgba(248, 247, 247, 0.5));
-      outline: none;
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
-  }*/
 }
 
 .footer__container {
@@ -2618,10 +2603,20 @@ td {
     border-radius: 10px;
   }
 
+  .header__burger--active {
+    position: absolute;
+    z-index: 200;
+    top: 128px;
+  }
+
   .header__search {
     order: 2;
     max-width: 700px;
     width: 100%;
+  }
+
+  .header__search--disactive {
+    display: none;
   }
 
   .header__user {
@@ -2630,6 +2625,10 @@ td {
     display: flex;
     justify-content: flex-end;
     gap: 40px;
+  }
+
+  .header__navigation {
+    top: 136px;
   }
 
   .hero {
@@ -3190,6 +3189,10 @@ td {
     font-size: 2.16vw;
   }
 
+  .header__burger--active {
+    top: 123px;
+  }
+
   .header__search {
     max-width: 65vw;
     width: 100%;
@@ -3467,6 +3470,10 @@ td {
     padding: 7px 21px 11px;
     font-size: 16px;
     border-radius: 6px;
+  }
+
+  .header__burger--active {
+    top: 120px;
   }
 
   .header__search {
@@ -4168,6 +4175,12 @@ td {
     min-width: 114px;
   }
 
+  .header__navigation {
+    min-width: 92%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .header__burger {
     max-width: 14.95vw;
     width: 100%;
@@ -4398,6 +4411,10 @@ td {
     font-size: 12px;
   }
 
+  .navigation__catalog--header {
+    margin-right: 0;
+  }
+
   .card__discount {
     top: 56px;
     left: 240px;
@@ -4521,6 +4538,10 @@ td {
     border-radius: 4px;
   }
 
+  .header__burger--active {
+    position: static;
+  }
+
   .header__burger-img-wrapper {
     width: 14px;
     height: 14px;
@@ -4561,6 +4582,10 @@ td {
 
   .header__user-text {
     display: none;
+  }
+
+  .header__navigation {
+    top: 126px;
   }
 
   .hero {
@@ -5080,7 +5105,7 @@ td {
   }
 
   .navigation__list--active {
-    display: block;
+    display: flex;
   }
 
   .navigation__item--email {
