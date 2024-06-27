@@ -1,3 +1,4 @@
+import {renderHeaderCartItemsCount} from '../header/headerRender.js';
 import {
   activateElem, disableElem, reduceCountLocalStorageCartItem,
   getCountOfLocalStorageCartItems, getLocalStorageCartItems,
@@ -132,6 +133,8 @@ export const updateItemPriceAndCount = (
     if (!сartItems.length) {
       renderEmptyCartMessage();
       disableElem(cartSubmitBtn);
+      renderHeaderCartItemsCount();
+      cartItemsCountElem.textContent = '';
     }
 
     return;
@@ -168,7 +171,7 @@ export const cartItemCountService = (target, clickedCountdBtn) => {
   } = getCartItemRenderedElements(itemElem);
 
   const cartItems = getLocalStorageCartItems();
-  // toDO DRY если останется время
+
   if (clickedCountdBtn === 'increase') {
     increaseCountLocalStorageCartItem(cartItems, itemId);
 
@@ -181,7 +184,12 @@ export const cartItemCountService = (target, clickedCountdBtn) => {
         'increase',
     );
   } else {
-    reduceCountLocalStorageCartItem(cartItems, itemId);
+    const itemIsRemoved = reduceCountLocalStorageCartItem(cartItems, itemId);
+
+    if (itemIsRemoved) {
+      renderHeaderCartItemsCount();
+    }
+
     updateItemPriceAndCount(
         itemElem,
         itemPriceELem,

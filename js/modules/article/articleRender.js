@@ -5,7 +5,6 @@ import {
   articleCrumbsContainer, articleContainer,
 } from './articleGetElements.js';
 import {loadArticleData, loadAutorData} from './articleGetData.js';
-import {renderHeaderCartItemsCount} from '../header/headerRender.js';
 
 const renderArticleCrumbsElem = async (articleTitle, articleId) => {
   const crumbElem = createElement('p', {
@@ -75,5 +74,4 @@ export const renderArticlePage = async () => {
 
   renderArticleCrumbsElem(articleTitle, articleId);
   renderArticle(articleTitle, articleText, dbAutorId);
-  renderHeaderCartItemsCount();
 };

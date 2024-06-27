@@ -8,3 +8,5 @@ export const headerMenuBtnCloseImg =
 export const headerItemCartElem =
   header.querySelector('.header__user-item--cart');
 export const headerSearch = header.querySelector('.header__search');
+export const getHeaderCountElem = () =>
+  header.querySelector('.header__user-cart-count');
