@@ -1,3 +1,4 @@
+import {renderHeaderCartItemsCount} from '../header/headerRender.js';
 import {
   activateElem, clearLocalStorageCartItems,
   disableElem, getCountOfLocalStorageCartItems,
@@ -141,6 +142,7 @@ export const submitBtnControl = () => {
     cleanCart();
     clearLocalStorageCartItems();
     disableElem(cartSubmitBtn);
+    renderHeaderCartItemsCount();
   });
 };
 
