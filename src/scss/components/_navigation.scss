@@ -231,6 +231,10 @@
         font-size: 12px;
       }
     }
+
+    &__catalog--header {
+      margin-right: 0;
+    }
   }
 
   @include small-layout {
@@ -311,7 +315,7 @@
     }
 
       &--active {
-        display: block;
+        display: flex;
       }
     }
 

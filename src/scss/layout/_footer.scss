@@ -60,22 +60,6 @@
     margin-bottom: 10px;
   }
 
-  /* &__designer-link {
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:focus-visible {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px rgba(248, 247, 247, 0.5));
-      outline: none;
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
-  }*/
-
   @include large {
     &__wrapper {
       gap: 3.12vw;

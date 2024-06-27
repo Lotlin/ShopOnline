@@ -2,7 +2,7 @@ import {toggleElem} from '../service.js';
 import {
   headerMenuBtn, headerNavigation, headerMenuBtnCloseImg, headerMenuBtnOpenImg,
 } from './headerGetElements.js';
-import {switchBurgerBtnImg} from './headerService.js';
+import {switchBurgerBtnImg, toggleHeaderElemsStyle} from './headerService.js';
 
 export const burgerMenuControl = () => {
   headerMenuBtn.addEventListener('click', () => {
@@ -11,5 +11,10 @@ export const burgerMenuControl = () => {
         headerMenuBtnCloseImg, 'header__burger-img--show',
         headerMenuBtnOpenImg, 'header__burger-img--hide',
     );
+    toggleHeaderElemsStyle();
   });
+};
+
+export const headerControl = () => {
+  burgerMenuControl();
 };
