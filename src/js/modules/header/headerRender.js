@@ -1,14 +1,16 @@
 import {
   createElement, getCountOfLocalStorageCartItems, getLocalStorageCartItems,
 } from '../service.js';
-import {header, headerItemCartElem} from './headerGetElements.js';
+import {
+  getHeaderCountElem, header, headerItemCartElem,
+} from './headerGetElements.js';
 
 export const renderHeaderCartItemsCount = () => {
   const cartItems = getLocalStorageCartItems();
   const countItemsInCart = getCountOfLocalStorageCartItems(cartItems);
 
   if (!countItemsInCart) {
-    const headerCountElem = header.querySelector('.header__user-cart-count');
+    const headerCountElem = getHeaderCountElem();
 
     if (headerCountElem) {
       headerCountElem.remove();

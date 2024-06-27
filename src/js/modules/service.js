@@ -158,8 +158,12 @@ export const reduceCountLocalStorageCartItem = (cartItems, itemId) => {
 
   if (itemInCart.count === 1) {
     cartItems = cartItems.filter((item) => item.id !== itemInCart.id);
+
+    const message = 'itemIsRemoved';
+
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    return;
+
+    return message;
   }
 
   itemInCart.count -= 1;
