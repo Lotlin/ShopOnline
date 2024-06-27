@@ -1,9 +1,7 @@
 import {
   createElement, getCountOfLocalStorageCartItems, getLocalStorageCartItems,
 } from '../service.js';
-import {
-  getHeaderCountElem, header, headerItemCartElem,
-} from './headerGetElements.js';
+import {getHeaderCountElem, headerItemCartElem} from './headerGetElements.js';
 
 export const renderHeaderCartItemsCount = () => {
   const cartItems = getLocalStorageCartItems();
